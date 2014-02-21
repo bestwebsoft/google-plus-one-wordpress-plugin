@@ -1,9 +1,16 @@
-Google Plus One Wordpress Plugin
+<a href="http://bestwebsoft.com/plugin/google-plus-one/" target=_blank>Google Plus One Wordpress Plugin</a>
 ========================
 
 Google +1 allows you to celebrate liked the article. The button also provides a current count of how many times your story has been liked on Google Search Engine.
 
-Official plugin page: http://bestwebsoft.com/plugin/google-plus-one/
+<img src="http://bestwebsoft.com/wp-content/uploads/2013/09/g+1.jpg" />
+
+<a href="http://bestwebsoft.com/plugin/google-plus-one/#description" target=_blank>Description</a> | 
+<a href="http://bestwebsoft.com/plugin/google-plus-one/#installation" target=_blank>Installation</a> | 
+<a href="http://bestwebsoft.com/plugin/google-plus-one/#faq" target=_blank>FAQ</a> | 
+<a href="http://bestwebsoft.com/plugin/google-plus-one/#screenshots" target=_blank>Screenshots</a> | 
+<a href="http://bestwebsoft.com/plugin/google-plus-one/#changelog" target=_blank>Changelog</a> | 
+<a href="http://bestwebsoft.com/plugin/google-plus-one/#download" target=_blank>Download</a>
 
 
 Features
@@ -16,6 +23,7 @@ Features
 Translation
 -----------------------------
 * Russian (ru_RU)
+* Ukrainian (uk)
 
 If you create your own language pack or update the existing one, you can send <a href="http://codex.wordpress.org/Translating_WordPress" target="_blank">the text in PO and MO files</a> for <a href="http://support.bestwebsoft.com" target="_blank">BestWebSoft</a> and we'll add it to the plugin. You can download the latest version of the program for work with PO and MO files <a href="http://www.poedit.net/download.php" target="_blank">Poedit</a>.
 
