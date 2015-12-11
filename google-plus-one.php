@@ -6,7 +6,7 @@ Description: Add Google +1 button to your WordPress website.
 Author: BestWebSoft
 Text Domain: google-one
 Domain Path: /languages
-Version: 1.2.6
+Version: 1.2.7
 Author URI: http://bestwebsoft.com
 License: GPLv2 or later
 */
@@ -30,7 +30,7 @@ License: GPLv2 or later
 /* Add BWS menu */
 if ( ! function_exists( 'gglplsn_admin_menu' ) ) {
 	function gglplsn_admin_menu() {
-		bws_add_general_menu( plugin_basename( __FILE__ ) );
+		bws_general_menu();
 		$settings = add_submenu_page( 'bws_plugins', __( 'Google +1 Settings', 'google-one' ), 'Google +1', 'manage_options', "google-plus-one.php", 'gglplsn_options' );
 		add_action( 'load-' . $settings, 'gglplsn_add_tabs' );
 	}
@@ -177,7 +177,7 @@ if ( ! function_exists( 'gglplsn_options' ) ) {
 		} /* end GO PRO ##*/ ?>
 		<!-- general -->
 		<div class="wrap">
-			<h2><?php _e( 'Google +1 Settings', 'google-one' ); ?></h2>
+			<h1><?php _e( 'Google +1 Settings', 'google-one' ); ?></h1>
 			<h2 class="nav-tab-wrapper">
 				<a class="nav-tab<?php if ( !isset( $_GET['action'] ) ) echo ' nav-tab-active'; ?>" href="admin.php?page=google-plus-one.php"><?php _e( 'Settings', 'google-one' ); ?></a>
 				<a class="nav-tab<?php if ( isset( $_GET['action'] ) && 'extra' == $_GET['action'] ) echo ' nav-tab-active'; ?>" href="admin.php?page=google-plus-one.php&amp;action=extra"><?php _e( 'Extra settings', 'google-one' ); ?></a>

@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: http://bestwebsoft.com/donate/
 Tags: add social buttons, add google share button, add google like button, add Google +1 button, best google like button, best google +1 button, best google +1 share button, best google share button, Button like, free, free google +1 button, free google like button, free google share button, follow, follow button, follow me, follow us, goggle +1, gogole +1, googgle +1, google +1, google +1 button, Google +1 button in pages, Google +1 button in posts, Google +1 button like, Google +1 button share, Google +1 like, Google +1 like button, Google +1 like count, Google +1 plugin, google +1 share, Google +1 share button, Google search engine, google share button, google like button, google profile, Like, like button, recommend post, recommend post on Google+, simple google +1 button, simple google +1 plugin, Share, share button, social, social account, social button, social bookmark, social bookmarking, Social Plugins, social profiles, social share, wp plugin, wp plugins, wp google +1 plugin, wordpress google +1 plugin, wp social plugin, wordpress social plugin
 Requires at least: 3.8
-Tested up to: 4.3.1
-Stable tag: 1.2.6
+Tested up to: 4.4
+Stable tag: 1.2.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -103,6 +103,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 
 == Changelog ==
 
+= V1.2.7 - 11.12.2015 =
+* Bugfix : The bug with plugin menu duplicating was fixed.
+
 = V1.2.6 - 05.11.2015 =
 * Update : Textdomain was changed.
 * NEW : A button for Google +1 Button shortcode inserting to the content.
@@ -174,6 +177,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 * Bugfix : The bug of position in the admin menu is fixed. 
 
 == Upgrade Notice ==
+
+= V1.2.7 =
+The bug with plugin menu duplicating was fixed.
 
 = V1.2.6 =
 Textdomain was changed. A button for Google +1 Button shortcode inserting to the content was added. Hungarian language file is added to the plugin.
