@@ -1,7 +1,14 @@
 <a href="http://bestwebsoft.com/products/google-plus-one/" target=_blank>Google +1 by BestWebSoft</a>
 ========================
 
-Google +1 allows you to celebrate liked the article. The button also provides a current count of how many times your story has been liked on Google Search Engine.
+With Google +1 you can add five Google buttons: 
+1) Google +1 Button allows you to see how many times your page has been liked on Google Search Engine as well as who has liked the article. You will be able to exclude certain post types or pages from adding the Google +1 button. This Button also counts of how many times your story has been liked on Google Search Engine. 
+2) Share Button allows your readerships to share the interesting articles from your site with friends. Moreover, it counts how many times your articles have been shared. 
+3) Follow button provides everyone an ability to become your follower in one click. 
+4) With Hangout button everyone who visits your site receives an opportunity to start chat, video call or phone call by dint of "Google Hangouts". You can set the type of Hangout, define the theme, and determine the invited people. 
+5) Google Badge allows you to post your summary or summary of your company/community in Google+ with link so that everyone could visit it. Also, Badge can be added as a Widget.
+
+Google +1 plugin is a perfect solution for people interested in the promotion of their website.
 
 <img src="http://bestwebsoft.com/wp-content/uploads/2013/09/g+1.jpg" />
 
@@ -15,13 +22,17 @@ Google +1 allows you to celebrate liked the article. The button also provides a 
 
 Features
 -----------------------------
-* Actions: Add Google +1 button easily.
-* Display: Select the button position: before the content, after, before and after or using a shortcode.
-* Display: Use one of 4 Sizes of button.
+* Add Google +1 buttons easily.
+* Select the button position: before the content, after the content or before and after.
+* Display buttons using a shortcode.
+* Configure the buttons according to your needs.
+* Select button language or use the current site language for Google +1 button (Using <a href="http://bestwebsoft.com/products/multilanguage/" target="_blank">Multilanguage by BestWebSoft</a>)
 
+If you have a feature, suggestion or idea you'd like to see in the plugin, we'd love to hear about it! <a href="http://support.bestwebsoft.com/hc/en-us/requests/new" target="_blank">Suggest a Feature</a> 
 
 Translation
 -----------------------------
+* Hungarian (hu_HU) (thanks to Peter Aprily http://www.aprily.com)
 * Russian (ru_RU)
 * Ukrainian (uk)
 
