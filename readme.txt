@@ -3,16 +3,23 @@ Contributors: bestwebsoft
 Donate link: http://bestwebsoft.com/donate/
 Tags: add social buttons, add google share button, add google like button, add Google +1 button, best google like button, best google +1 button, best google +1 share button, best google share button, Button like, free, free google +1 button, free google like button, free google share button, follow, follow button, follow me, follow us, goggle +1, gogole +1, googgle +1, google +1, google +1 button, Google +1 button in pages, Google +1 button in posts, Google +1 button like, Google +1 button share, Google +1 like, Google +1 like button, Google +1 like count, Google +1 plugin, google +1 share, Google +1 share button, Google search engine, google share button, google like button, google profile, Like, like button, recommend post, recommend post on Google+, simple google +1 button, simple google +1 plugin, Share, share button, social, social account, social button, social bookmark, social bookmarking, Social Plugins, social profiles, social share, wp plugin, wp plugins, wp google +1 plugin, wordpress google +1 plugin, wp social plugin, wordpress social plugin
 Requires at least: 3.8
-Tested up to: 4.4
-Stable tag: 1.2.7
+Tested up to: 4.4.2
+Stable tag: 1.2.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Add Google +1 button to your WordPress website.
+Add Google Buttons and Google Badge to your WordPress website.
 
 == Description ==
 
-Google +1 allows you to see how many times your page has been liked on Google Search Engine as well as who has liked the article. It comes with the button which provides a count. Google +1 plugin is a perfect solution for the people interested in the promotion of their website.
+With Google +1 you can add five Google buttons:
+ 1) Google +1 Button allows you to see how many times your page has been liked on Google Search Engine as well as who has liked the article. You will be able to exclude certain post types or pages from adding the Google +1 button. This Button also counts of how many times your story has been liked on Google Search Engine.
+ 2) Share Button allows your readerships to share the interesting articles from your site with friends. Moreover, it counts how many times your articles have been shared.
+ 3) Follow button provides everyone an ability to become your follower in one click.
+ 4) With Hangout button everyone who visits your site receives an opportunity to start chat, video call or phone call by dint of "Google Hangouts". You can set the type of Hangout, define the theme, and determine the invited people.
+ 5) Google Badge allows you to post your summary or summary of your company/community in Google+ with link so that everyone could visit it. Also, Badge can be added as a Widget.
+
+Google +1 plugin is a perfect solution for people interested in the promotion of their website.
 
 http://www.youtube.com/watch?v=Z-v0xWTKnuU
 
@@ -26,12 +33,13 @@ http://www.youtube.com/watch?v=Z-v0xWTKnuU
 
 = Features =
 
-* Add Google +1 button easily.
+* Add Google +1 buttons easily.
 * Select the button position: before the content, after the content or before and after.
-* Display button using a shortcode.
-* Use one of 4 Sizes of the button.
-* Add the annotation showing how many times your article has been liked.
+* Display buttons using a shortcode.
+* Configure the buttons according to your needs.
 * Select button language or use the current site language for Google +1 button (Using <a href="http://bestwebsoft.com/products/multilanguage/" target="_blank">Multilanguage by BestWebSoft</a>)
+
+If you have a feature, suggestion or idea you'd like to see in the plugin, we'd love to hear about it! <a href="http://support.bestwebsoft.com/hc/en-us/requests/new" target="_blank">Suggest a Feature</a>
 
 = Recommended Plugins =
 
@@ -81,9 +89,18 @@ In WordPress admin panel, please go to "BWS Plugins", find the Google +1 and cli
 
 In WordPress admin panel, please go to "BWS Plugins", find the Google +1 settings page and choose one of the listed positions: Before, After, Before and After. Then click "Save Changes".
 
-= How to add Google +1 Button with shortcode =
+= How to add Google +1 Button using the shortcode? =
 
-Just paste code [bws_googleplusone] into the necessary page, post or text widget.
+Just paste code [bws_googleplusone] into the necessary page, post or text widget for adding Google +1 Button or use a "display" parameter for adding another button(s).
+For example: [bws_googleplusone display="plusone,share,follow,hangout,badge"]. You can change the buttons queue in "display" parameter as you want.
+
+= Why I don't see the Follow Button and Google Badge? =
+
+Follow Button and Google Bange don`t work without Google ID. Just enter it on Settings Page
+
+= I've entered Google ID, but nothing has changed. =
+
+Please check the Badge type. Google Badge works incorrectly if Google ID don`t match with the Badge Type.
 
 = I have some problems with the plugin's work. What Information should I provide to receive proper support? =
 
@@ -102,6 +119,11 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 4. Displaying Google +1 Button in your post via the shortcode.
 
 == Changelog ==
+
+= V1.2.8 - 16.03.2016 =
+* NEW : The Share, Follow, Hangout Buttons were added.
+* NEW : The Google Badge was added.
+* Update : Google +1 Button options ware changed.
 
 = V1.2.7 - 11.12.2015 =
 * Bugfix : The bug with plugin menu duplicating was fixed.
@@ -178,6 +200,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 
 == Upgrade Notice ==
 
+= V1.2.8 =
+The Share, Follow, Hangout Buttons were added. The Google Badge was added. Google +1 Button options ware changed.
+
 = V1.2.7 =
 The bug with plugin menu duplicating was fixed.
 
@@ -230,7 +255,7 @@ We updated all functionality for wordpress 3.8. BWS plugins section is updated. 
 Add checking installed wordpress version. The Ukrainian language file is added to the plugin. We updated all functionality for wordpress 3.7.1. Activation of radio button or checkbox by clicking on its label.
 
 = V1.1.0 =
-Repeared bug with shortcode. Added new screenshots.
+Fixed bug with shortcode. Added new screenshots.
 
 = V1.0 =
 BWS Plugins sections was fixed and right now it is consisted with 3 parts: activated, installed and recommended plugins. The bug of position in the admin menu is fixed.
