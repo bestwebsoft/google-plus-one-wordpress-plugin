@@ -2,11 +2,11 @@
 ========================
 
 With Google +1 you can add five Google buttons:
- 1) Google +1 Button allows you to see how many times your page has been liked on Google Search Engine as well as who has liked the article. You will be able to exclude certain post types or pages from adding the Google +1 button. This Button also counts of how many times your story has been liked on Google Search Engine.
- 2) Share Button allows your readerships to share the interesting articles from your site with friends. Moreover, it counts how many times your articles have been shared.
- 3) Follow button provides everyone an ability to become your follower in one click.
- 4) With Hangout button everyone who visits your site receives an opportunity to start chat, video call or phone call by dint of "Google Hangouts". You can set the type of Hangout, define the theme, and determine the invited people.
- 5) Google Badge allows you to post your summary or summary of your company/community in Google+ with link so that everyone could visit it. Also, Badge can be added as a Widget.
+* Google +1 Button allows you to see how many times your page has been liked on Google Search Engine as well as who has liked the article. You will be able to exclude certain post types or pages from adding the Google +1 button. This Button also counts of how many times your story has been liked on Google Search Engine.
+* Share Button allows your readerships to share the interesting articles from your site with friends. Moreover, it counts how many times your articles have been shared.
+* Follow button provides everyone an ability to become your follower in one click.
+* With Hangout button everyone who visits your site receives an opportunity to start chat, video call or phone call by dint of "Google Hangouts". You can set the type of Hangout, define the theme, and determine the invited people.
+* Google Badge allows you to post your summary or summary of your company/community in Google+ with link so that everyone could visit it. Also, Badge can be added as a Widget.
 
 <img src="http://bestwebsoft.com/wp-content/uploads/2014/09/g-1-banner-website.jpg" />
 

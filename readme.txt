@@ -1,14 +1,14 @@
 ﻿=== Google +1 by BestWebSoft ===
 Contributors: bestwebsoft
 Donate link: http://bestwebsoft.com/donate/
-Tags: add social buttons, add google share button, add google like button, add Google +1 button, best google like button, best google +1 button, best google +1 share button, best google share button, Button like, free, free google +1 button, free google like button, free google share button, follow, follow button, follow me, follow us, goggle +1, gogole +1, googgle +1, google +1, google +1 button, Google +1 button in pages, Google +1 button in posts, Google +1 button like, Google +1 button share, Google +1 like, Google +1 like button, Google +1 like count, Google +1 plugin, google +1 share, Google +1 share button, Google search engine, google share button, google like button, google profile, Like, like button, recommend post, recommend post on Google+, simple google +1 button, simple google +1 plugin, Share, share button, badge, google badge, add google badge, free google badge, bage, google bage, free bage, hangout, google hangout, hangout button, add google hangout button, hngout, free google hangout button, best hangout button, best google hangout button, hangout button for wordpress, hangout social button, hangout buton, social, social account, social button, social bookmark, social bookmarking, Social Plugins, social profiles, social share, wp plugin, wp plugins, wp google +1 plugin, wordpress google +1 plugin, wp social plugin, wordpress social plugin
+Tags: add social buttons, add google social buttons, add google buttons, google like, google share, google like button, google share button, google, google social buttons, google +1, social account, social button
 Requires at least: 3.8
-Tested up to: 4.4.2
-Stable tag: 1.2.8
+Tested up to: 4.5.3
+Stable tag: 1.2.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Add Google Buttons and Google Badge to your WordPress website.
+Add Google +1 Share, Follow, Hangout buttons and profile badge to WordPress posts, pages and widgets.
 
 == Description ==
 
@@ -54,24 +54,25 @@ There is also a premium version of the plugin <a href="http://bestwebsoft.com/pr
 * Russian (ru_RU)
 * Ukrainian (uk)
 
-If you create your own language pack or update the existing one, you can send <a href="http://codex.wordpress.org/Translating_WordPress" target="_blank">the text in PO and MO files</a> for <a href="http://support.bestwebsoft.com" target="_blank">BestWebSoft</a> and we'll add it to the plugin. You can download the latest version of the program for work with PO and MO files <a href="http://www.poedit.net/download.php" target="_blank">Poedit</a>.
+Some of these translations are not complete. We are constantly adding new features which should be translated.
+If you create your own language pack or update the existing one, you can send <a href="http://codex.wordpress.org/Translating_WordPress" target="_blank">the text in PO and MO files</a> for <a href="http://support.bestwebsoft.com/hc/en-us/requests/new" target="_blank">BestWebSoft</a> and we'll add it to the plugin. You can download the latest version of the program for work with PO and MO files <a href="http://www.poedit.net/download.php" target="_blank">Poedit</a>.
 
 = Technical support =
 
-Dear users, our plugins are available for free download. If you have any questions or recommendations regarding the functionality of our plugins (existing options, new options, current issues), please feel free to contact us. Please note that we accept requests in English only. All messages in another languages won't be accepted.
+Dear users, our plugins are available for free download. If you have any questions or recommendations regarding the functionality of our plugins (existing options, new options, current issues), please feel free to contact us. Please note that we accept requests in English only. All messages in other languages won't be accepted.
 
 If you notice any bugs in the plugins, you can notify us about it and we'll investigate and fix the issue then. Your request should contain URL of the website, issues description and WordPress admin panel credentials.
-Moreover we can customize the plugin according to your requirements. It's a paid service (as a rule it costs $40, but the price can vary depending on the amount of the necessary changes and their complexity). Please note that we could also include this or that feature (developed for you) in the next release and share with the other users then. 
+Moreover we can customize the plugin according to your requirements. It's a paid service (as a rule it costs $40, but the price can vary depending on the amount of the necessary changes and their complexity). Please note that we could also include this or that feature (developed for you) in the next release and share with the other users then.
 We can fix some things for free for the users who provide translation of our plugin into their native language (this should be a new translation of a certain plugin, you can check available translations on the official plugin page).
 
 == Installation ==
 
 1. Upload `google-one` folder to the `/wp-content/plugins/` directory.
 2. Activate the plugin through the 'Plugins' menu in your WordPress admin panel.
-3. You can adjust necessary settings through your WordPress admin panel in "Settings" > "Google +1".
+3. You can adjust the necessary settings using your WordPress admin panel in "BWS Panel" > "Google +1".
 4. Create a page or a post and insert shortcode [bws_googleplusone] to the text.
 
-<a href="https://docs.google.com/document/d/1Vfxwe8PvzMQfhkqVZ-bKP8JNY92c6m9Tl4-edBUZpOA/edit" target="_blank">View a Step-by-step Instruction on Google +1 Installation</a>.
+<a href="https://docs.google.com/document/d/1Vfxwe8PvzMQfhkqVZ-bKP8JNY92c6m9Tl4-edBUZpOA" target="_blank">View a Step-by-step Instruction on Google +1 Installation</a>.
 
 http://www.youtube.com/watch?v=9G640UQeJFE
 
@@ -83,11 +84,11 @@ For correct work of the Google +1 buttons do not use it locally and on a free ho
 
 = How can I deactivate the plugin? =
 
-In WordPress admin panel, please go to "BWS Plugins", find the Google +1 and click "Deactivate".
+In WordPress admin panel, please go to "BWS Panel", find the Google +1 and click "Deactivate".
 
 = How to adjust Google +1 Button position on the page =
 
-In WordPress admin panel, please go to "BWS Plugins", find the Google +1 settings page and choose one of the listed positions: Before, After, Before and After. Then click "Save Changes".
+In WordPress admin panel, please go to "BWS Panel", find the Google +1 settings page and choose one of the listed positions: Before, After, Before and After. Then click "Save Changes".
 
 = How to add Google +1 Button using the shortcode? =
 
@@ -96,7 +97,7 @@ For example: [bws_googleplusone display="plusone,share,follow,hangout,badge"]. Y
 
 = Why I don't see the Follow Button and Google Badge? =
 
-Follow Button and Google Bange don`t work without Google ID. Just enter it on Settings Page
+Follow Button and Google Badge don`t work without Google ID. Just enter it on Settings Page
 
 = I've entered Google ID, but nothing has changed. =
 
@@ -113,12 +114,16 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 
 == Screenshots ==
 
-1. Google +1 Settings page.
-2. Google +1 Before and After the post.
-3. Adding Google +1 shortcode to your post or page.
-4. Displaying Google +1 Button in your post via the shortcode.
+1. Google +1 Before and After the post.
+2. Displaying Google +1 Button in your post via the shortcode.
+3. Google +1 Settings page.
+4. Adding Google +1 shortcode to your post or page.
 
 == Changelog ==
+
+= V1.2.9 - 11.07.2016 =
+* NEW : The Google Badge settings were added.
+* Update : We updated all functionality for wordpress 4.5.3.
 
 = V1.2.8 - 16.03.2016 =
 * NEW : The Share, Follow, Hangout Buttons were added.
@@ -163,7 +168,7 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 * Bugfix : Security Exploit was fixed.
 
 = V1.1.6 - 15.05.2014 =
-* Update : BWS plugins section is updated. 
+* Update : BWS plugins section is updated.
 * Update : We updated all functionality for wordpress 3.9.1.
 * Update : The Ukrainian language is updated in the plugin.
 
@@ -196,9 +201,12 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 
 = V1.0 - 01.09.2013 =
 * Bugfix : BWS Plugins sections was fixed and right now it is consisted with 3 parts: activated, installed and recommended plugins.
-* Bugfix : The bug of position in the admin menu is fixed. 
+* Bugfix : The bug of position in the admin menu is fixed.
 
 == Upgrade Notice ==
+
+= V1.2.9 =
+The Google Badge settings were added. We updated all functionality for wordpress 4.5.3.
 
 = V1.2.8 =
 The Share, Follow, Hangout Buttons were added. The Google Badge was added. Google +1 Button options ware changed.
