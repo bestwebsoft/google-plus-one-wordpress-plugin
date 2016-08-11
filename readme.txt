@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: http://bestwebsoft.com/donate/
 Tags: add social buttons, add google social buttons, add google buttons, google like, google share, google like button, google share button, google, google social buttons, google +1, social account, social button
 Requires at least: 3.8
-Tested up to: 4.5.3
-Stable tag: 1.2.9
+Tested up to: 4.6
+Stable tag: 1.3.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -114,12 +114,17 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 
 == Screenshots ==
 
-1. Google +1 Before and After the post.
+1. Google +1 Pro Before and After the post.
 2. Displaying Google +1 Button in your post via the shortcode.
-3. Google +1 Settings page.
+3. Displaying Google+ Badge Widget.
 4. Adding Google +1 shortcode to your post or page.
+5. Adding Google +1 widget to the sidebar.
+6. Google +1 Pro Settings page.
 
 == Changelog ==
+
+= V1.3.0 - 10.08.2016 =
+* Update : All functionality for WordPress 4.6 was updated.
 
 = V1.2.9 - 11.07.2016 =
 * NEW : The Google Badge settings were added.
@@ -204,6 +209,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 * Bugfix : The bug of position in the admin menu is fixed.
 
 == Upgrade Notice ==
+
+= V1.3.0 =
+* The compatibility with new WordPress version updated.
 
 = V1.2.9 =
 The Google Badge settings were added. We updated all functionality for wordpress 4.5.3.

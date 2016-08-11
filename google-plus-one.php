@@ -6,7 +6,7 @@ Description: Add Google +1 Share, Follow, Hangout buttons and profile badge to W
 Author: BestWebSoft
 Text Domain: google-one
 Domain Path: /languages
-Version: 1.2.9
+Version: 1.3.0
 Author URI: http://bestwebsoft.com
 License: GPLv2 or later
 */
@@ -57,7 +57,7 @@ if ( ! function_exists ( 'gglplsn_init' ) ) {
 		/*## add general functions */
 		require_once( dirname( __FILE__ ) . '/bws_menu/bws_include.php' );
 		bws_include_init( plugin_basename( __FILE__ ) );
-		bws_wp_min_version_check( plugin_basename( __FILE__ ), $gglplsn_plugin_info, '3.8', '3.1' );/* check compatible with current WP version ##*/
+		bws_wp_min_version_check( plugin_basename( __FILE__ ), $gglplsn_plugin_info, '3.8' );/* check compatible with current WP version ##*/
 
 		/* Get/Register and check settings for plugin */
 		if ( ! is_admin() || ( isset( $_GET['page'] ) && ( "google-plus-one.php" == $_GET['page'] || "social-buttons.php" == $_GET['page'] ) ) ) {
@@ -75,7 +75,7 @@ if ( ! function_exists( 'gglplsn_admin_init' ) ) {
 		global $bws_plugin_info, $gglplsn_plugin_info, $bws_shortcode_list;
 
 		/*## Function for bws menu */
-		if ( ! isset( $bws_plugin_info ) || empty( $bws_plugin_info ) )
+		if ( empty( $bws_plugin_info ) )
 			$bws_plugin_info = array( 'id' => '102', 'version' => $gglplsn_plugin_info["Version"] );
 
 		/* add Google +1 to global $bws_shortcode_list ##*/
@@ -322,14 +322,14 @@ if ( ! function_exists( 'gglplsn_options' ) ) {
 			$message = __( 'All plugin settings were restored.', 'google-one' );
 		}
 
-		/* GO PRO */
+		/*pls GO PRO */
 		if ( isset( $_GET['action'] ) && 'go_pro' == $_GET['action'] ) {
 			$go_pro_result = bws_go_pro_tab_check( $plugin_basename, 'gglplsn_options' );
 			if ( ! empty( $go_pro_result['error'] ) )
 				$error = $go_pro_result['error'];
 			elseif ( ! empty( $go_pro_result['message'] ) )
 				$message = $go_pro_result['message'];
-		} /* end GO PRO ##*/ ?>
+		} /* end GO PRO pls*/##*/ ?>
 		<!-- general -->
 		<div class="wrap">
 			<h1><?php _e( 'Google +1 Settings', 'google-one' ); ?></h1>
@@ -338,9 +338,13 @@ if ( ! function_exists( 'gglplsn_options' ) ) {
 			</ul>
 			<h2 class="nav-tab-wrapper">
 				<a class="nav-tab<?php if ( !isset( $_GET['action'] ) ) echo ' nav-tab-active'; ?>" href="admin.php?page=google-plus-one.php"><?php _e( 'Settings', 'google-one' ); ?></a>
+				<!-- pls -->
 				<a class="nav-tab<?php if ( isset( $_GET['action'] ) && 'extra' == $_GET['action'] ) echo ' nav-tab-active'; ?>" href="admin.php?page=google-plus-one.php&amp;action=extra"><?php _e( 'Extra settings', 'google-one' ); ?></a>
+				<!-- end pls -->
 				<a class="nav-tab<?php if ( isset( $_GET['action'] ) && 'custom_code' == $_GET['action'] ) echo ' nav-tab-active'; ?>" href="admin.php?page=google-plus-one.php&amp;action=custom_code"><?php _e( 'Custom Code', 'google-one' ); ?></a>
+				<!-- pls -->
 				<a class="nav-tab bws_go_pro_tab<?php if ( isset( $_GET['action'] ) && 'go_pro' == $_GET['action'] ) echo ' nav-tab-active'; ?>" href="admin.php?page=google-plus-one.php&amp;action=go_pro"><?php _e( 'Go PRO', 'google-one' ); ?></a>
+				<!-- end pls -->
 			</h2>
 			<noscript><div class="error below-h2"><p><strong><?php _e( 'Please, enable JavaScript in Your browser.', 'google-one' ); ?></strong></p></div></noscript>
 			<?php if ( ! empty( $hide_result['message'] ) ) { ?>
@@ -451,7 +455,7 @@ if ( ! function_exists( 'gglplsn_options' ) ) {
 															<input disabled="disabled" type="checkbox" name="gglplsn_use_multilanguage_locale" value="1" />
 															<?php _e( 'Use the current site language', 'google-one' ); ?>
 															<span class="bws_info">(<?php _e( 'Using', 'google-one' ); ?> Multilanguage by BestWebSoft)
-																<a href="http://bestwebsoft.com/products/multilanguage/?k=196fb3bb74b6e8b1e08f92cddfd54313&pn=78&v=<?php echo $gglplsn_plugin_info["Version"]; ?>&wp_v=<?php echo $wp_version; ?>"><?php _e( 'Download', 'google-one' ); ?> Multilanguage</a>
+																<a href="http://bestwebsoft.com/products/multilanguage/?k=4f26802e271bc07146a382140164abc1&pn=102&v=<?php echo $gglplsn_plugin_info["Version"]; ?>&wp_v=<?php echo $wp_version; ?>"><?php _e( 'Download', 'google-one' ); ?> Multilanguage</a>
 															</span>
 														<?php } ?>
 													</label>
@@ -921,7 +925,9 @@ if ( ! function_exists( 'gglplsn_options' ) ) {
 					<!-- general -->
 					<?php bws_form_restore_default_settings( $plugin_basename );
 				}
-			} elseif ( 'extra' == $_GET['action'] ) { ?>
+			} elseif( 'custom_code' == $_GET['action'] ) {
+				bws_custom_code_tab();			
+			} /*pls extra banner */ elseif ( 'extra' == $_GET['action'] ) { ?>
 				<div class="bws_pro_version_bloc">
 					<div class="bws_pro_version_table_bloc">
 						<div class="bws_table_bg"></div>
@@ -948,12 +954,10 @@ if ( ! function_exists( 'gglplsn_options' ) ) {
 						<div class="clear"></div>
 					</div>
 				</div>
-			<?php } elseif( 'custom_code' == $_GET['action'] ) {
-				bws_custom_code_tab();
-			} elseif ( 'go_pro' == $_GET['action'] ) {
+			<?php } elseif ( 'go_pro' == $_GET['action'] ) {
 				bws_go_pro_tab_show( $bws_hide_premium_options_check, $gglplsn_plugin_info, $plugin_basename, 'google-plus-one.php', 'google-plus-one-pro.php', 'google-one/google-plus-one-pro.php', 'google-plus-one', '0a5a8a70ed3c34b95587de0604ca9517', '102', isset( $go_pro_result['pro_plugin_is_activated'] ) );
 			}
-			bws_plugin_reviews_block( $gglplsn_plugin_info['Name'], 'google-one' ); ?>
+			bws_plugin_reviews_block( $gglplsn_plugin_info['Name'], 'google-one' );  /* show reviews block pls*/ ?>
 		</div>
 		<!-- end general -->
 	<?php }
@@ -1034,7 +1038,7 @@ if ( ! function_exists( 'gglplsn_js' ) ) {
 			}
 			if ( empty( $gglplsn_locale ) )
 				$gglplsn_locale = $gglplsn_options['lang']; ?>
-			<script>
+			<script type="text/javascript">
 				window.___gcfg = {
 					lang: '<?php echo $gglplsn_locale; ?>',
 				};
@@ -1469,12 +1473,13 @@ if ( ! function_exists ( 'gglplsn_plugin_banner' ) ) {
 		global $hook_suffix, $gglplsn_plugin_info, $gglplsn_options;
 		if ( 'plugins.php' == $hook_suffix ) {
 
+			/*pls show banner go pro */
 			if ( empty( $gglplsn_options ) )
 				$gglplsn_options = get_option( 'gglplsn_options' );
 
 			if ( isset( $gglplsn_options['first_install'] ) && strtotime( '-1 week' ) > $gglplsn_options['first_install'] )
 				bws_plugin_banner( $gglplsn_plugin_info, 'gglplsn', 'google-plus-one', 'ca01bbe0edd696fddb27769001fe8084', '102', '//ps.w.org/google-one/assets/icon-128x128.png' );
-
+			/* show banner go settings pls*/
 			if ( ! is_network_admin() )
 				bws_plugin_banner_to_settings( $gglplsn_plugin_info, 'gglplsn_options', 'google-one', 'admin.php?page=google-plus-one.php' );
 		}
