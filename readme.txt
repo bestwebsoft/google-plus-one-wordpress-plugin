@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: http://bestwebsoft.com/donate/
 Tags: add social buttons, add google social buttons, add google buttons, google like, google share, google like button, google share button, google, google social buttons, google +1, social account, social button
 Requires at least: 3.8
-Tested up to: 4.6
-Stable tag: 1.3.0
+Tested up to: 4.6.1
+Stable tag: 1.3.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -29,7 +29,7 @@ http://www.youtube.com/watch?v=Z-v0xWTKnuU
 
 <a href="http://support.bestwebsoft.com" target="_blank">Google +1 by BestWebSoft Support</a>
 
-<a href="http://bestwebsoft.com/products/google-plus-one/?k=ecb8dc3b466b95504db546e515600a5e" target="_blank">Upgrade to Google +1 Pro by BestWebSoft</a>
+<a href="http://bestwebsoft.com/products/wordpress/plugins/google-plus-one/?k=ecb8dc3b466b95504db546e515600a5e" target="_blank">Upgrade to Google +1 Pro by BestWebSoft</a>
 
 = Features =
 
@@ -37,7 +37,7 @@ http://www.youtube.com/watch?v=Z-v0xWTKnuU
 * Select the button position: before the content, after the content or before and after.
 * Display buttons using a shortcode.
 * Configure the buttons according to your needs.
-* Select button language or use the current site language for Google +1 button (Using <a href="http://bestwebsoft.com/products/multilanguage/" target="_blank">Multilanguage by BestWebSoft</a>)
+* Select button language or use the current site language for Google +1 button (Using <a href="http://bestwebsoft.com/products/wordpress/plugins/multilanguage/" target="_blank">Multilanguage by BestWebSoft</a>)
 
 If you have a feature, suggestion or idea you'd like to see in the plugin, we'd love to hear about it! <a href="http://support.bestwebsoft.com/hc/en-us/requests/new" target="_blank">Suggest a Feature</a>
 
@@ -46,7 +46,7 @@ If you have a feature, suggestion or idea you'd like to see in the plugin, we'd 
 The author of the Google +1 also recommends the following plugins:
 
 * <a href="http://wordpress.org/plugins/updater/">Updater</a> - This plugin updates WordPress core and the plugins to the recent versions. You can also use the auto mode or manual mode for updating and set email notifications.
-There is also a premium version of the plugin <a href="http://bestwebsoft.com/products/updater/?k=a0ca69e53accff1fea97aebbccd33d33">Updater Pro</a> with more useful features available. It can make backup of all your files and database before updating. Also it can forbid some plugins or WordPress Core update.
+There is also a premium version of the plugin <a href="http://bestwebsoft.com/products/wordpress/plugins/updater/?k=a0ca69e53accff1fea97aebbccd33d33">Updater Pro</a> with more useful features available. It can make backup of all your files and database before updating. Also it can forbid some plugins or WordPress Core update.
 
 = Translation =
 
@@ -114,14 +114,17 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 
 == Screenshots ==
 
-1. Google +1 Pro Before and After the post.
+1. Google +1 Before and After the post.
 2. Displaying Google +1 Button in your post via the shortcode.
 3. Displaying Google+ Badge Widget.
 4. Adding Google +1 shortcode to your post or page.
 5. Adding Google +1 widget to the sidebar.
-6. Google +1 Pro Settings page.
+6. Google +1 Settings page.
 
 == Changelog ==
+
+= V1.3.1 - 12.10.2016 =
+* Update : Compatibility with Pagination plugin was added.
 
 = V1.3.0 - 10.08.2016 =
 * Update : All functionality for WordPress 4.6 was updated.
@@ -209,6 +212,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 * Bugfix : The bug of position in the admin menu is fixed.
 
 == Upgrade Notice ==
+
+= V1.3.1 =
+* The compatibility with new Pagination version updated.
 
 = V1.3.0 =
 * The compatibility with new WordPress version updated.
