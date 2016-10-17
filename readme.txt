@@ -12,58 +12,122 @@ Add Google +1 Share, Follow, Hangout buttons and profile badge to WordPress post
 
 == Description ==
 
-With Google +1 you can add five Google buttons:
-* Google +1 Button allows you to see how many times your page has been liked on Google Search Engine as well as who has liked the article. You will be able to exclude certain post types or pages from adding the Google +1 button. This Button also counts of how many times your story has been liked on Google Search Engine.
-* Share Button allows your readerships to share the interesting articles from your site with friends. Moreover, it counts how many times your articles have been shared.
-* Follow button provides everyone an ability to become your follower in one click.
-* With Hangout button everyone who visits your site receives an opportunity to start chat, video call or phone call by dint of "Google Hangouts". You can set the type of Hangout, define the theme, and determine the invited people.
-* Google Badge allows you to post your summary or summary of your company/community in Google+ with link so that everyone could visit it. Also, Badge can be added as a Widget.
+Google +1 plugin makes it easy to add Google +1, Share, Follow, Hangout buttons and profile badge to WordPress website posts, pages and widgets. Let your visitors share and promote your content over the web.
 
-Google +1 plugin is a perfect solution for people interested in the promotion of their website.
+Customize the appearance for every button, configure settings, and take full advantage of social sharing!
 
 http://www.youtube.com/watch?v=Z-v0xWTKnuU
 
-<a href="http://www.youtube.com/watch?v=9G640UQeJFE" target="_blank">Google +1 by BestWebSoft Video instruction on Installation</a>
+= Free Features =
 
-<a href="http://wordpress.org/plugins/google-one/faq/" target="_blank">Google +1 by BestWebSoft FAQ</a>
+* Add Google:
+	* +1 Button
+	* Share 
+	* Follow 
+	* Hangout
+	* Badge
+* Add Profile Badge to the widget area
+* Choose buttons position:
+	* Before
+	* After
+	* Before and after
+	* Shortcode
+* Change button language
+* Detect current website language with [Multilanguage](http://bestwebsoft.com/products/wordpress/plugins/multilanguage/?k=335d851f03e56472622275e56546471c)
+* Automatically show buttons on:
+	* Home page
+	* Posts
+	* Pages
+* Change Google +1, Share, and Follow buttons:
+	* Size
+	* Annotation 
+* Choose Follow button relationship:
+	* Author
+	* Publisher
+* Set Hangout button topic:
+	* Page title
+	* Custom
+* Change Hangout button:
+	* Size
+	* Invitation type
+		* Google +1 profile ID
+		* Google +1 circle ID
+		* Email
+		* Phone number
+* Select Hangout button type:
+	* Normal
+	* On air
+	* Party
+	* Moderated
+* Choose the Badge type:
+	* Person
+	* Page
+	* Community
+* Set Badge layout:
+	* Portrait
+	* Landscape
+* Change Badge theme:
+	* Light
+	* Dart
+* Show Badge:
+	* Cover photo
+	* Tag line
+	* List of owners (for community type)
+* Set Badge width
+* Add custom code via plugin settings page
+* Compatible with latest WordPress version
+* Incredibly simple settings for fast setup without modifying code
+* Detailed step-by-step documentation and videos
 
-<a href="http://support.bestwebsoft.com" target="_blank">Google +1 by BestWebSoft Support</a>
+> **Pro Features**
+>
+> All features from Free version included plus:
+>
+> * Display Google +1 buttons for certain pages and/or post types
+> * Google +1 buttons preview 
+> * Enable +1 option for the:
+> 	* Entire website
+> 	* Single pages (default)
+> * Configure all subsites on the network
+> * Get answer to your support question within one business day ([Support Policy](http://bestwebsoft.com/support-policy/))
+>
+> [Upgrade to Pro Now](http://bestwebsoft.com/products/wordpress/plugins/google-plus-one/?k=ecb8dc3b466b95504db546e515600a5e)
 
-<a href="http://bestwebsoft.com/products/wordpress/plugins/google-plus-one/?k=ecb8dc3b466b95504db546e515600a5e" target="_blank">Upgrade to Google +1 Pro by BestWebSoft</a>
+If you have a feature suggestion or idea you'd like to see in the plugin, we'd love to hear about it! [Suggest a Feature](http://support.bestwebsoft.com/hc/en-us/requests/new)
 
-= Features =
+= Documentation & Videos =
 
-* Add Google +1 buttons easily.
-* Select the button position: before the content, after the content or before and after.
-* Display buttons using a shortcode.
-* Configure the buttons according to your needs.
-* Select button language or use the current site language for Google +1 button (Using <a href="http://bestwebsoft.com/products/wordpress/plugins/multilanguage/" target="_blank">Multilanguage by BestWebSoft</a>)
+* [[Doc] How to Use](https://docs.google.com/document/d/1v7j8TysjjBzXVnqozmfxMgjg5f7PS6XtV1GmZxnlNDk/)
+* [[Doc] Installation](https://docs.google.com/document/d/1Vfxwe8PvzMQfhkqVZ-bKP8JNY92c6m9Tl4-edBUZpOA)
+* [[Doc] Purchase, Installation & Configuration](https://docs.google.com/document/d/1yrAqoxE06806Cbo9-OVPvuko52np5x5Goq83YoqDVeA/)
+* [[Video] Installation Instruction](http://www.youtube.com/watch?v=9G640UQeJFE)
 
-If you have a feature, suggestion or idea you'd like to see in the plugin, we'd love to hear about it! <a href="http://support.bestwebsoft.com/hc/en-us/requests/new" target="_blank">Suggest a Feature</a>
+= Help & Support =
 
-= Recommended Plugins =
-
-The author of the Google +1 also recommends the following plugins:
-
-* <a href="http://wordpress.org/plugins/updater/">Updater</a> - This plugin updates WordPress core and the plugins to the recent versions. You can also use the auto mode or manual mode for updating and set email notifications.
-There is also a premium version of the plugin <a href="http://bestwebsoft.com/products/wordpress/plugins/updater/?k=a0ca69e53accff1fea97aebbccd33d33">Updater Pro</a> with more useful features available. It can make backup of all your files and database before updating. Also it can forbid some plugins or WordPress Core update.
+Visit our Help Center if you have any questions, our friendly Support Team is happy to help — <http://support.bestwebsoft.com/>
 
 = Translation =
 
-* Hungarian (hu_HU) (thanks to <a href="mailto:solarside09@gmail.com">Peter Aprily</a> www.aprily.com)
+* Hungarian (hu_HU) (thanks to [Peter Aprily](mailto:solarside09@gmail.com) www.aprily.com)
 * Russian (ru_RU)
 * Ukrainian (uk)
 
-Some of these translations are not complete. We are constantly adding new features which should be translated.
-If you create your own language pack or update the existing one, you can send <a href="http://codex.wordpress.org/Translating_WordPress" target="_blank">the text in PO and MO files</a> for <a href="http://support.bestwebsoft.com/hc/en-us/requests/new" target="_blank">BestWebSoft</a> and we'll add it to the plugin. You can download the latest version of the program for work with PO and MO files <a href="http://www.poedit.net/download.php" target="_blank">Poedit</a>.
+Some of these translations are not complete. We are constantly adding new features which should be translated. If you would like to create your own language pack or update the existing one, you can send [the text of PO and MO files](http://codex.wordpress.org/Translating_WordPress) to [BestWebSoft](http://support.bestwebsoft.com/hc/en-us/requests/new) and we'll add it to the plugin. You can download the latest version of the program for work with PO and MO [files Poedit](http://www.poedit.net/download.php).
 
-= Technical support =
+= Recommended Plugins =
 
-Dear users, our plugins are available for free download. If you have any questions or recommendations regarding the functionality of our plugins (existing options, new options, current issues), please feel free to contact us. Please note that we accept requests in English only. All messages in other languages won't be accepted.
+* [Updater](http://bestwebsoft.com/products/wordpress/plugins/updater/?k=a0ca69e53accff1fea97aebbccd33d33) - Automatically check and update WordPress core with all installed plugins to the latest versions. Manual mode, email notifications and backups of all your files and database before updating.
+* [LinkedIn](http://bestwebsoft.com/products/wordpress/plugins/linkedin/?k=b1d5bad85d647059237028e6d0f2b2fc) - Add LinkedIn Share and Follow buttons to WordPress posts, pages and widgets. 5 plugins included – profile, insider, etc.
+* [Multilanguage](http://bestwebsoft.com/products/wordpress/plugins/multilanguage/?k=335d851f03e56472622275e56546471c) - Translate WordPress website content to other languages manually. Create multilingual pages, posts, widgets, menus, etc.
+* [Pinterest](http://bestwebsoft.com/products/wordpress/plugins/pinterest/?k=60bf0e2a55bed0bccf29e725a8dfa127) - Add Pinterest Follow, Pin It buttons and profile widgets (Pin, Board, Profile) to WordPress posts, pages and widgets.
+* [Twitter](http://bestwebsoft.com/products/wordpress/plugins/twitter/?k=a10d537911393884b400c046a773a22c) - Add Twitter Follow, Tweet, Hashtag, and Mention buttons to WordPress posts, pages and widgets.
+Facebook Button - Add Facebook Like, Share and Profile buttons to WordPress posts, pages and widgets.
 
-If you notice any bugs in the plugins, you can notify us about it and we'll investigate and fix the issue then. Your request should contain URL of the website, issues description and WordPress admin panel credentials.
-Moreover we can customize the plugin according to your requirements. It's a paid service (as a rule it costs $40, but the price can vary depending on the amount of the necessary changes and their complexity). Please note that we could also include this or that feature (developed for you) in the next release and share with the other users then.
-We can fix some things for free for the users who provide translation of our plugin into their native language (this should be a new translation of a certain plugin, you can check available translations on the official plugin page).
+= Donate =
+
+Donations play an important role in supporting open-source projects. We greatly appreciate any donation you can make to help us continue further development of free products.
+
+[Donate Now](http://bestwebsoft.com/donate/)
 
 == Installation ==
 
@@ -72,7 +136,7 @@ We can fix some things for free for the users who provide translation of our plu
 3. You can adjust the necessary settings using your WordPress admin panel in "BWS Panel" > "Google +1".
 4. Create a page or a post and insert shortcode [bws_googleplusone] to the text.
 
-<a href="https://docs.google.com/document/d/1Vfxwe8PvzMQfhkqVZ-bKP8JNY92c6m9Tl4-edBUZpOA" target="_blank">View a Step-by-step Instruction on Google +1 Installation</a>.
+[View a Step-by-step Instruction on Google +1 Installation](https://docs.google.com/document/d/1Vfxwe8PvzMQfhkqVZ-bKP8JNY92c6m9Tl4-edBUZpOA)
 
 http://www.youtube.com/watch?v=9G640UQeJFE
 
@@ -105,12 +169,12 @@ Please check the Badge type. Google Badge works incorrectly if Google ID don`t m
 
 = I have some problems with the plugin's work. What Information should I provide to receive proper support? =
 
-Please make sure that the problem hasn't been discussed yet on our forum (<a href="http://support.bestwebsoft.com" target="_blank">http://support.bestwebsoft.com</a>). If no, please provide the following data along with your problem's description:
+Please make sure that the problem hasn't been discussed yet on our forum (<http://support.bestwebsoft.com>). If no, please provide the following data along with your problem's description:
 
 1. the link to the page where the problem occurs
 2. the name of the plugin and its version. If you are using a pro version - your order number.
 3. the version of your WordPress installation
-4. copy and paste into the message your system status report. Please read more here: <a href="https://docs.google.com/document/d/1Wi2X8RdRGXk9kMszQy1xItJrpN0ncXgioH935MaBKtc/edit" target="_blank">Instuction on System Status</a>
+4. copy and paste into the message your system status report. Please read more here: [Instruction on System Status](https://docs.google.com/document/d/1Wi2X8RdRGXk9kMszQy1xItJrpN0ncXgioH935MaBKtc/edit)
 
 == Screenshots ==
 
