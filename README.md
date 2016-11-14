@@ -1,4 +1,4 @@
-<a href="http://bestwebsoft.com/products/google-plus-one/" target=_blank>Google +1 WordPress Plugin</a>
+<a href="http://bestwebsoft.com/products/wordpress/plugins/google-plus-one/" target=_blank>Google +1 WordPress Plugin</a>
 ========================
 
 Add Google +1 Share, Follow, Hangout buttons and profile badge to WordPress posts, pages and widgets.
@@ -20,8 +20,8 @@ Add Google +1 Share, Follow, Hangout buttons and profile badge to WordPress post
 
 <ul>
 <li>+1 Button</li>
-<li>Share </li>
-<li>Follow </li>
+<li>Share</li>
+<li>Follow</li>
 <li>Hangout</li>
 <li>Badge</li>
 </ul></li>
@@ -47,7 +47,7 @@ Add Google +1 Share, Follow, Hangout buttons and profile badge to WordPress post
 
 <ul>
 <li>Size</li>
-<li>Annotation </li>
+<li>Annotation</li>
 </ul></li>
 <li>Choose Follow button relationship:
 
@@ -113,6 +113,7 @@ Add Google +1 Share, Follow, Hangout buttons and profile badge to WordPress post
 <li>Compatible with latest WordPress version</li>
 <li>Incredibly simple settings for fast setup without modifying code</li>
 <li>Detailed step-by-step documentation and videos</li>
+<li>Multilingual and RTL ready</li>
 </ul>
 
 <blockquote>
@@ -122,7 +123,7 @@ Add Google +1 Share, Follow, Hangout buttons and profile badge to WordPress post
   
   <ul>
   <li>Display Google +1 buttons for certain pages and/or post types</li>
-  <li>Google +1 buttons preview </li>
+  <li>Google +1 buttons preview</li>
   <li>Enable +1 option for the:
   
   <ul>
@@ -168,8 +169,8 @@ Add Google +1 Share, Follow, Hangout buttons and profile badge to WordPress post
 <li><a href="http://bestwebsoft.com/products/wordpress/plugins/linkedin/?k=b1d5bad85d647059237028e6d0f2b2fc">LinkedIn</a> - Add LinkedIn Share and Follow buttons to WordPress posts, pages and widgets. 5 plugins included &#8211; profile, insider, etc.</li>
 <li><a href="http://bestwebsoft.com/products/wordpress/plugins/multilanguage/?k=335d851f03e56472622275e56546471c">Multilanguage</a> - Translate WordPress website content to other languages manually. Create multilingual pages, posts, widgets, menus, etc.</li>
 <li><a href="http://bestwebsoft.com/products/wordpress/plugins/pinterest/?k=60bf0e2a55bed0bccf29e725a8dfa127">Pinterest</a> - Add Pinterest Follow, Pin It buttons and profile widgets (Pin, Board, Profile) to WordPress posts, pages and widgets.</li>
-<li><a href="http://bestwebsoft.com/products/wordpress/plugins/twitter/?k=a10d537911393884b400c046a773a22c">Twitter</a> - Add Twitter Follow, Tweet, Hashtag, and Mention buttons to WordPress posts, pages and widgets.
-Facebook Button - Add Facebook Like, Share and Profile buttons to WordPress posts, pages and widgets.</li>
+<li><a href="http://bestwebsoft.com/products/wordpress/plugins/twitter/?k=a10d537911393884b400c046a773a22c">Twitter</a> - Add Twitter Follow, Tweet, Hashtag, and Mention buttons to WordPress posts, pages and widgets.</li>
+<li><a href="http://bestwebsoft.com/products/wordpress/plugins/facebook-like-button/?k=b912215f820ef022d9f197430b7ac407">Facebook Button</a> - Add Facebook Like, Share and Profile buttons to WordPress posts, pages and widgets.</li>
 </ul>
 
 <h4>Donate</h4>

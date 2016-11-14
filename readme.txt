@@ -4,7 +4,7 @@ Donate link: http://bestwebsoft.com/donate/
 Tags: add social buttons, add google social buttons, add google buttons, google like, google share, google like button, google share button, google, google social buttons, google +1, social account, social button
 Requires at least: 3.8
 Tested up to: 4.6.1
-Stable tag: 1.3.1
+Stable tag: 1.3.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -22,8 +22,8 @@ http://www.youtube.com/watch?v=Z-v0xWTKnuU
 
 * Add Google:
 	* +1 Button
-	* Share 
-	* Follow 
+	* Share
+	* Follow
 	* Hangout
 	* Badge
 * Add Profile Badge to the widget area
@@ -40,7 +40,7 @@ http://www.youtube.com/watch?v=Z-v0xWTKnuU
 	* Pages
 * Change Google +1, Share, and Follow buttons:
 	* Size
-	* Annotation 
+	* Annotation
 * Choose Follow button relationship:
 	* Author
 	* Publisher
@@ -78,13 +78,14 @@ http://www.youtube.com/watch?v=Z-v0xWTKnuU
 * Compatible with latest WordPress version
 * Incredibly simple settings for fast setup without modifying code
 * Detailed step-by-step documentation and videos
+* Multilingual and RTL ready
 
 > **Pro Features**
 >
 > All features from Free version included plus:
 >
 > * Display Google +1 buttons for certain pages and/or post types
-> * Google +1 buttons preview 
+> * Google +1 buttons preview
 > * Enable +1 option for the:
 > 	* Entire website
 > 	* Single pages (default)
@@ -121,7 +122,7 @@ Some of these translations are not complete. We are constantly adding new featur
 * [Multilanguage](http://bestwebsoft.com/products/wordpress/plugins/multilanguage/?k=335d851f03e56472622275e56546471c) - Translate WordPress website content to other languages manually. Create multilingual pages, posts, widgets, menus, etc.
 * [Pinterest](http://bestwebsoft.com/products/wordpress/plugins/pinterest/?k=60bf0e2a55bed0bccf29e725a8dfa127) - Add Pinterest Follow, Pin It buttons and profile widgets (Pin, Board, Profile) to WordPress posts, pages and widgets.
 * [Twitter](http://bestwebsoft.com/products/wordpress/plugins/twitter/?k=a10d537911393884b400c046a773a22c) - Add Twitter Follow, Tweet, Hashtag, and Mention buttons to WordPress posts, pages and widgets.
-Facebook Button - Add Facebook Like, Share and Profile buttons to WordPress posts, pages and widgets.
+* [Facebook Button](http://bestwebsoft.com/products/wordpress/plugins/facebook-like-button/?k=b912215f820ef022d9f197430b7ac407) - Add Facebook Like, Share and Profile buttons to WordPress posts, pages and widgets.
 
 = Donate =
 
@@ -145,10 +146,6 @@ http://www.youtube.com/watch?v=9G640UQeJFE
 = Why does the button become red after clicking? =
 
 For correct work of the Google +1 buttons do not use it locally and on a free hosting
-
-= How can I deactivate the plugin? =
-
-In WordPress admin panel, please go to "BWS Panel", find the Google +1 and click "Deactivate".
 
 = How to adjust Google +1 Button position on the page =
 
@@ -186,6 +183,10 @@ Please make sure that the problem hasn't been discussed yet on our forum (<http:
 6. Google +1 Settings page.
 
 == Changelog ==
+
+= V1.3.2 - 14.11.2016 =
+* Update : BWS plugins section is updated.
+* Pro : Tree of site pages was updated.
 
 = V1.3.1 - 12.10.2016 =
 * Update : Compatibility with Pagination plugin was added.
@@ -276,6 +277,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<http:
 * Bugfix : The bug of position in the admin menu is fixed.
 
 == Upgrade Notice ==
+
+= V1.3.2 =
+* Functionality improved.
 
 = V1.3.1 =
 * The compatibility with new Pagination version updated.

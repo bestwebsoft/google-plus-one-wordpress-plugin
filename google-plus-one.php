@@ -6,7 +6,7 @@ Description: Add Google +1 Share, Follow, Hangout buttons and profile badge to W
 Author: BestWebSoft
 Text Domain: google-one
 Domain Path: /languages
-Version: 1.3.1
+Version: 1.3.2
 Author URI: http://bestwebsoft.com
 License: GPLv2 or later
 */
@@ -399,9 +399,9 @@ if ( ! function_exists( 'gglplsn_options' ) ) {
 													</label>
 													<span class="bws_info gglplsn_notice gglplsn-follow-notice gglplsn-unvisible-notice">
 														<?php if ( empty( $gglplsn_options['follow_id'] ) ) { ?>
-															( <?php _e( 'To see this button, please', 'google-one' ); ?>
+															(<?php _e( 'To see this button, please', 'google-one' ); ?>
 															<a class="gglplsn-follow-focus"><?php _e( 'enter', 'google-one' ) ?></a>
-															<?php _e( 'the Google+ ID', 'google-one' ); ?> )
+															<?php _e( 'the Google+ ID', 'google-one' ); ?>)
 														<?php } ?>
 													</span>
 													<br />
@@ -416,9 +416,9 @@ if ( ! function_exists( 'gglplsn_options' ) ) {
 													</label>
 													<span class="bws_info gglplsn_notice gglplsn-badge-notice gglplsn-unvisible-notice">
 														<?php if ( empty( $gglplsn_options['badge_id'] ) ) { ?>
-															( <?php _e( 'To see this button, please', 'google-one' ); ?>
+															(<?php _e( 'To see this button, please', 'google-one' ); ?>
 															<a class="gglplsn-badge-focus"><?php _e( 'enter', 'google-one' ) ?></a>
-															<?php _e( 'the Google+ ID', 'google-one' ); ?> )
+															<?php _e( 'the Google+ ID', 'google-one' ); ?>)
 														<?php } ?>
 													</span>
 												</fieldset>
@@ -925,22 +925,19 @@ if ( ! function_exists( 'gglplsn_options' ) ) {
 					<!-- general -->
 					<?php bws_form_restore_default_settings( $plugin_basename );
 				}
-			} elseif( 'custom_code' == $_GET['action'] ) {
+			} elseif ( 'custom_code' == $_GET['action'] ) {
 				bws_custom_code_tab();			
 			} /*pls extra banner */ elseif ( 'extra' == $_GET['action'] ) { ?>
 				<div class="bws_pro_version_bloc">
 					<div class="bws_pro_version_table_bloc">
 						<div class="bws_table_bg"></div>
 						<div class="bws_pro_version">
-							<?php _e( 'Please choose the necessary post types (or single pages) where Google +1 button will be displayed:', 'google-one' ); ?>
+							<?php _e( 'Please choose the necessary post types (or single pages) where Google button will be displayed:', 'google-one' ); ?>
 							<p>
 								<input disabled="disabled" checked="checked" id="twttrpr_jstree_url" type="checkbox" name="twttrpr_jstree_url" value="1" />
 								<?php _e( "Show URL for pages", 'google-one' );?>
 							</p>
 							<img src="<?php echo plugins_url( 'images/pro_screen_1.png', __FILE__ ); ?>" alt="<?php _e( "Example of the site's pages tree", 'google-one' ); ?>" title="<?php _e( "Example of the site's pages tree", 'google-one' ); ?>" />
-							<p class="submit">
-								<input disabled="disabled" type="submit" class="button-primary" value="<?php _e( 'Save Changes', 'google-one' ); ?>" />
-							</p>
 							<p>
 								<strong>* <?php _e( 'If you upgrade to Pro version all your settings will be saved.', 'google-one' ); ?></strong>
 							</p>
@@ -967,7 +964,7 @@ if ( ! function_exists( 'gglplsn_admin_head' ) ) {
 	function gglplsn_admin_head() {
 		global $hook_suffix, $gglplsn_is_button_shown;;
 		if ( isset( $_GET['page'] ) && ( "google-plus-one.php" == $_GET['page'] || "social-buttons.php" == $_GET['page'] ) ) {
-			if( isset( $_GET['action'] ) && 'custom_code' == $_GET['action'] ) {
+			if ( isset( $_GET['action'] ) && 'custom_code' == $_GET['action'] ) {
 				bws_plugins_include_codemirror();
 			}
 			wp_enqueue_style( 'gglplsn_style', plugins_url( 'css/style.css', __FILE__ ) );
@@ -1290,13 +1287,17 @@ if ( ! function_exists( 'gglplsn_return_button' ) ) {
 
 		if ( 'follow' == $request ) {
 			$follow_id = sanitize_text_field( $follow_id );
-			$href = 'https://plus.google.com/' . $follow_id;
-			$follow = '<span class="gglplsn_follow"><g:follow
-				href="' . esc_url( $href ) . '"
-				height="' . intval( $follow_size ) . '"
-				annotation="' . $follow_annotation .'"
-				rel="' . $follow_relationship . '"></g:follow></span>';
-			return $follow;
+			if ( ! empty( $follow_id ) ) {
+				$href = 'https://plus.google.com/' . $follow_id;
+				$follow = '<span class="gglplsn_follow"><g:follow
+					href="' . esc_url( $href ) . '"
+					height="' . intval( $follow_size ) . '"
+					annotation="' . $follow_annotation .'"
+					rel="' . $follow_relationship . '"></g:follow></span>';
+				return $follow;
+			} else {
+				return '';
+			}
 		}
 
 		if ( 'hangout' == $request ) {
@@ -1322,26 +1323,30 @@ if ( ! function_exists( 'gglplsn_return_button' ) ) {
 
 		if ( 'badge' == $request ) {
 			$badge_id = esc_html( $badge_id );
-			$href = 'https://plus.google.com/' . ( 'community' == $badge_type ? 'communities/': '' ) . $badge_id;
-			$photo = ( ( 'community' != $badge_type ) ? 'showcoverphoto="' : 'showphoto="' ) . $badge_show_cover . '"';
-			$badge_width = intval( $badge_width );
-			if ( $badge_width < 180 && 'portrait' == $badge_layout ) {
-				$badge_width = 180;
-			} elseif ( $badge_width < 273 && 'landscape' == $badge_layout ) {
-				$badge_width = 273;
-			} elseif ( $badge_width > 450 ) {
-				$badge_width = 450;
-			}
+			if ( ! empty( $badge_id ) ) {
+				$href = 'https://plus.google.com/' . ( 'community' == $badge_type ? 'communities/': '' ) . $badge_id;
+				$photo = ( ( 'community' != $badge_type ) ? 'showcoverphoto="' : 'showphoto="' ) . $badge_show_cover . '"';
+				$badge_width = intval( $badge_width );
+				if ( $badge_width < 180 && 'portrait' == $badge_layout ) {
+					$badge_width = 180;
+				} elseif ( $badge_width < 273 && 'landscape' == $badge_layout ) {
+					$badge_width = 273;
+				} elseif ( $badge_width > 450 ) {
+					$badge_width = 450;
+				}
 
-			$badge = '<p class="gglplsn_badge"><g:' . $badge_type . '
-				href="' . esc_url( $href ) . '"
-				layout="' . $badge_layout . '"
-				width="' . $badge_width . '"
-				theme="' . $badge_theme . '"
-				' . $photo . '
-				showowners="' . $badge_show_owners . '"
-				showtagline="' . $badge_show_tagline . '"></g:' . $badge_type . '></p>';
-			return $badge;
+				$badge = '<p class="gglplsn_badge"><g:' . $badge_type . '
+					href="' . esc_url( $href ) . '"
+					layout="' . $badge_layout . '"
+					width="' . $badge_width . '"
+					theme="' . $badge_theme . '"
+					' . $photo . '
+					showowners="' . $badge_show_owners . '"
+					showtagline="' . $badge_show_tagline . '"></g:' . $badge_type . '></p>';
+				return $badge;
+			} else {
+				return '';
+			}
 		}
 	}
 }
@@ -1386,7 +1391,9 @@ if ( ! function_exists( 'gglplsn_shortcode' ) ) {
 /* add shortcode content  */
 if ( ! function_exists( 'gglplsn_shortcode_button_content' ) ) {
 	function gglplsn_shortcode_button_content( $content ) {
-		global $wp_version; ?>
+		global $wp_version, $gglplsn_options;
+		if ( empty( $gglplsn_options ) )
+			$gglplsn_options = get_option( 'gglplsn_options' ); ?>
 		<div id="gglplsn" style="display:none;">
 			<fieldset>
 				<?php _e( 'Add Google Buttons to your page or post', 'google-one' ); ?>
@@ -1403,7 +1410,14 @@ if ( ! function_exists( 'gglplsn_shortcode_button_content' ) ) {
 					<br />
 					<label>
 						<input type="checkbox" name="gglplsn_selected_follow" value="follow" />
-						<?php _e( 'Follow', 'google-one' ) ?>
+						<?php _e( 'Follow', 'google-one' ); ?>
+						<?php if ( empty( $gglplsn_options['follow_id'] ) ) { ?>
+							<span class="bws_info">														
+								(<?php _e( 'To see this button, please', 'google-one' ); ?>
+								<a style="color: #0073aa;" href="admin.php?page=google-plus-one.php"><?php _e( 'enter', 'google-one' ) ?></a>
+								<?php _e( 'the Google+ ID', 'google-one' ); ?>)
+							</span>
+						<?php } ?>
 					</label>
 					<br />
 					<label>
@@ -1413,9 +1427,16 @@ if ( ! function_exists( 'gglplsn_shortcode_button_content' ) ) {
 					<br />
 					<label>
 						<input type="checkbox" name="gglplsn_selected_badge" value="badge" />
-						<?php _e( 'Badge', 'google-one' ) ?>
-					</label>
-				<input class="bws_default_shortcode" type="hidden" name="default" value="[bws_googleplusone]" />
+						<?php _e( 'Badge', 'google-one' ); ?>
+						<?php if ( empty( $gglplsn_options['badge_id'] ) ) { ?>
+						<span class="bws_info">
+							(<?php _e( 'To see this button, please', 'google-one' ); ?>
+							<a style="color: #0073aa;" href="admin.php?page=google-plus-one.php"><?php _e( 'enter', 'google-one' ) ?></a>
+							<?php _e( 'the Google+ ID', 'google-one' ); ?>)
+						</span>
+					<?php } ?>
+					</label>										
+					<input class="bws_default_shortcode" type="hidden" name="default" value="[bws_googleplusone]" />
 				<div class="clear"></div>
 			</fieldset>
 		</div>
