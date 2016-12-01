@@ -3,8 +3,6 @@
 
 Add Google +1 Share, Follow, Hangout buttons and profile badge to WordPress posts, pages and widgets.
 
-<img src="http://bestwebsoft.com/wp-content/uploads/2014/09/g-1-banner-website.jpg" />
-
 <p>Google +1 plugin makes it easy to add Google +1, Share, Follow, Hangout buttons and profile badge to WordPress website posts, pages and widgets. Let your visitors share and promote your content over the web.</p>
 
 <p>Customize the appearance for every button, configure settings, and take full advantage of social sharing!</p>
