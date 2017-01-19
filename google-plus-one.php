@@ -6,12 +6,12 @@ Description: Add Google +1 Share, Follow, Hangout buttons and profile badge to W
 Author: BestWebSoft
 Text Domain: google-one
 Domain Path: /languages
-Version: 1.3.2
+Version: 1.3.3
 Author URI: http://bestwebsoft.com
 License: GPLv2 or later
 */
 
-/*	@ Copyright 2016  BestWebSoft  ( http://support.bestwebsoft.com )
+/*	@ Copyright 2017  BestWebSoft  ( http://support.bestwebsoft.com )
 
 	This program is free software; you can redistribute it and/or modify
 	it under the terms of the GNU General Public License, version 2, as
@@ -76,7 +76,7 @@ if ( ! function_exists( 'gglplsn_admin_init' ) ) {
 
 		/*## Function for bws menu */
 		if ( empty( $bws_plugin_info ) )
-			$bws_plugin_info = array( 'id' => '102', 'version' => $gglplsn_plugin_info["Version"] );
+			$bws_plugin_info = array( 'id' => '102', 'version' => $gglplsn_plugin_info['Version'] );
 
 		/* add Google +1 to global $bws_shortcode_list ##*/
 		$bws_shortcode_list['gglplsn'] = array( 'name' => 'Google +1', 'js_function' => 'gglplsn_shortcode_init'  );
@@ -89,7 +89,7 @@ if ( ! function_exists ( 'gglplsn_settings' ) ) {
 
 		/* Default options */
 		$gglplsn_option_defaults		=	array(
-			'plugin_option_version'		=>	$gglplsn_plugin_info["Version"],
+			'plugin_option_version'		=>	$gglplsn_plugin_info['Version'],
 			'plus_one_js'				=>	1,
 			'plus_one_annotation'		=>	'none',
 			'plus_one_size'				=>	'standard',
@@ -169,6 +169,7 @@ if ( ! function_exists ( 'gglplsn_settings' ) ) {
 			$gglplsn_options['hide_premium_options'] = array();
 
 			update_option( 'gglplsn_options', $gglplsn_options );
+			gglplsn_plugin_activate();
 		}
 	}
 }
@@ -337,7 +338,7 @@ if ( ! function_exists( 'gglplsn_options' ) ) {
 				<li><a href="https://docs.google.com/document/d/1v7j8TysjjBzXVnqozmfxMgjg5f7PS6XtV1GmZxnlNDk" target="_blank"><?php _e( 'How to Use Step-by-step Instruction', 'google-one' ); ?></a></li>
 			</ul>
 			<h2 class="nav-tab-wrapper">
-				<a class="nav-tab<?php if ( !isset( $_GET['action'] ) ) echo ' nav-tab-active'; ?>" href="admin.php?page=google-plus-one.php"><?php _e( 'Settings', 'google-one' ); ?></a>
+				<a class="nav-tab<?php if ( ! isset( $_GET['action'] ) || ( isset( $_GET['action'] ) && ! in_array( $_GET['action'], array( 'extra', 'custom_code', 'go_pro' ) ) ) ) echo ' nav-tab-active'; ?>" href="admin.php?page=google-plus-one.php"><?php _e( 'Settings', 'google-one' ); ?></a>
 				<!-- pls -->
 				<a class="nav-tab<?php if ( isset( $_GET['action'] ) && 'extra' == $_GET['action'] ) echo ' nav-tab-active'; ?>" href="admin.php?page=google-plus-one.php&amp;action=extra"><?php _e( 'Extra settings', 'google-one' ); ?></a>
 				<!-- end pls -->
@@ -354,7 +355,7 @@ if ( ! function_exists( 'gglplsn_options' ) ) {
 			<div class="updated fade below-h2" <?php if ( '' == $message || "" != $error ) echo 'style="display:none"'; ?>><p><strong><?php echo $message; ?></strong></p></div>
 			<?php bws_show_settings_notice(); ?>
 			<div class="error below-h2" <?php if ( "" == $error ) echo 'style="display:none"'; ?>><p><strong><?php echo $error; ?></strong></p></div>
-			<?php /*## check action */ if ( ! isset( $_GET['action'] ) ) {
+			<?php /*## check action */ if ( ! isset( $_GET['action'] ) || ( isset( $_GET['action'] ) && ! in_array( $_GET['action'], array( 'extra', 'custom_code', 'go_pro' ) ) ) ) {
 				if ( isset( $_REQUEST['bws_restore_default'] ) && check_admin_referer( $plugin_basename, 'bws_settings_nonce_name' ) ) {
 					bws_form_restore_default_confirm( $plugin_basename );
 				} else { /* check action ##*/ ?>
@@ -926,7 +927,7 @@ if ( ! function_exists( 'gglplsn_options' ) ) {
 					<?php bws_form_restore_default_settings( $plugin_basename );
 				}
 			} elseif ( 'custom_code' == $_GET['action'] ) {
-				bws_custom_code_tab();			
+				bws_custom_code_tab();
 			} /*pls extra banner */ elseif ( 'extra' == $_GET['action'] ) { ?>
 				<div class="bws_pro_version_bloc">
 					<div class="bws_pro_version_table_bloc">
@@ -954,7 +955,7 @@ if ( ! function_exists( 'gglplsn_options' ) ) {
 			<?php } elseif ( 'go_pro' == $_GET['action'] ) {
 				bws_go_pro_tab_show( $bws_hide_premium_options_check, $gglplsn_plugin_info, $plugin_basename, 'google-plus-one.php', 'google-plus-one-pro.php', 'google-one-pro/google-plus-one-pro.php', 'google-plus-one', '0a5a8a70ed3c34b95587de0604ca9517', '102', isset( $go_pro_result['pro_plugin_is_activated'] ) );
 			}
-			bws_plugin_reviews_block( $gglplsn_plugin_info['Name'], 'google-one' );  /* show reviews block pls*/ ?>
+			bws_plugin_reviews_block( $gglplsn_plugin_info['Name'], 'google-one' ); /* show reviews block pls*/ ?>
 		</div>
 		<!-- end general -->
 	<?php }
@@ -962,14 +963,14 @@ if ( ! function_exists( 'gglplsn_options' ) ) {
 
 if ( ! function_exists( 'gglplsn_admin_head' ) ) {
 	function gglplsn_admin_head() {
-		global $hook_suffix, $gglplsn_is_button_shown;;
+		global $hook_suffix, $gglplsn_is_button_shown, $gglplsn_plugin_info;
 		if ( isset( $_GET['page'] ) && ( "google-plus-one.php" == $_GET['page'] || "social-buttons.php" == $_GET['page'] ) ) {
 			if ( isset( $_GET['action'] ) && 'custom_code' == $_GET['action'] ) {
 				bws_plugins_include_codemirror();
 			}
-			wp_enqueue_style( 'gglplsn_style', plugins_url( 'css/style.css', __FILE__ ) );
+			wp_enqueue_style( 'gglplsn_style', plugins_url( 'css/style.css', __FILE__ ), array(), $gglplsn_plugin_info['Version'] );
 			/* Loclize script */
-			wp_enqueue_script( 'gglplsn-script', plugins_url( 'js/script.js' , __FILE__ ) );
+			wp_enqueue_script( 'gglplsn-script', plugins_url( 'js/script.js' , __FILE__ ), array( 'jquery' ), $gglplsn_plugin_info['Version'] );
 			$js_strings = array(
 				'already_added'				=> __( 'Is already added', 'google-one' ),
 				'one_number'				=> __( 'Only one phone number can be added', 'google-one' ),
@@ -998,9 +999,9 @@ if ( ! function_exists( 'gglplsn_admin_head' ) ) {
 			);
 			wp_localize_script( 'gglplsn-script', 'js_string', $js_strings );
 		} elseif ( 'widgets.php' == $hook_suffix ) {
-			wp_enqueue_script( 'gglplsn-widgets-script', plugins_url( 'js/widgets-script.js' , __FILE__ ) );
+			wp_enqueue_script( 'gglplsn-widgets-script', plugins_url( 'js/widgets-script.js' , __FILE__ ), array( 'jquery' ), $gglplsn_plugin_info['Version'] );
 		} elseif ( ! is_admin() && ( ! empty( $gglplsn_is_button_shown ) || defined( 'BWS_ENQUEUE_ALL_SCRIPTS' ) ) ) {
-			wp_enqueue_style( 'gglplsn_style', plugins_url( 'css/style.css', __FILE__ ) );
+			wp_enqueue_style( 'gglplsn_style', plugins_url( 'css/style.css', __FILE__ ), array(), $gglplsn_plugin_info['Version'] );
 		}
 	}
 }
@@ -1014,13 +1015,13 @@ if ( ! function_exists( 'gglplsn_footer_actions' ) ) {
 
 if ( ! function_exists( 'gglplsn_pagination_callback' ) ) {
 	function gglplsn_pagination_callback( $content ) {
-		$content .= "if ( typeof gapi !== 'undefined' ) { 
+		$content .= "if ( typeof gapi !== 'undefined' ) {
 			gapi.plusone.go();
 			gapi.plus.go();
 			gapi.follow.go();
 			gapi.hangout.go();
-			gapi.person.go(); 
-			gapi.page.go(); 
+			gapi.person.go();
+			gapi.page.go();
 			gapi.community.go();
 		}";
 		return $content;
@@ -1032,7 +1033,13 @@ if ( ! function_exists( 'gglplsn_js' ) ) {
 		global $gglplsn_is_button_shown;
 		if ( ! empty( $gglplsn_is_button_shown ) || defined( 'BWS_ENQUEUE_ALL_SCRIPTS' ) ) {
 			global $gglplsn_options, $gglplsn_lang_codes;
-			if ( 1 == $gglplsn_options['plus_one_js'] || 1 == $gglplsn_options['share_js'] || 1 == $gglplsn_options['follow_js'] || 1 == $gglplsn_options['hangout_js'] || 1 == $gglplsn_options['badge_js'] ) {
+			if (
+				1 == $gglplsn_options['plus_one_js'] ||
+				1 == $gglplsn_options['share_js'] ||
+				1 == $gglplsn_options['follow_js'] ||
+				1 == $gglplsn_options['hangout_js'] ||
+				1 == $gglplsn_options['badge_js']
+			) {
 				if ( 1 == $gglplsn_options['use_multilanguage_locale'] && isset( $_SESSION['language'] ) ) {
 					if ( array_key_exists( $_SESSION['language'], $gglplsn_lang_codes ) ) {
 						$gglplsn_locale = $_SESSION['language'];
@@ -1412,7 +1419,7 @@ if ( ! function_exists( 'gglplsn_shortcode_button_content' ) ) {
 						<input type="checkbox" name="gglplsn_selected_follow" value="follow" />
 						<?php _e( 'Follow', 'google-one' ); ?>
 						<?php if ( empty( $gglplsn_options['follow_id'] ) ) { ?>
-							<span class="bws_info">														
+							<span class="bws_info">
 								(<?php _e( 'To see this button, please', 'google-one' ); ?>
 								<a style="color: #0073aa;" href="admin.php?page=google-plus-one.php"><?php _e( 'enter', 'google-one' ) ?></a>
 								<?php _e( 'the Google+ ID', 'google-one' ); ?>)
@@ -1435,7 +1442,7 @@ if ( ! function_exists( 'gglplsn_shortcode_button_content' ) ) {
 							<?php _e( 'the Google+ ID', 'google-one' ); ?>)
 						</span>
 					<?php } ?>
-					</label>										
+					</label>
 					<input class="bws_default_shortcode" type="hidden" name="default" value="[bws_googleplusone]" />
 				<div class="clear"></div>
 			</fieldset>
@@ -1538,6 +1545,18 @@ if ( ! function_exists( 'gglplsn_add_tabs' ) ) {
 	}
 }
 
+if ( ! function_exists( 'gglplsn_plugin_activate' ) ) {
+	function gglplsn_plugin_activate() {
+		if ( is_multisite() ) {
+			switch_to_blog( 1 );
+			register_uninstall_hook( __FILE__, 'gglplsn_uninstall' );
+			restore_current_blog();
+		} else {
+			register_uninstall_hook( __FILE__, 'gglplsn_uninstall' );
+		}
+	}
+}
+
 if ( ! function_exists( 'gglplsn_uninstall' ) ) {
 	function gglplsn_uninstall() {
 		if ( ! function_exists( 'get_plugins' ) )
@@ -1566,16 +1585,21 @@ if ( ! function_exists( 'gglplsn_uninstall' ) ) {
 	}
 }
 
+register_activation_hook( __FILE__, 'gglplsn_plugin_activate' );
+
 /* Adding 'BWS Plugins' admin menu */
 add_action( 'admin_menu', 'gglplsn_admin_menu' );
 /* Initialization ##*/
 add_action( 'init', 'gglplsn_init' );
 add_action( 'plugins_loaded', 'gglplsn_plugins_loaded' );
 add_action( 'admin_init', 'gglplsn_admin_init' );
+
 /* Adding stylesheets */
 add_action( 'wp_footer', 'gglplsn_footer_actions' );
 add_action( 'admin_enqueue_scripts', 'gglplsn_admin_head' );
+
 add_filter( 'pgntn_callback', 'gglplsn_pagination_callback' );
+
 /* Adding plugin buttons */
 add_shortcode( 'bws_googleplusone', 'gglplsn_shortcode' );
 add_filter( 'widget_text', 'do_shortcode' );
@@ -1592,5 +1616,3 @@ add_filter( 'plugin_row_meta', 'gglplsn_register_plugin_links', 10, 2 );
 /* Adding banner */
 add_action( 'admin_notices', 'gglplsn_plugin_banner' );
 /* Plugin uninstall function */
-register_uninstall_hook( __FILE__, 'gglplsn_uninstall' );
-/* end ##*/

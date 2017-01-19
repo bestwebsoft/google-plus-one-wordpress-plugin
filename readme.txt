@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: http://bestwebsoft.com/donate/
 Tags: add social buttons, add google social buttons, add google buttons, google like, google share, google like button, google share button, google, google social buttons, google +1, social account, social button
 Requires at least: 3.8
-Tested up to: 4.6.1
-Stable tag: 1.3.2
+Tested up to: 4.7.1
+Stable tag: 1.3.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -109,6 +109,7 @@ Visit our Help Center if you have any questions, our friendly Support Team is ha
 
 = Translation =
 
+* Czech (cs_CZ) (thanks to [Michal Kučera](mailto:mailus@n0lim.it) n0lim.it)
 * Hungarian (hu_HU) (thanks to [Peter Aprily](mailto:solarside09@gmail.com) www.aprily.com)
 * Russian (ru_RU)
 * Ukrainian (uk)
@@ -176,13 +177,17 @@ Please make sure that the problem hasn't been discussed yet on our forum (<http:
 == Screenshots ==
 
 1. Google +1 Before and After the post.
-2. Displaying Google +1 Button in your post via the shortcode.
-3. Displaying Google+ Badge Widget.
+2. Google +1 Button displaying in your post via the shortcode.
+3. Google+ Badge Widget displaying.
 4. Adding Google +1 shortcode to your post or page.
 5. Adding Google +1 widget to the sidebar.
 6. Google +1 Settings page.
 
 == Changelog ==
+
+= V1.3.3 - 19.01.2017 =
+* Update : We updated all functionality for wordpress 4.7.1.
+* NEW : Czech language file.
 
 = V1.3.2 - 14.11.2016 =
 * Update : BWS plugins section is updated.
@@ -277,6 +282,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<http:
 * Bugfix : The bug of position in the admin menu is fixed.
 
 == Upgrade Notice ==
+
+= V1.3.3 =
+* The compatibility with new WordPress version updated. Languages updated.
 
 = V1.3.2 =
 * Functionality improved.
