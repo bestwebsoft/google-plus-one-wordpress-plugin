@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: http://bestwebsoft.com/donate/
 Tags: add social buttons, add google social buttons, add google buttons, google like, google share, google like button, google share button, google, google social buttons, google +1, social account, social button
 Requires at least: 3.8
-Tested up to: 4.7.1
-Stable tag: 1.3.3
+Tested up to: 4.7.4
+Stable tag: 1.3.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -185,6 +185,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<http:
 
 == Changelog ==
 
+= V1.3.4 - 26.04.2017 =
+* Bugfix : Multiple Cross-Site Scripting (XSS) vulnerability was fixed.
+
 = V1.3.3 - 19.01.2017 =
 * Update : We updated all functionality for wordpress 4.7.1.
 * NEW : Czech language file.
@@ -282,6 +285,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<http:
 * Bugfix : The bug of position in the admin menu is fixed.
 
 == Upgrade Notice ==
+
+= V1.3.4 =
+* Bugs fixed.
 
 = V1.3.3 =
 * The compatibility with new WordPress version updated. Languages updated.

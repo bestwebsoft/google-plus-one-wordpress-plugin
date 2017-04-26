@@ -6,7 +6,7 @@ Description: Add Google +1 Share, Follow, Hangout buttons and profile badge to W
 Author: BestWebSoft
 Text Domain: google-one
 Domain Path: /languages
-Version: 1.3.3
+Version: 1.3.4
 Author URI: http://bestwebsoft.com
 License: GPLv2 or later
 */
@@ -361,17 +361,16 @@ if ( ! function_exists( 'gglplsn_options' ) ) {
 				} else { /* check action ##*/ ?>
 					<div id="gglplsn_settings_form_block">
 						<p><?php _e( 'For the correct work of the button do not use it locally or on a free hosting', 'google-one' ); ?><br /></p>
-						<div><?php $icon_shortcode = ( "google-plus-one.php" == $_GET['page'] ) ? plugins_url( 'bws_menu/images/shortcode-icon.png', __FILE__ ) : plugins_url( 'social-buttons-pack/bws_menu/images/shortcode-icon.png' );
-						printf(
+						<div><?php printf(
 							__( "If you'd like to add Google Buttons to your page or post, please use %s button", 'google-one' ),
-							'<span class="bws_code"><img style="vertical-align: sub;" src="' . $icon_shortcode . '" alt=""/></span>' ); ?>
+							'<span class="bws_code"><span class="bwsicons bwsicons-shortcode"></span></span>' ); ?>
 							<div class="bws_help_box bws_help_box_right dashicons dashicons-editor-help">
 								<div class="bws_hidden_help_text" style="min-width:180px;">
 									<?php printf(
 										__( "You can add Google Buttons to your page or post by clicking on %s button in the content edit block using the Visual mode. If the button isn't displayed, please use the shortcode %s to show the Google +1 Button, or use parameter 'display', e.g. %s to display these buttons", 'google-one' ),
-										'<code><img style="vertical-align: sub;" src="' . $icon_shortcode . '" alt="" /></code>',
-										'<code>[bws_googleplusone]</code>',
-										'<br><code>[bws_googleplusone display="plusone,share,follow,hangout,badge"]</code>'
+										'<span class="bws_code"><span class="bwsicons bwsicons-shortcode"></span></span>',
+										'[bws_googleplusone]',
+										'<br>[bws_googleplusone display="plusone,share,follow,hangout,badge"]'
 									); ?>
 								</div>
 							</div>
@@ -529,9 +528,6 @@ if ( ! function_exists( 'gglplsn_options' ) ) {
 												</table>
 											</div>
 											<div class="bws_pro_version_tooltip">
-												<div class="bws_info">
-													<?php _e( 'Unlock premium options by upgrading to Pro version', 'google-one' ); ?>
-												</div>
 												<a class="bws_button" href="http://bestwebsoft.com/products/wordpress/plugins/google-plus-one/?k=0a5a8a70ed3c34b95587de0604ca9517&pn=102&v=<?php echo $gglplsn_plugin_info["Version"]; ?>&wp_v=<?php echo $wp_version; ?>" target="_blank" title="Google +1 Pro"><?php _e( 'Learn More', 'google-one' ); ?></a>
 												<div class="clear"></div>
 											</div>
@@ -893,9 +889,6 @@ if ( ! function_exists( 'gglplsn_options' ) ) {
 											</table>
 										</div>
 										<div class="bws_pro_version_tooltip">
-											<div class="bws_info">
-												<?php _e( 'Unlock premium options by upgrading to Pro version', 'google-one' ); ?>
-											</div>
 											<a class="bws_button" href="http://bestwebsoft.com/products/wordpress/plugins/google-plus-one/?k=0a5a8a70ed3c34b95587de0604ca9517&pn=102&v=<?php echo $gglplsn_plugin_info["Version"]; ?>&wp_v=<?php echo $wp_version; ?>" target="_blank" title="Google +1 Pro"><?php _e( 'Learn More', 'google-one' ); ?></a>
 											<div class="clear"></div>
 										</div>
@@ -906,9 +899,6 @@ if ( ! function_exists( 'gglplsn_options' ) ) {
 										<h3><?php _e( 'Preview', 'google-one' ) ?></h3>
 										<img src="<?php echo plugin_dir_url( __FILE__ ); ?>/images/preview_screenshot.png">
 										<div class="bws_pro_version_tooltip">
-											<div class="bws_info">
-												<?php _e( 'Unlock premium options by upgrading to Pro version', 'google-one' ); ?>
-											</div>
 											<a class="bws_button" href="http://bestwebsoft.com/products/wordpress/plugins/google-plus-one/?k=0a5a8a70ed3c34b95587de0604ca9517&pn=102&v=<?php echo $gglplsn_plugin_info["Version"]; ?>&wp_v=<?php echo $wp_version; ?>" target="_blank" title="Google +1 Pro"><?php _e( 'Learn More', 'google-one' ); ?></a>
 											<div class="clear"></div>
 										</div>
@@ -945,9 +935,6 @@ if ( ! function_exists( 'gglplsn_options' ) ) {
 						</div>
 					</div>
 					<div class="bws_pro_version_tooltip">
-						<div class="bws_info">
-							<?php _e( 'Unlock premium options by upgrading to Pro version', 'google-one' ); ?>
-						</div>
 						<a class="bws_button" href="http://bestwebsoft.com/products/wordpress/plugins/google-plus-one/?k=0a5a8a70ed3c34b95587de0604ca9517&pn=102&v=<?php echo $gglplsn_plugin_info["Version"]; ?>&wp_v=<?php echo $wp_version; ?>" target="_blank" title="Google +1 Pro"><?php _e( 'Learn More', 'google-one' ); ?></a>
 						<div class="clear"></div>
 					</div>
