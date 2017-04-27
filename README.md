@@ -1,11 +1,9 @@
 <a href="https://bestwebsoft.com/products/wordpress/plugins/google-plus-one/" target=_blank>Google +1 WordPress Plugin</a>
 ========================
 
-
-
 <p>Google +1 plugin makes it easy to add Google +1, Share, Follow, Hangout buttons and profile badge to WordPress website posts, pages and widgets. Let your visitors share and promote your content over the web.</p>
 <p>Customize the appearance for every button, configure settings, and take full advantage of social sharing!</p>
-<p><span class="embed-youtube" style="text-align:center; display: block;"><iframe class='youtube-player' type='text/html' width='640' height='390' src='https://www.youtube.com/embed/Z-v0xWTKnuU?version=3&#038;rel=1&#038;fs=1&#038;autohide=2&#038;showsearch=0&#038;showinfo=1&#038;iv_load_policy=1&#038;wmode=transparent' allowfullscreen='true' style='border:0;'></iframe></span></p>
+<p><span class="embed-youtube" style="text-align:center; display: block;"></span></p>
 <h4>Free Features</h4>
 <ul>
 <li>Add Google:
