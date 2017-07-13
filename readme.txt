@@ -1,14 +1,14 @@
 ﻿=== Google +1 by BestWebSoft ===
 Contributors: bestwebsoft
-Donate link: http://bestwebsoft.com/donate/
+Donate link: https://bestwebsoft.com/donate/
 Tags: add social buttons, add google social buttons, add google buttons, google like, google share, google like button, google share button, google, google social buttons, google +1, social account, social button
-Requires at least: 3.8
-Tested up to: 4.7.4
-Stable tag: 1.3.4
+Requires at least: 3.9
+Tested up to: 4.8
+Stable tag: 1.3.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Add Google +1 Share, Follow, Hangout buttons and profile badge to WordPress posts, pages and widgets.
+Add Google +1, Share, Follow, Hangout buttons and profile badge to WordPress posts, pages and widgets.
 
 == Description ==
 
@@ -16,7 +16,7 @@ Google +1 plugin makes it easy to add Google +1, Share, Follow, Hangout buttons 
 
 Customize the appearance for every button, configure settings, and take full advantage of social sharing!
 
-http://www.youtube.com/watch?v=Z-v0xWTKnuU
+https://www.youtube.com/watch?v=Z-v0xWTKnuU
 
 = Free Features =
 
@@ -33,7 +33,7 @@ http://www.youtube.com/watch?v=Z-v0xWTKnuU
 	* Before and after
 	* Shortcode
 * Change button language
-* Detect current website language with [Multilanguage](http://bestwebsoft.com/products/wordpress/plugins/multilanguage/?k=335d851f03e56472622275e56546471c)
+* Detect current website language with [Multilanguage](https://bestwebsoft.com/products/wordpress/plugins/multilanguage/?k=335d851f03e56472622275e56546471c)
 * Automatically show buttons on:
 	* Home page
 	* Posts
@@ -68,7 +68,7 @@ http://www.youtube.com/watch?v=Z-v0xWTKnuU
 	* Landscape
 * Change Badge theme:
 	* Light
-	* Dart
+	* Dark
 * Show Badge:
 	* Cover photo
 	* Tag line
@@ -90,89 +90,84 @@ http://www.youtube.com/watch?v=Z-v0xWTKnuU
 > 	* Entire website
 > 	* Single pages (default)
 > * Configure all subsites on the network
-> * Get answer to your support question within one business day ([Support Policy](http://bestwebsoft.com/support-policy/))
+> * Get answer to your support question within one business day ([Support Policy](https://bestwebsoft.com/support-policy/))
 >
-> [Upgrade to Pro Now](http://bestwebsoft.com/products/wordpress/plugins/google-plus-one/?k=ecb8dc3b466b95504db546e515600a5e)
+> [Upgrade to Pro Now](https://bestwebsoft.com/products/wordpress/plugins/google-plus-one/?k=ecb8dc3b466b95504db546e515600a5e)
 
-If you have a feature suggestion or idea you'd like to see in the plugin, we'd love to hear about it! [Suggest a Feature](http://support.bestwebsoft.com/hc/en-us/requests/new)
+If you have a feature suggestion or idea you'd like to see in the plugin, we'd love to hear about it! [Suggest a Feature](https://support.bestwebsoft.com/hc/en-us/requests/new)
 
 = Documentation & Videos =
 
 * [[Doc] How to Use](https://docs.google.com/document/d/1v7j8TysjjBzXVnqozmfxMgjg5f7PS6XtV1GmZxnlNDk/)
-* [[Doc] Installation](https://docs.google.com/document/d/1Vfxwe8PvzMQfhkqVZ-bKP8JNY92c6m9Tl4-edBUZpOA)
-* [[Doc] Purchase, Installation & Configuration](https://docs.google.com/document/d/1yrAqoxE06806Cbo9-OVPvuko52np5x5Goq83YoqDVeA/)
-* [[Video] Installation Instruction](http://www.youtube.com/watch?v=9G640UQeJFE)
+* [[Doc] Installation](https://docs.google.com/document/d/1-hvn6WRvWnOqj5v5pLUk7Awyu87lq5B_dO-Tv-MC9JQ/)
+* [[Doc] Purchase](https://docs.google.com/document/d/1EUdBVvnm7IHZ6y0DNyldZypUQKpB8UVPToSc_LdOYQI/)
+* [[Video] Installation Instruction](https://www.youtube.com/watch?v=9G640UQeJFE)
 
 = Help & Support =
 
-Visit our Help Center if you have any questions, our friendly Support Team is happy to help — <http://support.bestwebsoft.com/>
+Visit our Help Center if you have any questions, our friendly Support Team is happy to help — <https://support.bestwebsoft.com/>
 
 = Translation =
 
-* Czech (cs_CZ) (thanks to [Michal Kučera](mailto:mailus@n0lim.it) n0lim.it)
+* Czech (cs_CZ) (thanks to [Michal Kučera](mailto:mailus@n0lim.it) www.n0lim.it)
 * Hungarian (hu_HU) (thanks to [Peter Aprily](mailto:solarside09@gmail.com) www.aprily.com)
 * Russian (ru_RU)
 * Ukrainian (uk)
 
-Some of these translations are not complete. We are constantly adding new features which should be translated. If you would like to create your own language pack or update the existing one, you can send [the text of PO and MO files](http://codex.wordpress.org/Translating_WordPress) to [BestWebSoft](http://support.bestwebsoft.com/hc/en-us/requests/new) and we'll add it to the plugin. You can download the latest version of the program for work with PO and MO [files Poedit](http://www.poedit.net/download.php).
+Some of these translations are not complete. We are constantly adding new features which should be translated. If you would like to create your own language pack or update the existing one, you can send [the text of PO and MO files](https://codex.wordpress.org/Translating_WordPress) to [BestWebSoft](https://support.bestwebsoft.com/hc/en-us/requests/new) and we'll add it to the plugin. You can download the latest version of the program for work with PO and MO [files Poedit](https://www.poedit.net/download.php).
 
 = Recommended Plugins =
 
-* [Updater](http://bestwebsoft.com/products/wordpress/plugins/updater/?k=a0ca69e53accff1fea97aebbccd33d33) - Automatically check and update WordPress core with all installed plugins to the latest versions. Manual mode, email notifications and backups of all your files and database before updating.
-* [LinkedIn](http://bestwebsoft.com/products/wordpress/plugins/linkedin/?k=b1d5bad85d647059237028e6d0f2b2fc) - Add LinkedIn Share and Follow buttons to WordPress posts, pages and widgets. 5 plugins included – profile, insider, etc.
-* [Multilanguage](http://bestwebsoft.com/products/wordpress/plugins/multilanguage/?k=335d851f03e56472622275e56546471c) - Translate WordPress website content to other languages manually. Create multilingual pages, posts, widgets, menus, etc.
-* [Pinterest](http://bestwebsoft.com/products/wordpress/plugins/pinterest/?k=60bf0e2a55bed0bccf29e725a8dfa127) - Add Pinterest Follow, Pin It buttons and profile widgets (Pin, Board, Profile) to WordPress posts, pages and widgets.
-* [Twitter](http://bestwebsoft.com/products/wordpress/plugins/twitter/?k=a10d537911393884b400c046a773a22c) - Add Twitter Follow, Tweet, Hashtag, and Mention buttons to WordPress posts, pages and widgets.
-* [Facebook Button](http://bestwebsoft.com/products/wordpress/plugins/facebook-like-button/?k=b912215f820ef022d9f197430b7ac407) - Add Facebook Like, Share and Profile buttons to WordPress posts, pages and widgets.
-
-= Donate =
-
-Donations play an important role in supporting open-source projects. We greatly appreciate any donation you can make to help us continue further development of free products.
-
-[Donate Now](http://bestwebsoft.com/donate/)
+* [Updater](https://bestwebsoft.com/products/wordpress/plugins/updater/?k=a0ca69e53accff1fea97aebbccd33d33) - Automatically check and update WordPress website core with all installed plugins and themes to the latest versions.
+* [LinkedIn](https://bestwebsoft.com/products/wordpress/plugins/linkedin/?k=b1d5bad85d647059237028e6d0f2b2fc) - Add LinkedIn Share and Follow buttons to WordPress posts, pages and widgets. 5 plugins included – profile, insider, etc.
+* [Multilanguage](https://bestwebsoft.com/products/wordpress/plugins/multilanguage/?k=335d851f03e56472622275e56546471c) - Translate WordPress website content to other languages manually. Create multilingual pages, posts, widgets, menus, etc.
+* [Pinterest](https://bestwebsoft.com/products/wordpress/plugins/pinterest/?k=60bf0e2a55bed0bccf29e725a8dfa127) - Add Pinterest Follow, Pin It buttons and profile widgets (Pin, Board, Profile) to WordPress posts, pages and widgets.
+* [Twitter](https://bestwebsoft.com/products/wordpress/plugins/twitter/?k=a10d537911393884b400c046a773a22c) - Add Twitter Follow, Tweet, Hashtag, and Mention buttons to WordPress posts, pages and widgets.
+* [Facebook Button](https://bestwebsoft.com/products/wordpress/plugins/facebook-like-button/?k=b912215f820ef022d9f197430b7ac407) - Add Facebook Like, Share and Profile buttons to WordPress posts, pages and widgets.
 
 == Installation ==
 
 1. Upload `google-one` folder to the `/wp-content/plugins/` directory.
 2. Activate the plugin through the 'Plugins' menu in your WordPress admin panel.
-3. You can adjust the necessary settings using your WordPress admin panel in "BWS Panel" > "Google +1".
+3. You can adjust the necessary settings using your WordPress admin panel in "Google +1".
 4. Create a page or a post and insert shortcode [bws_googleplusone] to the text.
 
-[View a Step-by-step Instruction on Google +1 Installation](https://docs.google.com/document/d/1Vfxwe8PvzMQfhkqVZ-bKP8JNY92c6m9Tl4-edBUZpOA)
+[View a Step-by-step Instruction on Google +1 Installation](https://docs.google.com/document/d/1-hvn6WRvWnOqj5v5pLUk7Awyu87lq5B_dO-Tv-MC9JQ/)
 
-http://www.youtube.com/watch?v=9G640UQeJFE
+https://www.youtube.com/watch?v=9G640UQeJFE
 
 == Frequently Asked Questions ==
-
-= Why does the button become red after clicking? =
-
-For correct work of the Google +1 buttons do not use it locally and on a free hosting
-
-= How to adjust Google +1 Button position on the page =
-
-In WordPress admin panel, please go to "BWS Panel", find the Google +1 settings page and choose one of the listed positions: Before, After, Before and After. Then click "Save Changes".
 
 = How to add Google +1 Button using the shortcode? =
 
 Just paste code [bws_googleplusone] into the necessary page, post or text widget for adding Google +1 Button or use a "display" parameter for adding another button(s).
-For example: [bws_googleplusone display="plusone,share,follow,hangout,badge"]. You can change the buttons queue in "display" parameter as you want.
+
+For example:
+[bws_googleplusone display="plusone,share,follow,hangout,badge"]. You can change the buttons queue in "display" parameter as you want.
+
+= I want to change the position of plugin buttons on the page =
+
+In WordPress admin panel, please go to “Google +1” page and choose one of the listed positions: Before, After. Then click “Save Changes”.
+
+= I click the button and it turns red. Why? =
+
+For correct work of the Google +1 buttons do not use it locally and on a free hosting.
 
 = Why I don't see the Follow Button and Google Badge? =
 
-Follow Button and Google Badge don`t work without Google ID. Just enter it on Settings Page
+Follow Button and Google Badge don`t work without Google ID. Just enter it on Settings Page.
 
-= I've entered Google ID, but nothing has changed. =
+= I've entered Google ID, but nothing has changed. Why? =
 
 Please check the Badge type. Google Badge works incorrectly if Google ID don`t match with the Badge Type.
 
 = I have some problems with the plugin's work. What Information should I provide to receive proper support? =
 
-Please make sure that the problem hasn't been discussed yet on our forum (<http://support.bestwebsoft.com>). If no, please provide the following data along with your problem's description:
-
-1. the link to the page where the problem occurs
-2. the name of the plugin and its version. If you are using a pro version - your order number.
-3. the version of your WordPress installation
-4. copy and paste into the message your system status report. Please read more here: [Instruction on System Status](https://docs.google.com/document/d/1Wi2X8RdRGXk9kMszQy1xItJrpN0ncXgioH935MaBKtc/edit)
+Please make sure that the problem hasn't been discussed yet on our forum (<https://support.bestwebsoft.com>). If no, please provide the following data along with your problem's description:
+- The link to the page where the problem occurs
+- The name of the plugin and its version. If you are using a pro version - your order number.
+- The version of your WordPress installation
+- Copy and paste into the message your system status report. Please read more here: [Instruction on System Status](https://docs.google.com/document/d/1Wi2X8RdRGXk9kMszQy1xItJrpN0ncXgioH935MaBKtc/)
 
 == Screenshots ==
 
@@ -184,6 +179,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<http:
 6. Google +1 Settings page.
 
 == Changelog ==
+
+= V1.3.5 - 13.07.2017 =
+* Update : The plugin settings page has been updated.
 
 = V1.3.4 - 26.04.2017 =
 * Bugfix : Multiple Cross-Site Scripting (XSS) vulnerability was fixed.
@@ -285,6 +283,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<http:
 * Bugfix : The bug of position in the admin menu is fixed.
 
 == Upgrade Notice ==
+
+= V1.3.5 =
+* Usability improved.
 
 = V1.3.4 =
 * Bugs fixed.
