@@ -3,7 +3,8 @@
  * Displays the content on the plugin settings page
  */
 
-require_once( dirname( dirname( __FILE__ ) ) . '/bws_menu/class-bws-settings.php' );
+if ( ! class_exists( 'Bws_Settings_Tabs' ) )
+	require_once( dirname( dirname( __FILE__ ) ) . '/bws_menu/class-bws-settings.php' );
 
 if ( ! class_exists( 'Gglplsn_Settings_Tabs' ) ) {
 	class Gglplsn_Settings_Tabs extends Bws_Settings_Tabs {
@@ -44,7 +45,9 @@ if ( ! class_exists( 'Gglplsn_Settings_Tabs' ) ) {
 			) );
 
 			add_action( get_parent_class( $this ) . '_display_metabox', array( $this, 'display_metabox' ) );
+			/*## display preview */
 			add_action( get_parent_class( $this ) . '_display_second_postbox', array( $this, 'display_second_postbox' ) );
+			/* ##*/
 		}
 
 		/**
@@ -58,13 +61,9 @@ if ( ! class_exists( 'Gglplsn_Settings_Tabs' ) ) {
 
 			if ( ! $this->forbid_view ) {
 				$this->options['plus_one_js']					= isset( $_REQUEST['gglplsn_plus_one_js'] ) ? 1 : 0;
-				$this->options['plus_one_annotation']			= esc_html( $_REQUEST['gglplsn_plus_one_annotation'] );
 				$this->options['plus_one_size']					= esc_html( $_REQUEST['gglplsn_plus_one_size'] );
-				$this->options['plus_one_annotation_type']		= esc_html( $_REQUEST['gglplsn_plus_one_annotation_type'] );
 				$this->options['share_js']						= isset( $_REQUEST['gglplsn_share_js'] ) ? 1 : 0;
 				$this->options['share_size']					= intval( $_REQUEST['gglplsn_share_size'] );
-				$this->options['share_annotation_type']			= esc_html( $_REQUEST['gglplsn_share_annotation_type'] );
-				$this->options['share_annotation']				= esc_html( $_REQUEST['gglplsn_share_annotation'] );
 				$this->options['follow_js']						= isset( $_REQUEST['gglplsn_follow_js'] ) ? 1 : 0;
 				$this->options['follow_size']					= intval( $_REQUEST['gglplsn_follow_size'] );
 				$this->options['follow_annotation']				= esc_html( $_REQUEST['gglplsn_follow_annotation'] );
@@ -172,7 +171,7 @@ if ( ! class_exists( 'Gglplsn_Settings_Tabs' ) ) {
 					}
 				}
 
-				/* Update options in the database */				
+				/* Update options in the database */
 				update_option( 'gglplsn_options', $this->options );
 
 				$message = __( 'Settings saved', 'google-one' );
@@ -194,7 +193,7 @@ if ( ! class_exists( 'Gglplsn_Settings_Tabs' ) ) {
 			} ?>
 			<h3 class="bws_tab_label"><?php _e( 'Google +1 Settings', 'google-one' ); ?></h3>
 			<?php $this->help_phrase(); ?>
-			<hr>			
+			<hr>
 			<div class="bws_tab_sub_label"><?php _e( 'General', 'google-one' ); ?></div>
 			<table class="form-table gglplsn_settings_form">
 				<tr>
@@ -211,15 +210,15 @@ if ( ! class_exists( 'Gglplsn_Settings_Tabs' ) ) {
 							<br />
 							<label>
 								<input type="checkbox" value="1" name="gglplsn_follow_js"<?php checked( 1, $this->options['follow_js'] ); ?> />
-								<?php _e( 'Follow', 'google-one' ); ?>								
+								<?php _e( 'Follow', 'google-one' ); ?>
 								<span class="bws_info gglplsn_notice gglplsn-follow-notice gglplsn-unvisible-notice">
 									<?php if ( empty( $this->options['follow_id'] ) ) { ?>
 										<?php _e( 'To see this button, please', 'google-one' ); ?>
 										<a href="#gglplsn_follow_id"><?php _e( 'enter', 'google-one' ) ?></a>
-										<?php _e( 'the Google+ ID', 'google-one' ); ?>.
+										<?php _e( 'Google+ ID', 'google-one' ); ?>.
 									<?php } ?>
 								</span>
-							</label>								
+							</label>
 							<br />
 							<label>
 								<input type="checkbox" value="1" name="gglplsn_hangout_js"<?php checked( 1, $this->options['hangout_js'] ); ?> />
@@ -238,7 +237,7 @@ if ( ! class_exists( 'Gglplsn_Settings_Tabs' ) ) {
 								<?php if ( empty( $this->options['badge_id'] ) ) { ?>
 									<?php _e( 'To see this button, please', 'google-one' ); ?>
 									<a href="#gglplsn_badge_id"><?php _e( 'enter', 'google-one' ) ?></a>
-									<?php _e( 'the Google+ ID', 'google-one' ); ?>.
+									<?php _e( 'Google+ ID', 'google-one' ); ?>.
 								<?php } ?>
 							</span>
 						</label>
@@ -289,14 +288,14 @@ if ( ! class_exists( 'Gglplsn_Settings_Tabs' ) ) {
 										echo ' selected="selected"';
 									echo '>' . esc_html( $val ) . '</option>';
 								} ?>
-							</select>							
+							</select>
 						</fieldset>
 						<div class="bws_info"><?php _e( 'Select the default language for Google+ button(-s).', 'google-one' ); ?></div>
 					</td>
 				</tr>
 				<tr>
 					<th>Multilanguage</th>
-					<td>							
+					<td>
 						<?php if ( array_key_exists( 'multilanguage/multilanguage.php', $this->all_plugins ) || array_key_exists( 'multilanguage-pro/multilanguage-pro.php', $this->all_plugins ) ) {
 							if ( is_plugin_active( 'multilanguage/multilanguage.php' ) || is_plugin_active( 'multilanguage-pro/multilanguage-pro.php' ) ) { ?>
 								
@@ -309,15 +308,16 @@ if ( ! class_exists( 'Gglplsn_Settings_Tabs' ) ) {
 						} else { ?>
 							<input disabled="disabled" type="checkbox" name="gglplsn_use_multilanguage_locale" value="1" />
 							<span class="bws_info"><?php _e( 'Enable to switch language automatically on multilingual website using Multilanguage plugin.', 'google-one' ); ?> <a href="https://bestwebsoft.com/products/wordpress/plugins/multilanguage/?k=28a18815248c6b7f41cfb667574b9dc4&pn=118&v=<?php echo $this->plugins_info["Version"]; ?>&wp_v=<?php echo $wp_version; ?>"><?php _e( 'Learn More', 'google-one' ); ?></a></span>
-						<?php } ?>							
+						<?php } ?>
 					</td>
 				</tr>
 			</table>
 			<div class="bws_tab_sub_label gglplsn_plus_one_enabled"><?php _e( 'Google+ Button', 'google-one' ); ?></div>
+			<!-- general -->
 			<?php if ( ! $this->hide_pro_tabs ) { ?>
 				<div class="bws_pro_version_bloc gglplsn_plus_one_enabled">
 					<div class="bws_pro_version_table_bloc">
-						<button type="submit" name="bws_hide_premium_options" class="notice-dismiss bws_hide_premium_options" title="<?php _e( 'Close', 'facebook-button-plugin' ); ?>"></button>
+						<button type="submit" name="bws_hide_premium_options" class="notice-dismiss bws_hide_premium_options" title="<?php _e( 'Close', 'google-one' ); ?>"></button>
 						<div class="bws_table_bg"></div>
 						<table class="form-table bws_pro_version">
 							<th><?php _e( '+1 Entire Website', 'google-one' ); ?></th>
@@ -330,6 +330,7 @@ if ( ! class_exists( 'Gglplsn_Settings_Tabs' ) ) {
 					<?php $this->bws_pro_block_links(); ?>
 				</div>
 			<?php } ?>
+			<!-- end general -->
 			<table class="form-table gglplsn_settings_form gglplsn_plus_one_enabled">
 				<tr>
 					<th><?php _e( 'Size', 'google-one' ); ?></th>
@@ -353,64 +354,9 @@ if ( ! class_exists( 'Gglplsn_Settings_Tabs' ) ) {
 						</fieldset>
 					</td>
 				</tr>
-				<tr>
-					<th><?php _e( 'Annotation', 'google-one' ); ?></th>
-					<td>
-						<fieldset>
-							<label>
-								<input type="radio" name="gglplsn_plus_one_annotation" value="none" <?php checked( 'none', $this->options['plus_one_annotation'] ); ?> /> <?php _e( 'None', 'google-one' ); ?>
-							</label>
-							<br/>
-							<label>
-								<input type="radio" name="gglplsn_plus_one_annotation" value="bubble" <?php checked( 'bubble', $this->options['plus_one_annotation'] ); ?> /> <?php _e( 'Bubble', 'google-one' ); ?>
-							</label>
-							<br/>
-							<label>
-								<input type="radio" name="gglplsn_plus_one_annotation" value="inline" <?php checked( 'inline', $this->options['plus_one_annotation'] ); ?> /> <?php _e( 'Inline', 'google-one' ); ?>
-							</label>
-						</fieldset>
-					</td>
-				</tr>
-				<tr class="gglplsn-plus-one-annotation-type">
-					<th><?php _e( 'Annotation Type', 'google-one' ); ?></th>
-					<td>
-						<fieldset>
-							<label>
-								<input type="radio" name="gglplsn_plus_one_annotation_type" value="standard" <?php checked( 'standard', $this->options['plus_one_annotation_type'] ); ?> /> <?php _e( 'Standard', 'google-one' ); ?>
-							</label>
-							<br/>
-							<label>
-								<input type="radio" name="gglplsn_plus_one_annotation_type" value="short" <?php checked( 'short', $this->options['plus_one_annotation_type'] ); ?> /> <?php _e( 'Short', 'google-one' ); ?>
-							</label>
-						</fieldset>
-					</td>
-				</tr>
 			</table>
 			<div class="bws_tab_sub_label gglplsn_share_enabled"><?php _e( 'Share Button', 'google-one' ); ?></div>
 			<table class="form-table gglplsn_settings_form gglplsn_share_enabled">
-				<tr>
-					<th><?php _e( 'Annotation', 'google-one' ); ?></th>
-					<td>
-						<fieldset>
-							<label>
-								<input type="radio" name="gglplsn_share_annotation" value="none" <?php checked( 'none', $this->options['share_annotation'] ); ?> /> <?php _e( 'None', 'google-one' ); ?>
-							</label>
-							<br/>
-							<label>
-								<input type="radio" name="gglplsn_share_annotation" value="inline" <?php checked( 'inline', $this->options['share_annotation'] ); ?> /> <?php _e( 'Inline', 'google-one' ); ?> (<?php _e( 'horizontal', 'google-one' ); ?>)
-							</label>
-							<br/>
-							<label>
-								<input type="radio" name="gglplsn_share_annotation" value="bubble" <?php checked( 'bubble', $this->options['share_annotation'] ); ?> /> <?php _e( 'Bubble', 'google-one' ); ?> (<?php _e( 'horizontal', 'google-one' ); ?>)
-							</label>
-							<br/>
-							<label>
-								<input type="radio" name="gglplsn_share_annotation" value="vertical-bubble" <?php checked( 'vertical-bubble', $this->options['share_annotation'] ); ?> /> <?php _e( 'Bubble', 'google-one' ); ?> (<?php _e( 'vertical', 'google-one' ); ?>)
-							</label>
-						</fieldset>
-						<div class="bws_info"><?php _e( 'Display the number of users who have shared the page.', 'google-one' ); ?></div>
-					</td>
-				</tr>
 				<tr class="gglplsn-share-size">
 					<th><?php _e( 'Size', 'google-one' ); ?></th>
 					<td>
@@ -425,20 +371,6 @@ if ( ! class_exists( 'Gglplsn_Settings_Tabs' ) ) {
 							<br/>
 							<label>
 								<input type="radio" name="gglplsn_share_size" value="24" <?php checked( '24', $this->options['share_size'] ); ?> /> <?php _e( 'Large', 'google-one' ); ?>
-							</label>
-						</fieldset>
-					</td>
-				</tr>
-				<tr class="gglplsn-share-annotation-type">
-					<th><?php _e( 'Annotation Type', 'google-one' ); ?></th>
-					<td>
-						<fieldset>
-							<label>
-								<input type="radio" name="gglplsn_share_annotation_type" value="standard" <?php checked( 'standard', $this->options['share_annotation_type'] ); ?> /> <?php _e( 'Standard', 'google-one' ); ?>
-							</label>
-							<br/>
-							<label>
-								<input type="radio" name="gglplsn_share_annotation_type" value="short" <?php checked( 'short', $this->options['share_annotation_type'] ); ?> /> <?php _e( 'Short', 'google-one' ); ?>
 							</label>
 						</fieldset>
 					</td>
@@ -503,7 +435,7 @@ if ( ! class_exists( 'Gglplsn_Settings_Tabs' ) ) {
 								<input type="radio" name="gglplsn_follow_annotation" value="vertical-bubble" <?php checked( 'vertical-bubble', $this->options['follow_annotation'] ); ?> /> <?php _e( 'Bubble', 'google-one' ); ?> (<?php _e( 'vertical', 'google-one' ); ?>)
 							</label>
 						</fieldset>
-						<div class="bws_info"><?php _e( 'Display the number of users who are following this page or person.', 'google-one' ); ?></div>
+						<div class="bws_info"><?php _e( 'Display the number of users who are following this page.', 'google-one' ); ?></div>
 					</td>
 				</tr>
 			</table>
@@ -524,7 +456,7 @@ if ( ! class_exists( 'Gglplsn_Settings_Tabs' ) ) {
 							</label>
 							<br />
 							<input type="text" name="gglplsn_hangout_topic" class="gglplsn-no-ajax gglplsn_hangout_topic_custom" value="<?php echo $this->options['hangout_topic']; ?>" />
-						</fieldset>							
+						</fieldset>
 					</td>
 				</tr>
 				<tr>
@@ -763,8 +695,9 @@ if ( ! class_exists( 'Gglplsn_Settings_Tabs' ) ) {
 					<?php _e( 'Google +1 Buttons Shortchode', 'google-one' ); ?>
 				</h3>
 				<div class="inside">
+					<p><?php _e( 'Add Google +1 Buttons to a widget.', 'google-one' ); ?> <a href="widgets.php"><?php _e( 'Navigate to Widgets', 'google-one' ); ?></a></p>
 					<?php _e( "Add Google +1 button(-s) to your posts, pages, custom post types or widgets by using the following shortcode:", 'google-one' ); ?>
-					<?php bws_shortcode_output( '[bws_googleplusone]' ); ?>						
+					<?php bws_shortcode_output( '[bws_googleplusone]' ); ?>
 				</div>
 			</div>
 		<?php }
@@ -777,7 +710,7 @@ if ( ! class_exists( 'Gglplsn_Settings_Tabs' ) ) {
 						<button type="submit" name="bws_hide_premium_options" class="notice-dismiss bws_hide_premium_options" title="<?php _e( 'Close', 'google-one' ); ?>"></button>
 						<?php _e( 'Google +1 Buttons Preview', 'google-one' ); ?>
 					</h3>
-					<div class="inside">								
+					<div class="inside">
 						<img src='<?php echo plugins_url( 'images/preview_screenshot.png', dirname( __FILE__ ) ); ?>' />
 					</div>
 					<?php $this->bws_pro_block_links(); ?>

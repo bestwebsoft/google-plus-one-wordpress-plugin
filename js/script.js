@@ -1,12 +1,6 @@
 ( function( $ ) {
 	$( document ).ready( function() {
 		function gglplsn_plus_one_js() {
-			if ( $( 'input[name="gglplsn_plus_one_js"]' ).is( ':checked' ) && 'inline' == $( 'input[name="gglplsn_plus_one_annotation"]:checked' ).val() ) {
-				$( '.gglplsn-plus-one-annotation-type' ).show();
-			} else {
-				$( '.gglplsn-plus-one-annotation-type' ).hide();
-			}
-
 			if ( $( 'input[name="gglplsn_plus_one_js"]' ).is( ':checked' ) ) {
 				$( '.gglplsn_plus_one_enabled' ).show();
 			} else {
@@ -14,13 +8,7 @@
 			}
 		}
 		function gglplsn_share_js() {
-			if ( true == $( 'input[name="gglplsn_share_js"]' ).is( ':checked' ) && 'inline' == $( 'input[name="gglplsn_share_annotation"]:checked' ).val() ) {
-				$( '.gglplsn-share-annotation-type' ).show();
-			} else {
-				$( '.gglplsn-share-annotation-type' ).hide();
-			}
-
-			if ( $( 'input[name="gglplsn_share_js"]' ).is( ':checked' ) && 'vertical-bubble' != $( 'input[name="gglplsn_share_annotation"]:checked' ).val() ) {
+			if ( $( 'input[name="gglplsn_share_js"]' ).is( ':checked' ) ) {
 				$( '.gglplsn-share-size' ).show();
 			} else {
 				$( '.gglplsn-share-size' ).hide();
@@ -41,7 +29,7 @@
 				}
 			} else {
 				$( '.gglplsn_follow_enabled' ).hide();
-				$( 'input[name="gglplsn_follow_id"]' ).removeAttr( 'required' );				
+				$( 'input[name="gglplsn_follow_id"]' ).removeAttr( 'required' );
 			}
 		}
 		function gglplsn_hangout_js() {
@@ -92,26 +80,6 @@
 				$( '.gglplsn-badge-tagline-info' ).html( js_string.person_tagline_info );
 			}
 		}
-		function gglplsn_plus_one_annotation() {
-			if ( 'inline' == $( 'input[name="gglplsn_plus_one_annotation"]:checked' ).val() ) {
-				$( '.gglplsn-plus-one-annotation-type' ).show();
-			} else {
-				$( '.gglplsn-plus-one-annotation-type' ).hide();
-			}
-		}
-		function gglplsn_share_annotation() {
-			if ( 'inline' == $( 'input[name="gglplsn_share_annotation"]:checked' ).val() ) {
-				$( '.gglplsn-share-annotation-type' ).show();
-			} else {
-				$( '.gglplsn-share-annotation-type' ).hide();
-			}
-
-			if ( 'vertical-bubble' == $( 'input[name="gglplsn_share_annotation"]:checked' ).val() ) {
-				$( '.gglplsn-share-size' ).hide();
-			} else {
-				$( '.gglplsn-share-size' ).show();
-			}
-		}
 		function gglplsn_badge_layout() {
 			var badge_width = $( 'input[name="gglplsn_badge_width"]' );
 			if ( 'portait' == $( 'input[name="gglplsn_badge_layout"]:checked' ).val() ) {
@@ -127,7 +95,7 @@
 			}
 		}
 
-		gglplsn_plus_one_js();		
+		gglplsn_plus_one_js();
 		$( 'input[name="gglplsn_plus_one_js"]' ).change( function() {
 			gglplsn_plus_one_js();
 		} );
@@ -150,14 +118,6 @@
 		gglplsn_badge_type();
 		$( 'input[name="gglplsn_badge_type"]' ).change( function() {
 			gglplsn_badge_type();
-		} );
-		gglplsn_plus_one_annotation();
-		$( 'input[name="gglplsn_plus_one_annotation"]' ).change( function() {
-			gglplsn_plus_one_annotation();
-		} );
-		gglplsn_share_annotation();
-		$( 'input[name="gglplsn_share_annotation"]' ).change( function() {
-			gglplsn_share_annotation();
 		} );
 		/* min width for badge */
 		gglplsn_badge_layout();

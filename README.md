@@ -146,6 +146,6 @@
 <li><a href="https://bestwebsoft.com/products/wordpress/plugins/linkedin/?k=b1d5bad85d647059237028e6d0f2b2fc" rel="nofollow">LinkedIn</a> &#8211; Add LinkedIn Share and Follow buttons to WordPress posts, pages and widgets. 5 plugins included – profile, insider, etc.</li>
 <li><a href="https://bestwebsoft.com/products/wordpress/plugins/multilanguage/?k=335d851f03e56472622275e56546471c" rel="nofollow">Multilanguage</a> &#8211; Translate WordPress website content to other languages manually. Create multilingual pages, posts, widgets, menus, etc.</li>
 <li><a href="https://bestwebsoft.com/products/wordpress/plugins/pinterest/?k=60bf0e2a55bed0bccf29e725a8dfa127" rel="nofollow">Pinterest</a> &#8211; Add Pinterest Follow, Pin It buttons and profile widgets (Pin, Board, Profile) to WordPress posts, pages and widgets.</li>
-<li><a href="https://bestwebsoft.com/products/wordpress/plugins/twitter/?k=a10d537911393884b400c046a773a22c" rel="nofollow">Twitter</a> &#8211; Add Twitter Follow, Tweet, Hashtag, and Mention buttons to WordPress posts, pages and widgets.</li>
+<li><a href="https://bestwebsoft.com/products/wordpress/plugins/twitter/?k=a10d537911393884b400c046a773a22c" rel="nofollow">Twitter</a> &#8211; Add Twitter Follow, Tweet, Hashtag, and Mention buttons to WordPress posts and pages.</li>
 <li><a href="https://bestwebsoft.com/products/wordpress/plugins/facebook-like-button/?k=b912215f820ef022d9f197430b7ac407" rel="nofollow">Facebook Button</a> &#8211; Add Facebook Like, Share and Profile buttons to WordPress posts, pages and widgets.</li>
 </ul>

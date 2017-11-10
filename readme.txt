@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: https://bestwebsoft.com/donate/
 Tags: add social buttons, add google social buttons, add google buttons, google like, google share, google like button, google share button, google, google social buttons, google +1, social account, social button
 Requires at least: 3.9
-Tested up to: 4.8
-Stable tag: 1.3.5
+Tested up to: 4.8.3
+Stable tag: 1.3.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -122,7 +122,7 @@ Some of these translations are not complete. We are constantly adding new featur
 * [LinkedIn](https://bestwebsoft.com/products/wordpress/plugins/linkedin/?k=b1d5bad85d647059237028e6d0f2b2fc) - Add LinkedIn Share and Follow buttons to WordPress posts, pages and widgets. 5 plugins included – profile, insider, etc.
 * [Multilanguage](https://bestwebsoft.com/products/wordpress/plugins/multilanguage/?k=335d851f03e56472622275e56546471c) - Translate WordPress website content to other languages manually. Create multilingual pages, posts, widgets, menus, etc.
 * [Pinterest](https://bestwebsoft.com/products/wordpress/plugins/pinterest/?k=60bf0e2a55bed0bccf29e725a8dfa127) - Add Pinterest Follow, Pin It buttons and profile widgets (Pin, Board, Profile) to WordPress posts, pages and widgets.
-* [Twitter](https://bestwebsoft.com/products/wordpress/plugins/twitter/?k=a10d537911393884b400c046a773a22c) - Add Twitter Follow, Tweet, Hashtag, and Mention buttons to WordPress posts, pages and widgets.
+* [Twitter](https://bestwebsoft.com/products/wordpress/plugins/twitter/?k=a10d537911393884b400c046a773a22c) - Add Twitter Follow, Tweet, Hashtag, and Mention buttons to WordPress posts and pages.
 * [Facebook Button](https://bestwebsoft.com/products/wordpress/plugins/facebook-like-button/?k=b912215f820ef022d9f197430b7ac407) - Add Facebook Like, Share and Profile buttons to WordPress posts, pages and widgets.
 
 == Installation ==
@@ -179,6 +179,10 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 6. Google +1 Settings page.
 
 == Changelog ==
+
+= V1.3.6 - 10.11.2017 =
+* Update : Deprecated option "Annotation" has been removed.
+* Update : The Czech language file is updated.
 
 = V1.3.5 - 13.07.2017 =
 * Update : The plugin settings page has been updated.
@@ -283,6 +287,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 * Bugfix : The bug of position in the admin menu is fixed.
 
 == Upgrade Notice ==
+
+= V1.3.6 =
+* Functionality improved.
 
 = V1.3.5 =
 * Usability improved.

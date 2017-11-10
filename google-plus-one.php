@@ -6,7 +6,7 @@ Description: Add Google +1, Share, Follow, Hangout buttons and profile badge to 
 Author: BestWebSoft
 Text Domain: google-one
 Domain Path: /languages
-Version: 1.3.5
+Version: 1.3.6
 Author URI: https://bestwebsoft.com
 License: GPLv2 or later
 */
@@ -26,6 +26,8 @@ License: GPLv2 or later
 	along with this program; if not, write to the Free Software
 	Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
+
+require_once( dirname( __FILE__ ) . '/includes/deprecated.php' );
 
 /* Add BWS menu */
 if ( ! function_exists( 'gglplsn_admin_menu' ) ) {
@@ -98,7 +100,6 @@ if ( ! function_exists ( 'gglplsn_settings' ) ) {
 	function gglplsn_settings() {
 		global $gglplsn_options, $gglplsn_plugin_info;
 
-
 		if ( ! get_option( 'gglplsn_options' ) ) {
 			$options_default = gglplsn_get_options_default();
 			add_option( 'gglplsn_options', $options_default );
@@ -109,24 +110,11 @@ if ( ! function_exists ( 'gglplsn_settings' ) ) {
 		if ( ! isset( $gglplsn_options['plugin_option_version'] ) || $gglplsn_options['plugin_option_version'] != $gglplsn_plugin_info["Version"] ) {
 
 			/**
-			* @since 1.3.5
-			* @todo remove after 12.10.2017
+			* @deprecated since 1.3.6
+			* @todo remove after 12.04.2018
 			*/
-			if ( ! is_array( $gglplsn_options['position'] ) ) {
-				switch ( $gglplsn_options['position'] ) {
-					case 'only_shortcode':
-						$gglplsn_options['position'] = array();
-						break;
-					case 'afterandbefore':
-						$gglplsn_options['position'] = array( 'before', 'after' );
-						break;
-					case 'before_post':
-						$gglplsn_options['position'] = array( 'before' );
-						break;
-					case 'after_post':
-						$gglplsn_options['position'] = array( 'after' );
-						break;
-				}
+			if ( version_compare( str_replace( 'pro-', '', $gglplsn_options['plugin_option_version'] ), '1.3.6', '<' ) ) {
+				gglplsn_remove_deprecated();
 			}
 			/* end @todo */
 
@@ -149,13 +137,9 @@ if ( ! function_exists( 'gglplsn_get_options_default' ) ) {
 		$options_default = array(
 			'plugin_option_version'		=>	$gglplsn_plugin_info['Version'],
 			'plus_one_js'				=>	1,
-			'plus_one_annotation'		=>	'none',
 			'plus_one_size'				=>	'standard',
-			'plus_one_annotation_type'	=>	'standard',
 			'share_js'					=>	0,
 			'share_size'				=>	20,
-			'share_annotation'			=>	'none',
-			'share_annotation_type'		=>	'standard',
 			'follow_js'					=>	0,
 			'follow_size'				=>	20,
 			'follow_annotation'			=>	'none',
@@ -201,7 +185,7 @@ if ( ! function_exists( 'gglplsn_options' ) ) {
 		<!-- general -->
 		<div id="gglplsn_settings_form" class="wrap">
 			<h1>Google +1 <?php _e( 'Settings', 'google-one-pro' ); ?></h1>
-			<noscript><div class="error below-h2"><p><strong><?php _e( "Please enable JavaScript in Your browser.", 'google-one' ); ?></strong></p></div></noscript>
+			<noscript><div class="error below-h2"><p><strong><?php _e( "Please enable JavaScript in your browser.", 'google-one' ); ?></strong></p></div></noscript>
 			<?php $page->display_content(); ?>
 		</div>
 	<?php }
@@ -224,7 +208,7 @@ if ( ! function_exists( 'gglplsn_admin_head' ) ) {
 				'invalid_email'     		=>  __( 'Enter the valid Email.', 'google-one' ),
 				'email_th'					=>  __( 'Email of Invited Person', 'google-one' ),
 				'email_info'				=>  __( 'Enter the Email of invited person.', 'google-one' ) . '&nbsp;' . __( 'For example', 'google-one' ) . ',&nbsp;"example@gmail.com".',
-				'phone_th'					=>  __( 'Phone Number of Invited Person', 'google-one' ),
+				'phone_th'					=>  __( 'Phone number of invited person', 'google-one' ),
 				'phone_info'				=>  __( 'Enter the phone number of invited person.', 'google-one' ) . '&nbsp;' . __( 'For example', 'google-one' ) . ',&nbsp;"+38001234567".',
 				'profile_th'				=>  __( 'Google+ Profile ID of Invited Person', 'google-one' ),
 				'profile_info'				=>  __( 'Enter the Google+ Profile ID of invited person.', 'google-one' ) . '&nbsp;' . __( 'For example', 'google-one' ) . ',&nbsp;"12345678912345678912"&nbsp;' . __( 'or', 'google-one' ) . '&nbsp;"+YouName".',
@@ -280,7 +264,7 @@ if ( ! function_exists( 'gglplsn_js' ) ) {
 	function gglplsn_js() {
 		global $gglplsn_is_button_shown;
 		if ( ! empty( $gglplsn_is_button_shown ) || defined( 'BWS_ENQUEUE_ALL_SCRIPTS' ) ) {
-			global $gglplsn_options, $gglplsn_lang_codes;
+			global $gglplsn_options, $gglplsn_lang_codes, $mltlngg_current_language;
 			
 			if (
 				1 == $gglplsn_options['plus_one_js'] ||
@@ -289,15 +273,15 @@ if ( ! function_exists( 'gglplsn_js' ) ) {
 				1 == $gglplsn_options['hangout_js'] ||
 				1 == $gglplsn_options['badge_js']
 			) {
-				if ( 1 == $gglplsn_options['use_multilanguage_locale'] && isset( $_SESSION['language'] ) ) {
-					if ( array_key_exists( $_SESSION['language'], $gglplsn_lang_codes ) ) {
-						$gglplsn_locale = $_SESSION['language'];
+				if ( 1 == $gglplsn_options['use_multilanguage_locale'] && isset( $mltlngg_current_language ) ) {
+					if ( array_key_exists( $mltlngg_current_language, $gglplsn_lang_codes ) ) {
+						$gglplsn_locale = $mltlngg_current_language;
 					} else {
-						$gglplsn_locale_from_multilanguage = str_replace( '_', '-', $_SESSION['language'] );
+						$gglplsn_locale_from_multilanguage = str_replace( '_', '-', $mltlngg_current_language );
 						if ( array_key_exists( $gglplsn_locale_from_multilanguage, $gglplsn_lang_codes ) ) {
 							$gglplsn_locale = $gglplsn_locale_from_multilanguage;
 						} else {
-							$gglplsn_locale_from_multilanguage = explode( '_', $_SESSION['language']  );
+							$gglplsn_locale_from_multilanguage = explode( '_', $mltlngg_current_language );
 							if( is_array( $gglplsn_locale_from_multilanguage ) && array_key_exists( $gglplsn_locale_from_multilanguage[0], $gglplsn_lang_codes ) )
 								$gglplsn_locale = $gglplsn_locale_from_multilanguage[0];
 						}
@@ -441,13 +425,13 @@ if ( ! class_exists( 'Gglplsn_Badge_Widget' ) ) {
 			<p>
 				<label for="<?php echo $this->get_field_id( 'badge_id' ); ?>"><?php _e( 'Google+ ID', 'google-one' ); ?>:</label>
 				<input type="text" class="widefat" name="<?php echo $this->get_field_name( 'badge_id' ); ?>" <?php echo 'required="required"'; ?> value="<?php echo $badge_id; ?>" />
-				<span class="bws_info gglplsn-badge-id-info"><?php echo __( 'Enter your Google+ ID.', 'google-one' ) . '&nbsp;' . __( 'For example', 'google-one' ) . ',&nbsp;"12345678912345678912"&nbsp;'; ?>)</span>
+				<span class="bws_info gglplsn-badge-id-info"><?php echo __( 'Enter your Google+ ID.', 'google-one' ) . '&nbsp;' . __( 'For example', 'google-one' ) . ',&nbsp;"12345678912345678912"&nbsp;'; ?></span>
 			</p>
 			<p>
 				<label for="<?php echo $this->get_field_id( 'badge_type' ); ?>"><?php _e( 'Type', 'google-one' ); ?></label>
 				<select id="<?php echo $this->get_field_id( 'badge_type' ); ?>" class="gglplsn-badge-type" name="<?php echo $this->get_field_name( 'badge_type' ); ?>">
 					<option value="person" <?php selected( 'person', $badge_type ); ?>><?php _e( 'Person', 'google-one' ); ?></option>
-					<option value="page" <?php selected('page', $badge_type ); ?>><?php _e( 'Page', 'google-one' ); ?></option>
+					<option value="page" <?php selected( 'page', $badge_type ); ?>><?php _e( 'Page', 'google-one' ); ?></option>
 					<option value="community" <?php selected( 'community', $badge_type ); ?>><?php _e( 'Community', 'google-one' ); ?></option>
 				</select>
 			</p>
@@ -491,48 +475,18 @@ if ( ! function_exists( 'gglplsn_return_button' ) ) {
 	function gglplsn_return_button( $request, $options ) {
 		extract( $options );
 		if ( 'plusone' == $request ) {
-			switch( $plus_one_size ) {
-				case 'standard' :
-					$plus_one_width = ( 'standard' == $plus_one_annotation_type ) ? 189 : 139;
-					break;
-				case 'small' :
-					$plus_one_width = ( 'standard' == $plus_one_annotation_type ) ? 185 : 129;
-					break;
-				case 'medium' :
-					$plus_one_width = ( 'standard' == $plus_one_annotation_type ) ? 183 : 133;
-					break;
-				case 'tall' :
-					$plus_one_width = ( 'standard' == $plus_one_annotation_type ) ? 201 : 151;
-					break;
-			}
-
-			$plus_one = '<span class="gglplsn_plus_one"><g:plusone
-				size="' . $plus_one_size . '"
-				'. ( ( 'inline' == $plus_one_annotation ) ? 'width="' . $plus_one_width . '"' : "" ) .
-				'annotation="' . $plus_one_annotation . '"
-				callback="on"
-				href="' . get_permalink() . '"></g:plusone></span>';
+			$plus_one = sprintf(
+				'<span class="gglplsn_plus_one"><g:plusone size="%s" callback="on" href="%s"></g:plusone></span>',
+				$plus_one_size, get_permalink()
+			);
 			return $plus_one;
 		}
 
 		if ( 'share' == $request ) {
-			switch( $share_size ) {
-				case 20 :
-					$share_width = ( 'standard' == $share_annotation_type ) ? 200 : 150;
-					break;
-				case 15 :
-					$share_width = ( 'standard' == $share_annotation_type ) ? 205 : 140;
-					break;
-				case 24 :
-					$share_width = ( 'standard' == $share_annotation_type ) ? 206 : 150;
-					break;
-			}
-
-			$share = '<span class="gglplsn_share"><g:plus action="share"
-				href="'. get_permalink() . '"
-				'. ( ( 'vertical-bubble' != $share_annotation ) ? 'height="' . $share_size . '"' : "" ) . '
-				annotation="' . $share_annotation .'"
-				'. ( ( 'inline' == $share_annotation ) ? 'width="' . $share_width . '"' : "" ) . '> </span></span>';
+			$share = sprintf(
+				'<span class="gglplsn_share"><g:plus action="share" href="%s" height="%d"> </span></span>',
+				get_permalink(), intval( $share_size )
+			);
 			return $share;
 		}
 
@@ -540,11 +494,10 @@ if ( ! function_exists( 'gglplsn_return_button' ) ) {
 			$follow_id = sanitize_text_field( $follow_id );
 			if ( ! empty( $follow_id ) ) {
 				$href = 'https://plus.google.com/' . $follow_id;
-				$follow = '<span class="gglplsn_follow"><g:follow
-					href="' . esc_url( $href ) . '"
-					height="' . intval( $follow_size ) . '"
-					annotation="' . $follow_annotation .'"
-					rel="' . $follow_relationship . '"></g:follow></span>';
+				$follow = sprintf(
+					'<span class="gglplsn_follow"><g:follow href="%s" height="%d" annotation="%s" rel="%s"> </span></span>',
+					esc_url( $href ), intval( $follow_size ), $follow_annotation, $follow_relationship
+				);
 				return $follow;
 			} else {
 				return '';
@@ -562,13 +515,10 @@ if ( ! function_exists( 'gglplsn_return_button' ) ) {
 			if ( 'standard' != $hangout_size ) {
 				$hangout_width = ( 'narrow' == $hangout_size ) ? 72 : 175;
 			}
-
-			$hangout = '<span class="gglplsn_hangout"><g:hangout
-				render="createhangout"
-				topic="' . $hangout_topic_string . '"
-				hangout_type="' . $hangout_type . '"
-				'. ( ( 'standard' != $hangout_size ) ? 'widget_size="' . $hangout_width . '"' : "" ) . '
-				invites="[' . $hangout_invite . ']"></g:hangout></span>';
+			$hangout = sprintf(
+				'<span class="gglplsn_hangout"><g:hangout render="createhangout" topic="%s" hangout_type="%d" annotation="%s" invites="[%s]"> </g:hangout></span>',
+				$hangout_topic_string, $hangout_type, ( 'standard' != $hangout_size ) ? 'widget_size="' . $hangout_width . '"' : "", $hangout_invite
+			);
 			return $hangout;
 		}
 
@@ -585,15 +535,10 @@ if ( ! function_exists( 'gglplsn_return_button' ) ) {
 				} elseif ( $badge_width > 450 ) {
 					$badge_width = 450;
 				}
-
-				$badge = '<p class="gglplsn_badge"><g:' . $badge_type . '
-					href="' . esc_url( $href ) . '"
-					layout="' . $badge_layout . '"
-					width="' . $badge_width . '"
-					theme="' . $badge_theme . '"
-					' . $photo . '
-					showowners="' . $badge_show_owners . '"
-					showtagline="' . $badge_show_tagline . '"></g:' . $badge_type . '></p>';
+				$badge = sprintf(
+					'<p class="gglplsn_badge"><g:%s href="%s" layout="%s" width="%s" theme="%s" %s showowners="%s" showtagline="%s"></g:%s></p>',
+					$badge_type, esc_url( $href ), $badge_layout, $badge_width, $badge_theme, $photo, $badge_show_owners, $badge_show_tagline, $badge_type
+				);
 				return $badge;
 			} else {
 				return '';
@@ -666,7 +611,7 @@ if ( ! function_exists( 'gglplsn_shortcode_button_content' ) ) {
 							<span class="bws_info">
 								(<?php _e( 'To see this button, please', 'google-one' ); ?>
 								<a style="color: #0073aa;" href="admin.php?page=google-plus-one.php"><?php _e( 'enter', 'google-one' ) ?></a>
-								<?php _e( 'the Google+ ID', 'google-one' ); ?>)
+								<?php _e( 'Google+ ID', 'google-one' ); ?>)
 							</span>
 						<?php } ?>
 					</label>
@@ -683,7 +628,7 @@ if ( ! function_exists( 'gglplsn_shortcode_button_content' ) ) {
 						<span class="bws_info">
 							(<?php _e( 'To see this button, please', 'google-one' ); ?>
 							<a style="color: #0073aa;" href="admin.php?page=google-plus-one.php"><?php _e( 'enter', 'google-one' ) ?></a>
-							<?php _e( 'the Google+ ID', 'google-one' ); ?>)
+							<?php _e( 'Google+ ID', 'google-one' ); ?>)
 						</span>
 					<?php } ?>
 					</label>
