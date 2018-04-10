@@ -24,6 +24,12 @@
 <li>Shortcode</li>
 </ul>
 </li>
+<li>Choose badge features type [NEW]:
+<ul>
+<li>Icon</li>
+<li>Badge</li>
+</ul>
+</li>
 <li>Change button language</li>
 <li>Detect current website language with <a href="https://bestwebsoft.com/products/wordpress/plugins/multilanguage/?k=335d851f03e56472622275e56546471c" rel="nofollow">Multilanguage</a></li>
 <li>Automatically show buttons on:

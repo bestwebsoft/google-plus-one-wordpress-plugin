@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: google-one\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-07 11:46+0200\n"
-"PO-Revision-Date: 2017-11-07 11:46+0200\n"
+"POT-Creation-Date: 2018-02-28 14:34+0200\n"
+"PO-Revision-Date: 2018-02-28 14:44+0200\n"
 "Last-Translator: bestwebsoft.com <plugins@bestwebsoft.com>\n"
 "Language-Team: bestwebsoft.com <plugin@bestwebsoft.com>\n"
 "Language: uk_UA\n"
@@ -19,12 +19,12 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 
 #: google-plus-one.php:37 google-plus-one.php:38
-#: includes/class-gglplsn-settings.php:194
+#: includes/class-gglplsn-settings.php:196
 msgid "Google +1 Settings"
 msgstr "Налаштування Google +1"
 
-#: google-plus-one.php:38 google-plus-one.php:187 google-plus-one.php:682
-#: google-plus-one.php:695 includes/class-gglplsn-settings.php:24
+#: google-plus-one.php:38 google-plus-one.php:190 google-plus-one.php:726
+#: google-plus-one.php:739 includes/class-gglplsn-settings.php:24
 msgid "Settings"
 msgstr "Налаштування"
 
@@ -32,25 +32,37 @@ msgstr "Налаштування"
 msgid "Upgrade to Pro"
 msgstr "Оновитися на Pro"
 
-#: google-plus-one.php:188
+#: google-plus-one.php:191
 msgid "Please enable JavaScript in your browser."
 msgstr "Будь ласка, увімкніть використання JavaScript у вашому браузері."
 
-#: google-plus-one.php:203
+#: google-plus-one.php:193
+msgid "Important"
+msgstr "Важливо"
+
+#: google-plus-one.php:193
+msgid "The Google+ API for Hangouts is no longer supported."
+msgstr "Google+ API для Hangouts більше не підтримується."
+
+#: google-plus-one.php:193
+msgid "Learn more"
+msgstr "Докладніше"
+
+#: google-plus-one.php:209
 msgid "Is already added."
 msgstr "Вже додано."
 
-#: google-plus-one.php:204
+#: google-plus-one.php:210
 msgid "Only one phone number can be added."
 msgstr "Тільки один номер телефону може бути доданий."
 
-#: google-plus-one.php:205
+#: google-plus-one.php:211
 msgid "You can't add the invitation because the phone number is already added."
 msgstr ""
 "Неможливо додати запрошення, тому що запрошення за номером телефону вже "
 "додано."
 
-#: google-plus-one.php:206
+#: google-plus-one.php:212
 msgid ""
 "You can't add the phone number because another invitation type is already "
 "added."
@@ -58,209 +70,210 @@ msgstr ""
 "Неможливо додати запрошення за номером телефону, тому що запрошення іншого "
 "типу вже додано."
 
-#: google-plus-one.php:207
+#: google-plus-one.php:213
 msgid "This field can't be empty."
 msgstr "Це поле не може бути порожнім."
 
-#: google-plus-one.php:208
+#: google-plus-one.php:214
 msgid "Enter the valid Email."
 msgstr "Введіть коректний емейл."
 
-#: google-plus-one.php:209
+#: google-plus-one.php:215
 msgid "Email of Invited Person"
 msgstr "Email для запрошення"
 
-#: google-plus-one.php:210
+#: google-plus-one.php:216
 msgid "Enter the Email of invited person."
 msgstr "Введіть емейл запрошуваного."
 
-#: google-plus-one.php:210 google-plus-one.php:212 google-plus-one.php:214
 #: google-plus-one.php:216 google-plus-one.php:218 google-plus-one.php:220
-#: google-plus-one.php:222 google-plus-one.php:428
-#: includes/class-gglplsn-settings.php:385
-#: includes/class-gglplsn-settings.php:608
-#: includes/class-gglplsn-settings.php:613
-#: includes/class-gglplsn-settings.php:618
+#: google-plus-one.php:222 google-plus-one.php:224 google-plus-one.php:226
+#: google-plus-one.php:228 google-plus-one.php:434
+#: includes/class-gglplsn-settings.php:387
+#: includes/class-gglplsn-settings.php:610
+#: includes/class-gglplsn-settings.php:615
+#: includes/class-gglplsn-settings.php:620
 msgid "For example"
 msgstr "Наприклад"
 
-#: google-plus-one.php:211
+#: google-plus-one.php:217
 msgid "Phone number of invited person"
 msgstr "Номер Телефону для запрошення"
 
-#: google-plus-one.php:212
+#: google-plus-one.php:218
 msgid "Enter the phone number of invited person."
 msgstr "Введіть номер телефону запрошуваного."
 
-#: google-plus-one.php:213
+#: google-plus-one.php:219
 msgid "Google+ Profile ID of Invited Person"
 msgstr "Google+ ID Профілю для запрошення"
 
-#: google-plus-one.php:214
+#: google-plus-one.php:220
 msgid "Enter the Google+ Profile ID of invited person."
 msgstr "Введіть Google + ID Профілю запрошуваного."
 
-#: google-plus-one.php:214 google-plus-one.php:218 google-plus-one.php:220
-#: google-plus-one.php:222 includes/class-gglplsn-settings.php:385
-#: includes/class-gglplsn-settings.php:554
-#: includes/class-gglplsn-settings.php:608
-#: includes/class-gglplsn-settings.php:613
-#: includes/class-gglplsn-settings.php:618
+#: google-plus-one.php:220 google-plus-one.php:224 google-plus-one.php:226
+#: google-plus-one.php:228 includes/class-gglplsn-settings.php:387
+#: includes/class-gglplsn-settings.php:556
+#: includes/class-gglplsn-settings.php:610
+#: includes/class-gglplsn-settings.php:615
+#: includes/class-gglplsn-settings.php:620
 msgid "or"
 msgstr "або"
 
-#: google-plus-one.php:215
+#: google-plus-one.php:221
 msgid "Google+ Circle ID for the Invitation"
 msgstr "Google+ ID Кола для запрошення"
 
-#: google-plus-one.php:216
+#: google-plus-one.php:222
 msgid "Enter the Google+ Circle ID for the Invitation."
 msgstr "Введіть Google+ ID Кола для запрошення."
 
-#: google-plus-one.php:217 google-plus-one.php:426 google-plus-one.php:614
-#: google-plus-one.php:631 includes/class-gglplsn-settings.php:218
-#: includes/class-gglplsn-settings.php:240
+#: google-plus-one.php:223 google-plus-one.php:432 google-plus-one.php:658
+#: google-plus-one.php:675 includes/class-gglplsn-settings.php:220
+#: includes/class-gglplsn-settings.php:242
 msgid "Google+ ID"
 msgstr "Google+ ID"
 
-#: google-plus-one.php:218
+#: google-plus-one.php:224
 msgid "Enter the Google+ ID."
 msgstr "Введіть Google + ID."
 
-#: google-plus-one.php:219 includes/class-gglplsn-settings.php:612
+#: google-plus-one.php:225 includes/class-gglplsn-settings.php:614
 msgid "Google+ Page ID"
 msgstr "Google+ ID Сторінки"
 
-#: google-plus-one.php:220
+#: google-plus-one.php:226
 msgid "Enter the Google+ Page ID."
 msgstr "Введіть Google+ ID Сторінки."
 
-#: google-plus-one.php:221 includes/class-gglplsn-settings.php:617
+#: google-plus-one.php:227 includes/class-gglplsn-settings.php:619
 msgid "Google+ Community ID"
 msgstr "Google+ ID Спільноти"
 
-#: google-plus-one.php:222
+#: google-plus-one.php:228
 msgid "Enter the Google+ Community ID."
 msgstr "Введіть Google+ ID Спільноти."
 
-#: google-plus-one.php:223
+#: google-plus-one.php:229
 msgid "Display the user's tag line."
 msgstr "Відображати слоган користувача."
 
-#: google-plus-one.php:224
+#: google-plus-one.php:230
 msgid "Display the company tag line."
 msgstr "Відображати слоган компанії."
 
-#: google-plus-one.php:225
+#: google-plus-one.php:231
 msgid "Display the community tag line."
 msgstr "Відображати слоган спільноти."
 
-#: google-plus-one.php:352
+#: google-plus-one.php:358
 msgid "Google+ Badge Widget"
 msgstr "Віджет Значка Google+"
 
-#: google-plus-one.php:352
+#: google-plus-one.php:358
 msgid "Show Google Badge on your site"
 msgstr "Показувати Google Значок на вашому сайті"
 
-#: google-plus-one.php:422
+#: google-plus-one.php:428
 msgid "Title"
 msgstr "Назва"
 
-#: google-plus-one.php:428
+#: google-plus-one.php:434
 msgid "Enter your Google+ ID."
 msgstr "Введіть ваш Google + ID."
 
-#: google-plus-one.php:431 includes/class-gglplsn-settings.php:481
-#: includes/class-gglplsn-settings.php:586
+#: google-plus-one.php:437 includes/class-gglplsn-settings.php:483
+#: includes/class-gglplsn-settings.php:588
 msgid "Type"
 msgstr "Тип"
 
-#: google-plus-one.php:433 includes/class-gglplsn-settings.php:590
+#: google-plus-one.php:439 includes/class-gglplsn-settings.php:592
 msgid "Person"
 msgstr "Профіль"
 
-#: google-plus-one.php:434 includes/class-gglplsn-settings.php:594
+#: google-plus-one.php:440 includes/class-gglplsn-settings.php:596
 msgid "Page"
 msgstr "Сторінка"
 
-#: google-plus-one.php:435 includes/class-gglplsn-settings.php:598
+#: google-plus-one.php:441 includes/class-gglplsn-settings.php:600
 msgid "Community"
 msgstr "Спільнота"
 
-#: google-plus-one.php:439 includes/class-gglplsn-settings.php:629
+#: google-plus-one.php:445 includes/class-gglplsn-settings.php:645
 msgid "Layout"
 msgstr "Орієнтація"
 
-#: google-plus-one.php:441 includes/class-gglplsn-settings.php:633
+#: google-plus-one.php:447 includes/class-gglplsn-settings.php:649
 msgid "Portrait"
 msgstr "Вертикальна"
 
-#: google-plus-one.php:442 includes/class-gglplsn-settings.php:637
+#: google-plus-one.php:448 includes/class-gglplsn-settings.php:653
 msgid "Landscape"
 msgstr "Горизонтальна"
 
-#: google-plus-one.php:447
+#: google-plus-one.php:453
 msgid "Show Cover Photo"
 msgstr "Відображати фото обкладинки"
 
-#: google-plus-one.php:451
+#: google-plus-one.php:457
 msgid "Show Tag Line"
 msgstr "Відображати слоган"
 
-#: google-plus-one.php:456
+#: google-plus-one.php:462
 msgid "Show Owners"
 msgstr "Відображати засновників"
 
-#: google-plus-one.php:459 includes/class-gglplsn-settings.php:644
+#: google-plus-one.php:465 includes/class-gglplsn-settings.php:660
 msgid "Width"
 msgstr "Ширина"
 
-#: google-plus-one.php:461 includes/class-gglplsn-settings.php:648
+#: google-plus-one.php:467 includes/class-gglplsn-settings.php:664
 msgid "px"
 msgstr "px"
 
-#: google-plus-one.php:595
+#: google-plus-one.php:639
 msgid "Add Google Buttons to your page or post"
 msgstr "Додати кнопки Google на вашу сторінку або пост"
 
-#: google-plus-one.php:599 includes/class-gglplsn-settings.php:204
+#: google-plus-one.php:643 includes/class-gglplsn-settings.php:206
 msgid "Google +1"
 msgstr "\"Плюс один\""
 
-#: google-plus-one.php:604 includes/class-gglplsn-settings.php:208
+#: google-plus-one.php:648 includes/class-gglplsn-settings.php:210
 msgid "Share"
 msgstr "\"Поділитись\""
 
-#: google-plus-one.php:609 includes/class-gglplsn-settings.php:213
+#: google-plus-one.php:653 includes/class-gglplsn-settings.php:215
 msgid "Follow"
 msgstr "\"Підписатися\""
 
-#: google-plus-one.php:612 google-plus-one.php:629
-#: includes/class-gglplsn-settings.php:216
-#: includes/class-gglplsn-settings.php:238
+#: google-plus-one.php:656 google-plus-one.php:673
+#: includes/class-gglplsn-settings.php:218
+#: includes/class-gglplsn-settings.php:240
 msgid "To see this button, please"
 msgstr "Щоб побачити кнопку, будь ласка"
 
-#: google-plus-one.php:613 google-plus-one.php:630
-#: includes/class-gglplsn-settings.php:217
-#: includes/class-gglplsn-settings.php:239
+#: google-plus-one.php:657 google-plus-one.php:674
+#: includes/class-gglplsn-settings.php:219
+#: includes/class-gglplsn-settings.php:241
 msgid "enter"
 msgstr "вкажіть"
 
-#: google-plus-one.php:621 includes/class-gglplsn-settings.php:225
+#: google-plus-one.php:665 includes/class-gglplsn-settings.php:227
 msgid "Hangout"
 msgstr "\"Чат\""
 
-#: google-plus-one.php:626 includes/class-gglplsn-settings.php:231
+#: google-plus-one.php:670 includes/class-gglplsn-settings.php:233
+#: includes/class-gglplsn-settings.php:635
 msgid "Badge"
 msgstr "Значок"
 
-#: google-plus-one.php:696
+#: google-plus-one.php:740
 msgid "FAQ"
 msgstr "FAQ"
 
-#: google-plus-one.php:697
+#: google-plus-one.php:741
 msgid "Support"
 msgstr "Підтримка"
 
@@ -280,29 +293,29 @@ msgstr "Користувацький код"
 msgid "License Key"
 msgstr "Ліцензійний ключ"
 
-#: includes/class-gglplsn-settings.php:142
+#: includes/class-gglplsn-settings.php:145
 msgid "Email is invalid"
 msgstr "Невірний email"
 
-#: includes/class-gglplsn-settings.php:144
+#: includes/class-gglplsn-settings.php:147
 msgid "Please select the invitation type"
 msgstr "Будь ласка, оберіть тип запрошення"
 
-#: includes/class-gglplsn-settings.php:146
+#: includes/class-gglplsn-settings.php:149
 msgid "Invitation field can't be empty"
 msgstr "Поле запрошення не може бути порожнім"
 
-#: includes/class-gglplsn-settings.php:152
+#: includes/class-gglplsn-settings.php:155
 msgid "Only one phone number can be added"
 msgstr "Тільки один номер телефону може бути доданий"
 
-#: includes/class-gglplsn-settings.php:154
+#: includes/class-gglplsn-settings.php:157
 msgid "You can't add the invitation because the phone number is already added"
 msgstr ""
 "Неможливо додати запрошення, тому що запрошення за номером телефону вже "
 "додано"
 
-#: includes/class-gglplsn-settings.php:156
+#: includes/class-gglplsn-settings.php:159
 msgid ""
 "You can't add the phone number because another invitation type is already "
 "added"
@@ -310,65 +323,65 @@ msgstr ""
 "Неможливо додати запрошення за номером телефону, тому що запрошення іншого "
 "типу вже додано"
 
-#: includes/class-gglplsn-settings.php:161
+#: includes/class-gglplsn-settings.php:164
 msgid "Is already added"
 msgstr "Вже додано"
 
-#: includes/class-gglplsn-settings.php:177
+#: includes/class-gglplsn-settings.php:180
 msgid "Settings saved"
 msgstr "Налаштування збережено"
 
-#: includes/class-gglplsn-settings.php:197
+#: includes/class-gglplsn-settings.php:199
 msgid "General"
 msgstr "Загальне"
 
-#: includes/class-gglplsn-settings.php:200
+#: includes/class-gglplsn-settings.php:202
 msgid "Buttons"
 msgstr "Кнопки"
 
-#: includes/class-gglplsn-settings.php:235
-msgid "Enable to display a Google+ badge in the front-end."
-msgstr "Включити, щоб відобразити значок Google+ в фронтенді."
+#: includes/class-gglplsn-settings.php:237
+msgid "Enable to link your existing Google+ account page to your site."
+msgstr "Увімкніть, щоб зв'язати вашу сторінку Google+ зі своїм сайтом."
 
-#: includes/class-gglplsn-settings.php:247
+#: includes/class-gglplsn-settings.php:249
 msgid "Display on"
 msgstr "Відображати для"
 
-#: includes/class-gglplsn-settings.php:250
+#: includes/class-gglplsn-settings.php:252
 msgid "Home page"
 msgstr "Головної сторінки"
 
-#: includes/class-gglplsn-settings.php:254
+#: includes/class-gglplsn-settings.php:256
 msgid "Posts"
 msgstr "Записів"
 
-#: includes/class-gglplsn-settings.php:259
+#: includes/class-gglplsn-settings.php:261
 msgid "Pages"
 msgstr "Сторінок"
 
-#: includes/class-gglplsn-settings.php:265
+#: includes/class-gglplsn-settings.php:267
 msgid "Buttons Position"
 msgstr "Розташування кнопок"
 
-#: includes/class-gglplsn-settings.php:270
+#: includes/class-gglplsn-settings.php:272
 msgid "Before content"
 msgstr "Перед вмістом"
 
-#: includes/class-gglplsn-settings.php:275
+#: includes/class-gglplsn-settings.php:277
 msgid "After content"
 msgstr "Після вмісту"
 
-#: includes/class-gglplsn-settings.php:281
+#: includes/class-gglplsn-settings.php:283
 msgid "Language"
 msgstr "Мова"
 
-#: includes/class-gglplsn-settings.php:293
+#: includes/class-gglplsn-settings.php:295
 msgid "Select the default language for Google+ button(-s)."
 msgstr "Оберіть мову за замовчуванням для кнопок Google+."
 
-#: includes/class-gglplsn-settings.php:303
-#: includes/class-gglplsn-settings.php:306
-#: includes/class-gglplsn-settings.php:310
+#: includes/class-gglplsn-settings.php:305
+#: includes/class-gglplsn-settings.php:308
+#: includes/class-gglplsn-settings.php:312
 msgid ""
 "Enable to switch language automatically on multilingual website using "
 "Multilanguage plugin."
@@ -376,308 +389,327 @@ msgstr ""
 "Включити, щоб перемкнути мову автоматично на багатомовному сайті, "
 "використовуючи Multilanguage плагін."
 
-#: includes/class-gglplsn-settings.php:306
+#: includes/class-gglplsn-settings.php:308
 #, php-format
 msgid "Activate %s"
 msgstr "Активувати %s"
 
-#: includes/class-gglplsn-settings.php:310
+#: includes/class-gglplsn-settings.php:312
 msgid "Learn More"
 msgstr "Докладніше"
 
-#: includes/class-gglplsn-settings.php:315
+#: includes/class-gglplsn-settings.php:317
 msgid "Google+ Button"
 msgstr "Кнопка Google+"
 
-#: includes/class-gglplsn-settings.php:320
-#: includes/class-gglplsn-settings.php:710
+#: includes/class-gglplsn-settings.php:322
+#: includes/class-gglplsn-settings.php:750
 msgid "Close"
 msgstr "Закрити"
 
-#: includes/class-gglplsn-settings.php:323
+#: includes/class-gglplsn-settings.php:325
 msgid "+1 Entire Website"
 msgstr "+1 Всьому Сайту"
 
-#: includes/class-gglplsn-settings.php:326
+#: includes/class-gglplsn-settings.php:328
 msgid "Enable to +1 the entire website using +1 button."
 msgstr "Включити +1 для всього сайту за допомогою кнопки +1."
 
-#: includes/class-gglplsn-settings.php:336
-#: includes/class-gglplsn-settings.php:361
-#: includes/class-gglplsn-settings.php:405
-#: includes/class-gglplsn-settings.php:463
+#: includes/class-gglplsn-settings.php:338
+#: includes/class-gglplsn-settings.php:363
+#: includes/class-gglplsn-settings.php:407
+#: includes/class-gglplsn-settings.php:465
 msgid "Size"
 msgstr "Розмір"
 
-#: includes/class-gglplsn-settings.php:340
+#: includes/class-gglplsn-settings.php:342
 msgctxt "for:size"
 msgid "Small"
 msgstr "Маленька"
 
-#: includes/class-gglplsn-settings.php:344
+#: includes/class-gglplsn-settings.php:346
 msgctxt "for:size"
 msgid "Medium"
 msgstr "Середня"
 
-#: includes/class-gglplsn-settings.php:348
+#: includes/class-gglplsn-settings.php:350
 msgctxt "for:size"
 msgid "Standard"
 msgstr "Стандартна"
 
-#: includes/class-gglplsn-settings.php:352
+#: includes/class-gglplsn-settings.php:354
 msgctxt "for:size"
 msgid "Tall"
 msgstr "Велика"
 
-#: includes/class-gglplsn-settings.php:358
+#: includes/class-gglplsn-settings.php:360
 msgid "Share Button"
 msgstr "Кнопка \"Поділитись\""
 
-#: includes/class-gglplsn-settings.php:365
-#: includes/class-gglplsn-settings.php:409
+#: includes/class-gglplsn-settings.php:367
+#: includes/class-gglplsn-settings.php:411
+#: includes/class-gglplsn-settings.php:710
 msgid "Small"
 msgstr "Маленька"
 
-#: includes/class-gglplsn-settings.php:369
-#: includes/class-gglplsn-settings.php:413
+#: includes/class-gglplsn-settings.php:371
+#: includes/class-gglplsn-settings.php:415
+#: includes/class-gglplsn-settings.php:714
 msgid "Medium"
 msgstr "Середня"
 
-#: includes/class-gglplsn-settings.php:373
-#: includes/class-gglplsn-settings.php:417
+#: includes/class-gglplsn-settings.php:375
+#: includes/class-gglplsn-settings.php:419
+#: includes/class-gglplsn-settings.php:718
 msgid "Large"
 msgstr "Велика"
 
-#: includes/class-gglplsn-settings.php:379
+#: includes/class-gglplsn-settings.php:381
 msgid "Follow Button"
 msgstr "Кнопка \"Підписатися\""
 
-#: includes/class-gglplsn-settings.php:382
-#: includes/class-gglplsn-settings.php:607
+#: includes/class-gglplsn-settings.php:384
+#: includes/class-gglplsn-settings.php:609
 msgid "Google+ User ID"
 msgstr "Google+ ID користувача"
 
-#: includes/class-gglplsn-settings.php:385
-#: includes/class-gglplsn-settings.php:608
+#: includes/class-gglplsn-settings.php:387
+#: includes/class-gglplsn-settings.php:610
 msgid "Enter your Google+ user ID."
 msgstr "Введіть Google+ ID користувача."
 
-#: includes/class-gglplsn-settings.php:389
+#: includes/class-gglplsn-settings.php:391
 msgid "Relationship"
 msgstr "Відношення"
 
-#: includes/class-gglplsn-settings.php:393
+#: includes/class-gglplsn-settings.php:395
 msgid "Author"
 msgstr "Автор"
 
-#: includes/class-gglplsn-settings.php:397
+#: includes/class-gglplsn-settings.php:399
 msgid "Publisher"
 msgstr "Видавець"
 
-#: includes/class-gglplsn-settings.php:400
+#: includes/class-gglplsn-settings.php:402
 msgid ""
 "Describes your relationship to the content of the page where the button is "
 "added."
 msgstr ""
 "Вказує на ваше відношення до змісту сторінки, на якій розміщено кнопку."
 
-#: includes/class-gglplsn-settings.php:423
+#: includes/class-gglplsn-settings.php:425
 msgid "Annotation"
 msgstr "Примітка"
 
-#: includes/class-gglplsn-settings.php:427
+#: includes/class-gglplsn-settings.php:429
 msgid "None"
 msgstr "Немає"
 
-#: includes/class-gglplsn-settings.php:431
-#: includes/class-gglplsn-settings.php:435
+#: includes/class-gglplsn-settings.php:433
+#: includes/class-gglplsn-settings.php:437
 msgid "Bubble"
 msgstr "Спливаюча"
 
-#: includes/class-gglplsn-settings.php:431
+#: includes/class-gglplsn-settings.php:433
 msgid "horizontal"
 msgstr "горизонтальна"
 
-#: includes/class-gglplsn-settings.php:435
+#: includes/class-gglplsn-settings.php:437
 msgid "vertical"
 msgstr "вертикальна"
 
-#: includes/class-gglplsn-settings.php:438
+#: includes/class-gglplsn-settings.php:440
 msgid "Display the number of users who are following this page."
 msgstr "Відображення кількості користувачів, що слідкують за ціею сторінкою."
 
-#: includes/class-gglplsn-settings.php:442
-msgid "Hangout Button"
-msgstr "Кнопка \"Hangout\""
+#: includes/class-gglplsn-settings.php:444
+msgid "Hangouts Button"
+msgstr "Кнопка \"Hangouts\""
 
-#: includes/class-gglplsn-settings.php:445
+#: includes/class-gglplsn-settings.php:447
 msgid "Topic"
 msgstr "Тема Чату"
 
-#: includes/class-gglplsn-settings.php:450
+#: includes/class-gglplsn-settings.php:452
 msgid "Current page title"
 msgstr "Заголовок поточної сторінки"
 
-#: includes/class-gglplsn-settings.php:455
+#: includes/class-gglplsn-settings.php:457
 msgid "Custom"
 msgstr "Користувацький"
 
-#: includes/class-gglplsn-settings.php:467
+#: includes/class-gglplsn-settings.php:469
 msgctxt "for:hangout_size"
 msgid "Standard"
 msgstr "Стандартна"
 
-#: includes/class-gglplsn-settings.php:471
+#: includes/class-gglplsn-settings.php:473
 msgid "Narrow"
 msgstr "Вузька"
 
-#: includes/class-gglplsn-settings.php:475
+#: includes/class-gglplsn-settings.php:477
 msgid "Wide"
 msgstr "Широка"
 
-#: includes/class-gglplsn-settings.php:485
+#: includes/class-gglplsn-settings.php:487
 msgid "Normal"
 msgstr "Звичайний"
 
-#: includes/class-gglplsn-settings.php:489
+#: includes/class-gglplsn-settings.php:491
 msgid "On air"
 msgstr "В прямому ефірі"
 
-#: includes/class-gglplsn-settings.php:493
+#: includes/class-gglplsn-settings.php:495
 msgid "Party"
 msgstr "Груповий"
 
-#: includes/class-gglplsn-settings.php:499
+#: includes/class-gglplsn-settings.php:501
 msgid "Invitation Type"
 msgstr "Тип запрошення"
 
-#: includes/class-gglplsn-settings.php:502
+#: includes/class-gglplsn-settings.php:504
 msgid "Select The Type"
 msgstr "Вкажіть тип"
 
-#: includes/class-gglplsn-settings.php:503
+#: includes/class-gglplsn-settings.php:505
 msgid "Google+ Profile ID"
 msgstr "Google+ ID Профілю"
 
-#: includes/class-gglplsn-settings.php:504
+#: includes/class-gglplsn-settings.php:506
 msgid "Google+ Circle ID"
 msgstr "Google+ ID Кола"
 
-#: includes/class-gglplsn-settings.php:505
+#: includes/class-gglplsn-settings.php:507
 msgid "Email"
 msgstr "Email"
 
-#: includes/class-gglplsn-settings.php:506
+#: includes/class-gglplsn-settings.php:508
 msgid "Phone Number"
 msgstr "Номер Телефону"
 
-#: includes/class-gglplsn-settings.php:543
+#: includes/class-gglplsn-settings.php:545
 msgid "Google+ ID, Phone Number or Email"
 msgstr "Google+ ID, Номер Телефону або Email"
 
-#: includes/class-gglplsn-settings.php:549
-#: includes/class-gglplsn-settings.php:575
+#: includes/class-gglplsn-settings.php:551
+#: includes/class-gglplsn-settings.php:577
 msgid "Add"
 msgstr "Додати"
 
-#: includes/class-gglplsn-settings.php:551
+#: includes/class-gglplsn-settings.php:553
 msgid "Delete Selected"
 msgstr "Видалити позначене"
 
-#: includes/class-gglplsn-settings.php:554
+#: includes/class-gglplsn-settings.php:556
 msgid "If Invitation Type is 'Google+ Profile ID', it should look like"
 msgstr ""
 "Якщо обрано тип запрошення 'Google+  ID Профілю', то вказанний ID має мати "
 "вигляд"
 
-#: includes/class-gglplsn-settings.php:558
+#: includes/class-gglplsn-settings.php:560
 msgid "If Invitation Type is 'Google+ Circle ID', it should look like"
 msgstr ""
 "Якщо обрано тип запрошення 'Google+ ID Кола', то вказанний ID має мати вигляд"
 
-#: includes/class-gglplsn-settings.php:562
+#: includes/class-gglplsn-settings.php:564
 msgid "If Invitation Type is 'Email', it should look like"
 msgstr "Якщо обрано тип запрошення 'Email', то вказана адреса має мати вигляд"
 
-#: includes/class-gglplsn-settings.php:566
+#: includes/class-gglplsn-settings.php:568
 msgid "If Invitation Type is 'Phone Number', it should look like"
 msgstr ""
 "Якщо обрано тип запрошення 'Номер Телефону', то вказаний номер має мати "
 "вигляд"
 
-#: includes/class-gglplsn-settings.php:583
+#: includes/class-gglplsn-settings.php:585
 msgid "Google+ Badge"
 msgstr "Google+ Значок"
 
-#: includes/class-gglplsn-settings.php:609
+#: includes/class-gglplsn-settings.php:611
 msgid "Enable to display the user's tag line."
 msgstr "Увімкніть, щоб відображати слоган користувача."
 
-#: includes/class-gglplsn-settings.php:613
+#: includes/class-gglplsn-settings.php:615
 msgid "Enter your Google+ page ID."
 msgstr "Введіть ваш Google + ID сторінки."
 
-#: includes/class-gglplsn-settings.php:614
+#: includes/class-gglplsn-settings.php:616
 msgid "Enable to display the company tag line."
 msgstr "Увімкніть, щоб відображати слоган компанії."
 
-#: includes/class-gglplsn-settings.php:618
+#: includes/class-gglplsn-settings.php:620
 msgid "Enter your Google+ community ID."
 msgstr "Введіть ваш Google+ ID Спільноти."
 
-#: includes/class-gglplsn-settings.php:619
+#: includes/class-gglplsn-settings.php:621
 msgid "Enable to display the community tag line."
 msgstr "Увімкніть, щоб відображати слоган спільноти."
 
-#: includes/class-gglplsn-settings.php:640
+#: includes/class-gglplsn-settings.php:631
+msgid "Features"
+msgstr "Властивості"
+
+#: includes/class-gglplsn-settings.php:639
+msgid "Icon"
+msgstr "Іконка"
+
+#: includes/class-gglplsn-settings.php:656
 msgid "Sets the orientation of the badge."
 msgstr "Встановлює орієнтацію значка."
 
-#: includes/class-gglplsn-settings.php:652
+#: includes/class-gglplsn-settings.php:668
 msgid "Color Theme"
 msgstr "Тема кольору"
 
-#: includes/class-gglplsn-settings.php:656
+#: includes/class-gglplsn-settings.php:672
 msgid "Light"
 msgstr "Світла"
 
-#: includes/class-gglplsn-settings.php:660
+#: includes/class-gglplsn-settings.php:676
 msgid "Dark"
 msgstr "Темна"
 
-#: includes/class-gglplsn-settings.php:666
+#: includes/class-gglplsn-settings.php:682
 msgid "Cover Photo"
 msgstr "Фото обкладинки"
 
-#: includes/class-gglplsn-settings.php:668
+#: includes/class-gglplsn-settings.php:684
 msgid "Enable to display a cover photo."
 msgstr "Включить, щоб відображати фото обкладинки."
 
-#: includes/class-gglplsn-settings.php:672
+#: includes/class-gglplsn-settings.php:688
 msgid "Tag Line"
 msgstr "Слоган"
 
-#: includes/class-gglplsn-settings.php:678
+#: includes/class-gglplsn-settings.php:694
 msgid "Owners"
 msgstr "Засновники"
 
-#: includes/class-gglplsn-settings.php:680
+#: includes/class-gglplsn-settings.php:696
 msgid "Enable to display a list of community owners."
 msgstr "Увімкніть, щоб відображати список засновників спільноти."
 
-#: includes/class-gglplsn-settings.php:695
+#: includes/class-gglplsn-settings.php:700
+msgid "Custom Name"
+msgstr "Назва"
+
+#: includes/class-gglplsn-settings.php:706
+msgid "Icon Size"
+msgstr "Розмір іконки"
+
+#: includes/class-gglplsn-settings.php:735
 msgid "Google +1 Buttons Shortchode"
 msgstr "Шорткод Google +1 кнопок"
 
-#: includes/class-gglplsn-settings.php:698
+#: includes/class-gglplsn-settings.php:738
 msgid "Add Google +1 Buttons to a widget."
 msgstr "Додайте кнопки Google +1 в віджет."
 
-#: includes/class-gglplsn-settings.php:698
+#: includes/class-gglplsn-settings.php:738
 msgid "Navigate to Widgets"
 msgstr "Перейти до Віджетів"
 
-#: includes/class-gglplsn-settings.php:699
+#: includes/class-gglplsn-settings.php:739
 msgid ""
 "Add Google +1 button(-s) to your posts, pages, custom post types or widgets "
 "by using the following shortcode:"
@@ -685,15 +717,15 @@ msgstr ""
 "Додати кнопки Google +1 на ваші записи, сторінки, користувацькі типи записів "
 "або віджети за допомогою даного шорткода:"
 
-#: includes/class-gglplsn-settings.php:711
+#: includes/class-gglplsn-settings.php:751
 msgid "Google +1 Buttons Preview"
 msgstr "Попередній перегляд кнопок Google +1"
 
-#: includes/class-gglplsn-settings.php:725
+#: includes/class-gglplsn-settings.php:765
 msgid "Display Settings"
 msgstr "Налаштування відображення"
 
-#: includes/class-gglplsn-settings.php:734
+#: includes/class-gglplsn-settings.php:774
 msgid ""
 "Please choose the necessary post types (or single pages) where Google "
 "buttons will be displayed:"
@@ -701,17 +733,23 @@ msgstr ""
 "Будь ласка, оберіть потрібні тип пости (чи сторінки), де будуть "
 "відображатись кнопки Google:"
 
-#: includes/class-gglplsn-settings.php:741
+#: includes/class-gglplsn-settings.php:781
 msgid "Show URL for pages"
 msgstr "Відображати URL сторінок"
 
-#: includes/class-gglplsn-settings.php:747
+#: includes/class-gglplsn-settings.php:787
 msgid "Example of the site's pages tree"
 msgstr "Приклад дерева сторінок сайту"
 
-#: includes/class-gglplsn-settings.php:747
+#: includes/class-gglplsn-settings.php:787
 msgid "Example of site pages' tree"
 msgstr "Приклад дерева сторінок сайту"
+
+#~ msgid "Enable to display a Google+ badge in the front-end."
+#~ msgstr "Включити, щоб відобразити значок Google+ в фронтенді."
+
+#~ msgid "Hangout Button"
+#~ msgstr "Кнопка \"Hangout\""
 
 #~ msgid "Please enable JavaScript in Your browser."
 #~ msgstr "Будь ласка, увімкніть використання JavaScript у вашому браузері."
@@ -1049,10 +1087,6 @@ msgstr "Приклад дерева сторінок сайту"
 #, fuzzy
 #~ msgid "Themes"
 #~ msgstr "Тема"
-
-#, fuzzy
-#~ msgid "Learn more"
-#~ msgstr "Докладніше"
 
 #~ msgid "Go"
 #~ msgstr "Перейти"

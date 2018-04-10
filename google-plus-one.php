@@ -6,7 +6,7 @@ Description: Add Google +1, Share, Follow, Hangout buttons and profile badge to 
 Author: BestWebSoft
 Text Domain: google-one
 Domain Path: /languages
-Version: 1.3.6
+Version: 1.3.7
 Author URI: https://bestwebsoft.com
 License: GPLv2 or later
 */
@@ -153,6 +153,7 @@ if ( ! function_exists( 'gglplsn_get_options_default' ) ) {
 			'hangout_invite_type'		=>	array(),
 			'hangout_invite_id'			=>	array(),
 			'badge_js'					=>	0,
+			'badge_js_type'				=>	'badge',
 			'badge_type'				=>	'person',
 			'badge_id'					=>	'',
 			'badge_layout'				=>	'portrait',
@@ -161,6 +162,8 @@ if ( ! function_exists( 'gglplsn_get_options_default' ) ) {
 			'badge_show_owners'			=>	false,
 			'badge_theme'				=>	'light',
 			'badge_width'				=>	300,
+			'badge_icon_size'			=> 	16,
+			'badge_custom_name'			=>	'',
 			'position'					=>	array( 'before' ),
 			'homepage'					=>	1,
 			'posts'						=>	1,
@@ -186,6 +189,9 @@ if ( ! function_exists( 'gglplsn_options' ) ) {
 		<div id="gglplsn_settings_form" class="wrap">
 			<h1>Google +1 <?php _e( 'Settings', 'google-one-pro' ); ?></h1>
 			<noscript><div class="error below-h2"><p><strong><?php _e( "Please enable JavaScript in your browser.", 'google-one' ); ?></strong></p></div></noscript>
+			<div class="error bws-notice inline hangouts-support" style="display: none;">
+				<p><strong><?php _e( 'Important' ) ?></strong>: <?php echo ( __( 'The Google+ API for Hangouts is no longer supported.', 'google-one' ) . ' <a href="https://developers.google.com/+/hangouts/support-faq">' . __( 'Learn more', 'google-one' ) . '</a>' ) ?></p>
+			</div>
 			<?php $page->display_content(); ?>
 		</div>
 	<?php }
@@ -373,7 +379,7 @@ if ( ! class_exists( 'Gglplsn_Badge_Widget' ) ) {
 			if ( ! empty( $title ) ) {
 				echo $args['before_title'] . $title . $args['after_title'];
 			}
-			$badge = gglplsn_return_button( 'badge', $instance );
+			$badge = gglplsn_return_button( 'widget', $instance );
 			echo $badge;
 			echo $args['after_widget'];
 			$gglplsn_is_button_shown = true;
@@ -434,6 +440,9 @@ if ( ! class_exists( 'Gglplsn_Badge_Widget' ) ) {
 					<option value="page" <?php selected( 'page', $badge_type ); ?>><?php _e( 'Page', 'google-one' ); ?></option>
 					<option value="community" <?php selected( 'community', $badge_type ); ?>><?php _e( 'Community', 'google-one' ); ?></option>
 				</select>
+			</p>
+			<p>
+				
 			</p>
 			<p>
 				<label for="<?php echo $this->get_field_id( 'badge_layout' ); ?>"><?php _e( 'Layout', 'google-one' ); ?></label>
@@ -515,14 +524,15 @@ if ( ! function_exists( 'gglplsn_return_button' ) ) {
 			if ( 'standard' != $hangout_size ) {
 				$hangout_width = ( 'narrow' == $hangout_size ) ? 72 : 175;
 			}
+
 			$hangout = sprintf(
-				'<span class="gglplsn_hangout"><g:hangout render="createhangout" topic="%s" hangout_type="%d" annotation="%s" invites="[%s]"> </g:hangout></span>',
+				'<span class="gglplsn_hangout"><g:hangout render="createhangout" topic="%s" hangout_type="%d" %s invites="[%s]"> </g:hangout></span>',
 				$hangout_topic_string, $hangout_type, ( 'standard' != $hangout_size ) ? 'widget_size="' . $hangout_width . '"' : "", $hangout_invite
 			);
 			return $hangout;
 		}
-
-		if ( 'badge' == $request ) {
+		
+		if ( 'badge' == $request && 'badge' == $badge_js_type || 'widget' == $request ) {
 			$badge_id = esc_html( $badge_id );
 			if ( ! empty( $badge_id ) ) {
 				$href = 'https://plus.google.com/' . ( 'community' == $badge_type ? 'communities/': '' ) . $badge_id;
@@ -539,6 +549,38 @@ if ( ! function_exists( 'gglplsn_return_button' ) ) {
 					'<p class="gglplsn_badge"><g:%s href="%s" layout="%s" width="%s" theme="%s" %s showowners="%s" showtagline="%s"></g:%s></p>',
 					$badge_type, esc_url( $href ), $badge_layout, $badge_width, $badge_theme, $photo, $badge_show_owners, $badge_show_tagline, $badge_type
 				);
+
+				return $badge;
+			} else {
+				return '';
+			}
+		} elseif ( 'badge' == $request && 'icon' == $badge_js_type ) {
+			$badge_id = esc_html( $badge_id );
+			if ( ! empty( $badge_id ) ) {
+				$href = 'https://plus.google.com/' . ( 'community' == $badge_type ? 'communities/': '' ) . $badge_id;
+				if ( ! empty( $badge_custom_name ) ) {
+					if ( 64 != $badge_icon_size ) {
+						$badge = sprintf(
+							'<a href="%s" rel="publisher" target="_top" style="text-decoration:none;display:inline-block;color:#333;text-align:center; font:13px/16px arial,sans-serif;white-space:nowrap;">
+							<span style="display:inline-block;font-weight:bold;vertical-align:top;margin-right:5px; margin-top:8px;">%s</span><span style="display:inline-block;vertical-align:top;margin-right:15px; margin-top:8px;">on</span>
+							<img src="//ssl.gstatic.com/images/icons/gplus-%s.png" alt="Google+" style="border:0;width:%3$spx;height:%3$spx;"/>
+							</a>', esc_url( $href ), $badge_custom_name, $badge_icon_size
+						);
+					} elseif ( 64 == $badge_icon_size ) {
+						$badge = sprintf(
+							'<a href="%s" rel="publisher" target="_top" style="text-decoration:none;display:inline-block;color:#333;text-align:center; font:13px/16px arial,sans-serif;white-space:nowrap;">
+							<img src="//ssl.gstatic.com/images/icons/gplus-64.png" alt="" style="border:0;width:64px;height:64px;"/><br/>
+							<span style="font-weight:bold;">%s</span><br/><span>on Google+</span>
+							</a>', esc_url( $href ), $badge_custom_name
+						);
+					}
+				} else {
+					$badge = sprintf(
+						'<a href="%s" rel="publisher" target="_top" style="text-decoration:none;">
+						<img src="//ssl.gstatic.com/images/icons/gplus-%s.png" alt="Google+" style="border:0;width:%2$spx;height:%2$spx;"/>
+						</a>', esc_url( $href ), $badge_icon_size
+					);
+				}
 				return $badge;
 			} else {
 				return '';

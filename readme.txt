@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: https://bestwebsoft.com/donate/
 Tags: add social buttons, add google social buttons, add google buttons, google like, google share, google like button, google share button, google, google social buttons, google +1, social account, social button
 Requires at least: 3.9
-Tested up to: 4.8.3
-Stable tag: 1.3.6
+Tested up to: 4.9.5
+Stable tag: 1.3.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -32,6 +32,9 @@ https://www.youtube.com/watch?v=Z-v0xWTKnuU
 	* After
 	* Before and after
 	* Shortcode
+* Choose badge features type [NEW]:
+	* Icon
+	* Badge
 * Change button language
 * Detect current website language with [Multilanguage](https://bestwebsoft.com/products/wordpress/plugins/multilanguage/?k=335d851f03e56472622275e56546471c)
 * Automatically show buttons on:
@@ -180,6 +183,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 
 == Changelog ==
 
+= V1.3.7 - 10.04.2018 =
+* NEW : Ability to change badge type has been added.
+
 = V1.3.6 - 10.11.2017 =
 * Update : Deprecated option "Annotation" has been removed.
 * Update : The Czech language file is updated.
@@ -287,6 +293,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 * Bugfix : The bug of position in the admin menu is fixed.
 
 == Upgrade Notice ==
+
+= V1.3.7 =
+* Functionality improved.
 
 = V1.3.6 =
 * Functionality improved.

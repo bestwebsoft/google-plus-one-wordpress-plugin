@@ -77,7 +77,10 @@ if ( ! class_exists( 'Gglplsn_Settings_Tabs' ) ) {
 				$this->options['hangout_invite_type']			= array();
 				$this->options['hangout_invite_id']				= array();
 				$this->options['badge_js']						= isset( $_REQUEST['gglplsn_badge_js'] ) ? 1 : 0;
+				$this->options['badge_js_type']					= esc_html( $_REQUEST['gglplsn_badge_js_type'] );
 				$this->options['badge_type']					= esc_html( $_REQUEST['gglplsn_badge_type'] );
+				$this->options['badge_icon_size']				= intval( $_REQUEST['gglplsn_icon_size'] );
+				$this->options['badge_custom_name']				= esc_html( trim( $_REQUEST['gglplsn_custom_name'] ) );
 				$this->options['badge_id']						= sanitize_text_field( $_REQUEST['gglplsn_badge_id'] );
 				$this->options['badge_layout']					= ( 'portrait' == $_REQUEST['gglplsn_badge_layout'] ) ? 'portrait' : 'landscape';
 				$this->options['badge_show_cover']				= isset( $_REQUEST['gglplsn_badge_show_cover'] ) ? true : false;
@@ -88,8 +91,8 @@ if ( ! class_exists( 'Gglplsn_Settings_Tabs' ) ) {
 				$this->options['position']						= isset( $_REQUEST['gglplsn_position'] ) ? $_REQUEST['gglplsn_position'] : array();
 				$this->options['lang']							= esc_html( $_REQUEST['gglplsn_lang'] );
 				$this->options['homepage']						= isset( $_REQUEST['gglplsn_homepage'] ) ? 1 : 0 ;
-				$this->options['posts']						= isset( $_REQUEST['gglplsn_posts'] ) ? 1 : 0 ;
-				$this->options['pages']						= isset( $_REQUEST['gglplsn_pages'] ) ? 1 : 0 ;
+				$this->options['posts']							= isset( $_REQUEST['gglplsn_posts'] ) ? 1 : 0 ;
+				$this->options['pages']							= isset( $_REQUEST['gglplsn_pages'] ) ? 1 : 0 ;
 				$this->options['use_multilanguage_locale']		= isset( $_REQUEST['gglplsn_use_multilanguage_locale'] ) ? 1 : 0;
 
 				if ( $this->options['badge_width'] < 180 && 'portrait' == $this->options['badge_layout'] ) {
@@ -185,7 +188,6 @@ if ( ! class_exists( 'Gglplsn_Settings_Tabs' ) ) {
 		 */
 		public function tab_settings() { 
 			global $gglplsn_lang_codes, $wp_version;
-
 			if ( ! $this->all_plugins ) {
 				if ( ! function_exists( 'get_plugins' ) )
 					require_once( ABSPATH . 'wp-admin/includes/plugin.php' );
@@ -201,17 +203,17 @@ if ( ! class_exists( 'Gglplsn_Settings_Tabs' ) ) {
 					<td>
 						<fieldset>
 							<label>
-								<input type="checkbox" value="1" name="gglplsn_plus_one_js"<?php checked( 1, $this->options['plus_one_js'] ); ?> /> <?php _e( 'Google +1', 'google-one' ); ?>
+								<input class="bws_option_affect" data-affect-show="#gglplsn_plus_one_enabled_title, #gglplsn_plus_one_enabled_pro, #gglplsn_plus_one_enabled_main" type="checkbox" value="1" name="gglplsn_plus_one_js"<?php checked( 1, $this->options['plus_one_js'] ); ?> /> <?php _e( 'Google +1', 'google-one' ); ?>
 							</label>
 							<br />
 							<label>
-								<input type="checkbox" value="1" name="gglplsn_share_js"<?php checked( 1, $this->options['share_js'] ); ?> /> <?php _e( 'Share', 'google-one' ); ?>
+								<input class="bws_option_affect" data-affect-show="#gglplsn_share_enabled_title, #gglplsn_share_enabled_main" type="checkbox" value="1" name="gglplsn_share_js"<?php checked( 1, $this->options['share_js'] ); ?> /> <?php _e( 'Share', 'google-one' ); ?>
 							</label>
 							<br />
 							<label>
-								<input type="checkbox" value="1" name="gglplsn_follow_js"<?php checked( 1, $this->options['follow_js'] ); ?> />
+								<input class="bws_option_affect" data-affect-show=".gglplsn-unvisible-notice-follow, #gglplsn_follow_enabled_title, #gglplsn_follow_enabled_main, #gglplsn_follow_notice" type="checkbox" value="1" name="gglplsn_follow_js"<?php checked( 1, $this->options['follow_js'] ); ?> />
 								<?php _e( 'Follow', 'google-one' ); ?>
-								<span class="bws_info gglplsn_notice gglplsn-follow-notice gglplsn-unvisible-notice">
+								<span id="gglplsn_follow_notice" class="bws_info gglplsn_notice gglplsn-follow-notice gglplsn-unvisible-notice gglplsn-unvisible-notice-follow">
 									<?php if ( empty( $this->options['follow_id'] ) ) { ?>
 										<?php _e( 'To see this button, please', 'google-one' ); ?>
 										<a href="#gglplsn_follow_id"><?php _e( 'enter', 'google-one' ) ?></a>
@@ -221,7 +223,7 @@ if ( ! class_exists( 'Gglplsn_Settings_Tabs' ) ) {
 							</label>
 							<br />
 							<label>
-								<input type="checkbox" value="1" name="gglplsn_hangout_js"<?php checked( 1, $this->options['hangout_js'] ); ?> />
+								<input class="bws_option_affect" data-affect-show="#gglplsn_hangout_enabled_title, #gglplsn_hangout_enabled_main, .hangouts-support" type="checkbox" value="1" name="gglplsn_hangout_js"<?php checked( 1, $this->options['hangout_js'] ); ?> />
 								<?php _e( 'Hangout', 'google-one' ); ?>
 							</label>
 						</fieldset>
@@ -231,9 +233,9 @@ if ( ! class_exists( 'Gglplsn_Settings_Tabs' ) ) {
 					<th><?php _e( 'Badge', 'google-one' ); ?></th>
 					<td>
 						<label>
-							<input type="checkbox" value="1" name="gglplsn_badge_js" <?php checked( 1, $this->options['badge_js'] ); ?> /> 
-							<span class="bws_info"><?php _e( 'Enable to display a Google+ badge in the front-end.', 'google-one'  ); ?></span> 
-							<span class="bws_info gglplsn_notice gglplsn-badge-notice gglplsn-unvisible-notice">
+							<input class="bws_option_affect" data-affect-show=".gglplsn-unvisible-notice-badge, #gglplsn_badge_enabled_title, #gglplsn_badge_enabled_main" type="checkbox" value="1" name="gglplsn_badge_js" <?php checked( 1, $this->options['badge_js'] ); ?> /> 
+							<span class="bws_info"><?php _e( 'Enable to link your existing Google+ account page to your site.', 'google-one'  ); ?></span> 
+							<span class="bws_info gglplsn_notice gglplsn-badge-notice gglplsn-unvisible-notice gglplsn-unvisible-notice-badge">
 								<?php if ( empty( $this->options['badge_id'] ) ) { ?>
 									<?php _e( 'To see this button, please', 'google-one' ); ?>
 									<a href="#gglplsn_badge_id"><?php _e( 'enter', 'google-one' ) ?></a>
@@ -312,10 +314,10 @@ if ( ! class_exists( 'Gglplsn_Settings_Tabs' ) ) {
 					</td>
 				</tr>
 			</table>
-			<div class="bws_tab_sub_label gglplsn_plus_one_enabled"><?php _e( 'Google+ Button', 'google-one' ); ?></div>
+			<div id="gglplsn_plus_one_enabled_title" class="bws_tab_sub_label"><?php _e( 'Google+ Button', 'google-one' ); ?></div>
 			<!-- general -->
 			<?php if ( ! $this->hide_pro_tabs ) { ?>
-				<div class="bws_pro_version_bloc gglplsn_plus_one_enabled">
+				<div id="gglplsn_plus_one_enabled_pro" class="bws_pro_version_bloc">
 					<div class="bws_pro_version_table_bloc">
 						<button type="submit" name="bws_hide_premium_options" class="notice-dismiss bws_hide_premium_options" title="<?php _e( 'Close', 'google-one' ); ?>"></button>
 						<div class="bws_table_bg"></div>
@@ -331,7 +333,7 @@ if ( ! class_exists( 'Gglplsn_Settings_Tabs' ) ) {
 				</div>
 			<?php } ?>
 			<!-- end general -->
-			<table class="form-table gglplsn_settings_form gglplsn_plus_one_enabled">
+			<table id="gglplsn_plus_one_enabled_main" class="form-table gglplsn_settings_form">
 				<tr>
 					<th><?php _e( 'Size', 'google-one' ); ?></th>
 					<td>
@@ -355,8 +357,8 @@ if ( ! class_exists( 'Gglplsn_Settings_Tabs' ) ) {
 					</td>
 				</tr>
 			</table>
-			<div class="bws_tab_sub_label gglplsn_share_enabled"><?php _e( 'Share Button', 'google-one' ); ?></div>
-			<table class="form-table gglplsn_settings_form gglplsn_share_enabled">
+			<div id="gglplsn_share_enabled_title" class="bws_tab_sub_label gglplsn_share_enabled"><?php _e( 'Share Button', 'google-one' ); ?></div>
+			<table id="gglplsn_share_enabled_main" class="form-table gglplsn_settings_form gglplsn_share_enabled">
 				<tr class="gglplsn-share-size">
 					<th><?php _e( 'Size', 'google-one' ); ?></th>
 					<td>
@@ -376,8 +378,8 @@ if ( ! class_exists( 'Gglplsn_Settings_Tabs' ) ) {
 					</td>
 				</tr>
 			</table>
-			<div class="bws_tab_sub_label gglplsn_follow_enabled"><?php _e( 'Follow Button', 'google-one' ); ?></div>
-			<table class="form-table gglplsn_settings_form gglplsn_follow_enabled">
+			<div id="gglplsn_follow_enabled_title" class="bws_tab_sub_label gglplsn_follow_enabled"><?php _e( 'Follow Button', 'google-one' ); ?></div>
+			<table id="gglplsn_follow_enabled_main" class="form-table gglplsn_settings_form gglplsn_follow_enabled">
 				<tr id="gglplsn_follow_id">
 					<th><?php _e( 'Google+ User ID', 'google-one' ); ?></th>
 					<td>
@@ -439,19 +441,19 @@ if ( ! class_exists( 'Gglplsn_Settings_Tabs' ) ) {
 					</td>
 				</tr>
 			</table>
-			<div class="bws_tab_sub_label gglplsn_hangout_enabled"><?php _e( 'Hangout Button', 'google-one' ); ?></div>
-			<table class="form-table gglplsn_settings_form gglplsn_hangout_enabled">
+			<div id="gglplsn_hangout_enabled_title" class="bws_tab_sub_label gglplsn_hangout_enabled"><?php _e( 'Hangouts Button', 'google-one' ); ?></div>
+			<table id="gglplsn_hangout_enabled_main" class="form-table gglplsn_settings_form gglplsn_hangout_enabled">
 				<tr>
 					<th><?php _e( 'Topic', 'google-one' ); ?></th>
 					<td>
 						<fieldset>
 							<label>
-								<input type="radio" name="gglplsn_hangout_topic_title" class="gglplsn-no-ajax" value="1" <?php checked( 1, $this->options['hangout_topic_title'] ); ?> />
+								<input data-affect-hide=".gglplsn_hangout_topic_custom" type="radio" name="gglplsn_hangout_topic_title" class="gglplsn-no-ajax bws_option_affect" value="1" <?php checked( 1, $this->options['hangout_topic_title'] ); ?> />
 								<?php _e( 'Current page title', 'google-one' ); ?>
 							</label>
 							<br />
 							<label>
-								<input type="radio" name="gglplsn_hangout_topic_title" class="gglplsn-no-ajax" value="0" <?php checked( 0, $this->options['hangout_topic_title'] ); ?> /> 
+								<input data-affect-show=".gglplsn_hangout_topic_custom" type="radio" name="gglplsn_hangout_topic_title" class="gglplsn-no-ajax bws_option_affect" value="0" <?php checked( 0, $this->options['hangout_topic_title'] ); ?> /> 
 								<?php _e( 'Custom', 'google-one' ); ?>
 							</label>
 							<br />
@@ -580,8 +582,8 @@ if ( ! class_exists( 'Gglplsn_Settings_Tabs' ) ) {
 					</td>
 				</tr>
 			</table>
-			<div class="bws_tab_sub_label gglplsn_badge_enabled"><?php _e( 'Google+ Badge', 'google-one' ); ?></div>
-			<table class="form-table gglplsn_settings_form gglplsn_badge_enabled">
+			<div id="gglplsn_badge_enabled_title" class="bws_tab_sub_label gglplsn_badge_enabled"><?php _e( 'Google+ Badge', 'google-one' ); ?></div>
+			<table id="gglplsn_badge_enabled_main" class="form-table gglplsn_settings_form gglplsn_badge_enabled">
 				<tr>
 					<th><?php _e( 'Type', 'google-one' ); ?></th>
 					<td>
@@ -595,7 +597,7 @@ if ( ! class_exists( 'Gglplsn_Settings_Tabs' ) ) {
 							</label>
 							<br/>
 							<label>
-								<input type="radio" name="gglplsn_badge_type" value="community" <?php checked( 'community', $this->options['badge_type'] ); ?> /> <?php _e( 'Community', 'google-one' ); ?>
+								<input class="gglplsn_badge_type" type="radio" name="gglplsn_badge_type" value="community" <?php checked( 'community', $this->options['badge_type'] ); ?> /> <?php _e( 'Community', 'google-one' ); ?>
 							</label>
 						</fieldset>
 					</td>
@@ -625,7 +627,21 @@ if ( ! class_exists( 'Gglplsn_Settings_Tabs' ) ) {
 						<div class="bws_info gglplsn-badge-id-info"><?php echo $badge_id_info; ?></div>
 					</td>
 				</tr>
-				<tr>
+				<tr id="badge_js_type">
+					<th><?php _e( 'Features', 'google-one' ); ?></th>
+					<td>
+						<fieldset>
+							<label>
+								<input class="bws_option_affect gglplsn_enabled_icon" data-affect-show=".gglplsn_enabled_badge" data-affect-hide=".gglplsn_icon_enabled" type="radio" name="gglplsn_badge_js_type" value="badge" <?php checked( 'badge', $this->options['badge_js_type'] ); ?> /> <?php _e( 'Badge', 'google-one' ); ?>
+							</label>
+							<br/>
+							<label>
+								<input class="bws_option_affect" data-affect-show=".gglplsn_icon_enabled" data-affect-hide=".gglplsn_enabled_badge" type="radio" name="gglplsn_badge_js_type" value="icon" <?php checked( 'icon', $this->options['badge_js_type'] ); ?> /> <?php _e( 'Icon', 'google-one' ); ?>
+							</label>
+						</fieldset>
+					</td>
+				</tr>
+				<tr class="gglplsn_enabled_badge">
 					<th><?php _e( 'Layout', 'google-one' ); ?></th>
 					<td>
 						<fieldset>
@@ -640,7 +656,7 @@ if ( ! class_exists( 'Gglplsn_Settings_Tabs' ) ) {
 						<span class="bws_info"><?php _e( 'Sets the orientation of the badge.', 'google-one' ); ?></span>
 					</td>
 				</tr>
-				<tr>
+				<tr class="gglplsn_enabled_badge">
 					<th><?php _e( 'Width', 'google-one' ); ?></th>
 					<td>
 						<input type="number" name="gglplsn_badge_width" max="450" <?php echo ( 'portrait' == $this->options['badge_layout'] ) ? 'min="180"' : 'min="273"'; ?>
@@ -648,7 +664,7 @@ if ( ! class_exists( 'Gglplsn_Settings_Tabs' ) ) {
 							<?php _e( 'px', 'google-one' ); ?>
 					</td>
 				</tr>
-				<tr>
+				<tr class="gglplsn_enabled_badge">
 					<th><?php _e( 'Color Theme', 'google-one' ); ?></th>
 					<td>
 						<fieldset>
@@ -662,24 +678,48 @@ if ( ! class_exists( 'Gglplsn_Settings_Tabs' ) ) {
 						</fieldset>
 					</td>
 				</tr>
-				<tr class="gglplsn-show-cover">
+				<tr class="gglplsn_enabled_badge gglplsn-show-cover">
 					<th><?php _e( 'Cover Photo', 'google-one' ); ?></th>
 					<td>
 						<label><input type="checkbox" value="1" name="gglplsn_badge_show_cover" <?php checked( true, $this->options['badge_show_cover'] ); ?> /> <span class="bws_info"><?php _e( 'Enable to display a cover photo.', 'google-one' ); ?></span></label>
 					</td>
 				</tr>
-				<tr class="gglplsn-show-tagline">
+				<tr class="gglplsn_enabled_badge gglplsn-show-tagline">
 					<th><?php _e( 'Tag Line', 'google-one' ); ?></th>
 					<td>
 						<label><input type="checkbox" value="1" name="gglplsn_badge_show_tagline"<?php checked( true, $this->options['badge_show_tagline'] ); ?> /> <span class="bws_info gglplsn-badge-tagline-info"><?php echo $badge_tagline_info; ?></span></label>
 					</td>
 				</tr>
-				<tr class="gglplsn-show-owners">
+				<tr id="gglplsn-show-owners" class="gglplsn-show-owners">
 					<th><?php _e( 'Owners', 'google-one' ); ?></th>
 					<td>
 						<label><input type="checkbox" value="1" name="gglplsn_badge_show_owners"<?php checked( true, $this->options['badge_show_owners'] ); ?> /> <span class="bws_info"><?php _e( 'Enable to display a list of community owners.', 'google-one' ); ?></span></label>
 					</td>
-				</tr>	
+				</tr>
+				<tr class="gglplsn_icon_enabled">
+					<th><?php _e( 'Custom Name', 'google-one' ); ?></th>
+					<td>
+						<input type="text" name="gglplsn_custom_name" value="<?php echo $this->options['badge_custom_name']; ?>">
+					</td>
+				</tr>
+				<tr class="gglplsn_icon_enabled">
+					<th><?php _e( 'Icon Size', 'google-one' ); ?></th>
+					<td>
+						<fieldset>
+							<label>
+								<input type="radio" name="gglplsn_icon_size" value="16" <?php checked( 16, $this->options['badge_icon_size'] ); ?> /> <?php _e( 'Small', 'google-one' ); ?>
+							</label>
+							<br/>
+							<label>
+								<input type="radio" name="gglplsn_icon_size" value="32" <?php checked( 32, $this->options['badge_icon_size'] ); ?> /> <?php _e( 'Medium', 'google-one' ); ?>
+							</label>
+							<br/>
+							<label>
+								<input type="radio" name="gglplsn_icon_size" value="64" <?php checked( 64, $this->options['badge_icon_size'] ); ?> /> <?php _e( 'Large', 'google-one' ); ?>
+							</label>
+						</fieldset>
+					</td>
+				</tr>
 			</table>
 		<?php }
 

@@ -49,7 +49,6 @@
 	width: calc(100% - 32px);
 	word-wrap: break-word;
 	display: inline-block;
-	float; left;
 	padding-left: 3px;
 	margin-top: -9px;
 }
@@ -105,6 +104,9 @@
 }
 .gglplsn-delbutton:hover:before {
 	color: #c00;
+}
+.bws_pro_version_bloc img {
+	max-width: 100%;
 }
 @media screen and ( max-width: 1170px ) {
 	.gglplsn-view-invited-noscript p {
