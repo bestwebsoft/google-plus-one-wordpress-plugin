@@ -24,7 +24,7 @@
 <li>Shortcode</li>
 </ul>
 </li>
-<li>Choose badge features type [NEW]:
+<li>Choose badge features type:
 <ul>
 <li>Icon</li>
 <li>Badge</li>

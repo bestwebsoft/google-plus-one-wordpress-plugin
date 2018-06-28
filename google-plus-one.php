@@ -6,7 +6,7 @@ Description: Add Google +1, Share, Follow, Hangout buttons and profile badge to 
 Author: BestWebSoft
 Text Domain: google-one
 Domain Path: /languages
-Version: 1.3.7
+Version: 1.3.8
 Author URI: https://bestwebsoft.com
 License: GPLv2 or later
 */
@@ -29,7 +29,7 @@ License: GPLv2 or later
 
 require_once( dirname( __FILE__ ) . '/includes/deprecated.php' );
 
-/* Add BWS menu */
+/* Add BWS menu  */
 if ( ! function_exists( 'gglplsn_admin_menu' ) ) {
 	function gglplsn_admin_menu() {
 		global $submenu, $gglplsn_plugin_info, $wp_version;
@@ -746,7 +746,6 @@ if ( ! function_exists ( 'gglplsn_plugin_banner' ) ) {
 	function gglplsn_plugin_banner() {
 		global $hook_suffix, $gglplsn_plugin_info, $gglplsn_options;
 		if ( 'plugins.php' == $hook_suffix ) {
-
 			/*pls show banner go pro */
 			if ( empty( $gglplsn_options ) )
 				$gglplsn_options = get_option( 'gglplsn_options' );
@@ -757,7 +756,6 @@ if ( ! function_exists ( 'gglplsn_plugin_banner' ) ) {
 			if ( ! is_network_admin() )
 				bws_plugin_banner_to_settings( $gglplsn_plugin_info, 'gglplsn_options', 'google-one', 'admin.php?page=google-plus-one.php' );
 		}
-
 		if ( isset( $_REQUEST['page'] ) && 'google-plus-one.php' == $_REQUEST['page'] ) {
 			bws_plugin_suggest_feature_banner( $gglplsn_plugin_info, 'gglplsn_options', 'google-one' );
 		}
@@ -796,7 +794,6 @@ if ( ! function_exists( 'gglplsn_uninstall' ) ) {
 		if ( ! array_key_exists( 'google-one-pro/google-plus-one-pro.php', $all_plugins ) && ! array_key_exists( 'bws-social-buttons/bws-social-buttons.php', $all_plugins ) ) {
 			if ( function_exists( 'is_multisite' ) && is_multisite() ) {
 				global $wpdb;
-
 				$old_blog = $wpdb->blogid;
 				/* Get all blog ids */
 				$blogids = $wpdb->get_col( "SELECT `blog_id` FROM $wpdb->blogs" );
@@ -808,7 +805,6 @@ if ( ! function_exists( 'gglplsn_uninstall' ) ) {
 			} else {
 				delete_option( 'gglplsn_options' );
 			}
-
 		}
 		require_once( dirname( __FILE__ ) . '/bws_menu/bws_include.php' );
 		bws_include_init( plugin_basename( __FILE__ ) );
@@ -817,20 +813,16 @@ if ( ! function_exists( 'gglplsn_uninstall' ) ) {
 }
 
 register_activation_hook( __FILE__, 'gglplsn_plugin_activate' );
-
 /* Adding 'BWS Plugins' admin menu */
 add_action( 'admin_menu', 'gglplsn_admin_menu' );
 /* Initialization ##*/
 add_action( 'init', 'gglplsn_init' );
 add_action( 'plugins_loaded', 'gglplsn_plugins_loaded' );
 add_action( 'admin_init', 'gglplsn_admin_init' );
-
 /* Adding stylesheets */
 add_action( 'wp_footer', 'gglplsn_footer_actions' );
 add_action( 'admin_enqueue_scripts', 'gglplsn_admin_head' );
-
 add_filter( 'pgntn_callback', 'gglplsn_pagination_callback' );
-
 /* Adding plugin buttons */
 add_shortcode( 'bws_googleplusone', 'gglplsn_shortcode' );
 add_filter( 'widget_text', 'do_shortcode' );

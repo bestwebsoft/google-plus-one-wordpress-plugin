@@ -35,7 +35,6 @@
 				}
 			}
 		}
-
 		gglplsn_badge_type();
 		$( 'input[name="gglplsn_badge_type"]' ).change( function() {
 			gglplsn_badge_type();
@@ -90,23 +89,23 @@
 		$( '#gglplsn_invite_id_error' ).hide();
 		$( '#gglplsn_hangout_invite_add' ).click( function( e ) {
 			e.preventDefault();
-			var added 			= false;
-			var phone 			= false;
-			var any 			= false;
-			var validate_email 	= true;
-			var vis_val 		= $( '#gglplsn_hangout_invite_id' ).val();
-			var vis_type 		= $( '#gglplsn_hangout_invite_type' ).val();
+			var added = false;
+			var phone = false;
+			var any = false;
+			var validate_email = true;
+			var vis_val = $( '#gglplsn_hangout_invite_id' ).val();
+			var vis_type = $( '#gglplsn_hangout_invite_type' ).val();
 			if ( 'EMAIL' == vis_type ) {
 				var ajax_success = false;
-				$.ajax( {
+				$.ajax({
 					type: "POST",
 					dataType: "json",
 					url: ajaxurl,
 					async: false,
 					data: {
-						action: 						'gglplsn_validate_email',
-						gglplsn_email_for_validate: 	vis_val,
-						gglplsn_nonce: 					js_string.gglplsn_ajax_nonce
+						action: 'gglplsn_validate_email',
+						gglplsn_email_for_validate: vis_val,
+						gglplsn_nonce: js_string.gglplsn_ajax_nonce
 					},
 					success: function( data ) {
 						if ( -1 != data ) {
@@ -119,13 +118,12 @@
 					}
 				} );
 			}
-
 			$( '.gglplsn-view-invited input[name^="gglplsn_hangout_invite_id_hidden"' ).each( function() {
 				if ( $( this ).val() == vis_val ) {
 					if ( 'block' == $( '#gglplsn_invite_id_error' ).css( 'display' ) ) {
 						$( '#gglplsn_invite_id_error' ).hide();
 					}
-					$( '#gglplsn_invite_id_error' ).html( '<span>' + js_string.already_added + '</span>' ).slideDown( 300 );
+					$( '#gglplsn_invite_id_error' ).html( '<span>' + js_string.already_added + '</span>' ).slideDown(300);
 					added = true;
 				}
 			} );
@@ -180,31 +178,35 @@
 		/* Check the isset id for follow and badge */
 		$( '#gglplsn_settings_form #bws-submit-button' ).click( function() {
 			var submit_form, focus_form = false;
-			if ( $( 'input[name="gglplsn_follow_js"]' ).is( ':checked' ) && '' == $( 'input[name="gglplsn_follow_id"]' ).val() ) {
-				if ( $( 'input[name="gglplsn_follow_js"]' ).is( ':visible' ) ) {
+			if ( $( 'input[name="gglplsn_follow_js"]' ).is( ':visible' ) || $( 'input[name="gglplsn_badge_js"]' ).is( ':visible' ) ){
+				if ( $( 'input[name="gglplsn_follow_js"]' ).is( ':checked' ) && '' == $( 'input[name="gglplsn_follow_id"]' ).val() ) {
+					$( 'input[name="gglplsn_follow_id"]' ).attr( "required", "required" );
 					$( 'input[name="gglplsn_follow_id"]' ).focus();
 					focus_form = true;
 				} else {
-					$( 'input[name="gglplsn_follow_js"]' ).prop( "checked", false );
 					$( 'input[name="gglplsn_follow_id"]' ).removeAttr( 'required' );
-					submit_form = true;
 				}
-			}
-			if ( ! focus_form ) {				
-				if ( $( 'input[name="gglplsn_badge_js"]' ).is( ':checked' ) && '' == $( 'input[name="gglplsn_badge_id"]' ).val()  ) {
-					if ( $( 'input[name="gglplsn_badge_js"]' ).is( ':visible' ) ) {
+				if ( ! focus_form ) {
+					if ( $( 'input[name="gglplsn_badge_js"]' ).is( ':checked' ) && '' == $( 'input[name="gglplsn_badge_id"]' ).val() ) {
+						$( 'input[name="gglplsn_badge_id"]' ).attr( "required", "required" );
 						$( 'input[name="gglplsn_badge_id"]' ).focus();
 					} else {
-						$( 'input[name="gglplsn_badge_js"]' ).prop( "checked", false );
 						$( 'input[name="gglplsn_badge_id"]' ).removeAttr( 'required' );
 						submit_form = true;
 					}
 				}
+			} else {
+				$( 'input[name="gglplsn_follow_id"]' ).removeAttr( 'required' );
+				$( 'input[name="gglplsn_badge_id"]' ).removeAttr( 'required' );
+				submit_form = true;
 			}
-
 			if ( submit_form ) {
 				$( this ).submit();
 			}
+		} );
+		$( 'input[name="bws_restore_default"]' ).click( function(){
+			$( 'input[name="gglplsn_follow_id"]' ).removeAttr( 'required' );
+			$( 'input[name="gglplsn_badge_id"]' ).removeAttr( 'required' );
 		} );
 	} );
 } ) ( jQuery );
