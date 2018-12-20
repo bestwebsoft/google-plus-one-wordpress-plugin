@@ -6,12 +6,12 @@ Description: Add Google +1, Share, Follow, Hangout buttons and profile badge to 
 Author: BestWebSoft
 Text Domain: google-one
 Domain Path: /languages
-Version: 1.3.8
+Version: 1.3.9
 Author URI: https://bestwebsoft.com
 License: GPLv2 or later
 */
 
-/*	@ Copyright 2017  BestWebSoft  ( https://support.bestwebsoft.com )
+/*	@ Copyright 2018  BestWebSoft  ( https://support.bestwebsoft.com )
 
 	This program is free software; you can redistribute it and/or modify
 	it under the terms of the GNU General Public License, version 2, as
@@ -96,6 +96,18 @@ if ( ! function_exists( 'gglplsn_admin_init' ) ) {
 	}
 }
 
+if ( ! function_exists( 'gglplsn_plugin_activate' ) ) {
+	function gglplsn_plugin_activate() {
+		if ( is_multisite() ) {
+			switch_to_blog( 1 );
+			register_uninstall_hook( __FILE__, 'gglplsn_uninstall' );
+			restore_current_blog();
+		} else {
+			register_uninstall_hook( __FILE__, 'gglplsn_uninstall' );
+		}
+	}
+}
+
 if ( ! function_exists ( 'gglplsn_settings' ) ) {
 	function gglplsn_settings() {
 		global $gglplsn_options, $gglplsn_plugin_info;
@@ -108,15 +120,6 @@ if ( ! function_exists ( 'gglplsn_settings' ) ) {
 		$gglplsn_options = get_option( 'gglplsn_options' );
 
 		if ( ! isset( $gglplsn_options['plugin_option_version'] ) || $gglplsn_options['plugin_option_version'] != $gglplsn_plugin_info["Version"] ) {
-
-			/**
-			* @deprecated since 1.3.6
-			* @todo remove after 12.04.2018
-			*/
-			if ( version_compare( str_replace( 'pro-', '', $gglplsn_options['plugin_option_version'] ), '1.3.6', '<' ) ) {
-				gglplsn_remove_deprecated();
-			}
-			/* end @todo */
 
 			$options_default = gglplsn_get_options_default();
 			$gglplsn_options = array_merge( $options_default, $gglplsn_options );
@@ -180,7 +183,7 @@ if ( ! function_exists( 'gglplsn_get_options_default' ) ) {
 	}
 }
 
-/* Add settings page in admin area */
+/*## Add settings page in admin area */
 if ( ! function_exists( 'gglplsn_options' ) ) {
 	function gglplsn_options() {
 		require_once( dirname( __FILE__ ) . '/includes/class-gglplsn-settings.php' );
@@ -197,6 +200,7 @@ if ( ! function_exists( 'gglplsn_options' ) ) {
 	<?php }
 }
 
+/* enqueue style and script in admin area ##*/
 if ( ! function_exists( 'gglplsn_admin_head' ) ) {
 	function gglplsn_admin_head() {
 		global $hook_suffix, $gglplsn_is_button_shown, $gglplsn_plugin_info;
@@ -762,7 +766,7 @@ if ( ! function_exists ( 'gglplsn_plugin_banner' ) ) {
 	}
 }
 
-/* add help tab  */
+/* add help tab ##*/
 if ( ! function_exists( 'gglplsn_add_tabs' ) ) {
 	function gglplsn_add_tabs() {
 		$screen = get_current_screen();
@@ -774,18 +778,8 @@ if ( ! function_exists( 'gglplsn_add_tabs' ) ) {
 	}
 }
 
-if ( ! function_exists( 'gglplsn_plugin_activate' ) ) {
-	function gglplsn_plugin_activate() {
-		if ( is_multisite() ) {
-			switch_to_blog( 1 );
-			register_uninstall_hook( __FILE__, 'gglplsn_uninstall' );
-			restore_current_blog();
-		} else {
-			register_uninstall_hook( __FILE__, 'gglplsn_uninstall' );
-		}
-	}
-}
 
+/*## Plugin uninstall */
 if ( ! function_exists( 'gglplsn_uninstall' ) ) {
 	function gglplsn_uninstall() {
 		if ( ! function_exists( 'get_plugins' ) )
@@ -838,4 +832,4 @@ add_filter( 'plugin_action_links', 'gglplsn_action_links', 10, 2 );
 add_filter( 'plugin_row_meta', 'gglplsn_register_plugin_links', 10, 2 );
 /* Adding banner */
 add_action( 'admin_notices', 'gglplsn_plugin_banner' );
-/* Plugin uninstall function */
+/* Plugin uninstall function ##*/

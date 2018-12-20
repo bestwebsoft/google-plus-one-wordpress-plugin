@@ -732,7 +732,7 @@ if ( ! class_exists( 'Gglplsn_Settings_Tabs' ) ) {
 		public function display_metabox() { ?>
 			<div class="postbox">
 				<h3 class="hndle">
-					<?php _e( 'Google +1 Buttons Shortchode', 'google-one' ); ?>
+                    <?php _e( 'Google +1 Buttons Shortchode', 'google-one' ); ?>
 				</h3>
 				<div class="inside">
 					<p><?php _e( 'Add Google +1 Buttons to a widget.', 'google-one' ); ?> <a href="widgets.php"><?php _e( 'Navigate to Widgets', 'google-one' ); ?></a></p>
@@ -767,7 +767,8 @@ if ( ! class_exists( 'Gglplsn_Settings_Tabs' ) ) {
 			<hr>
 			<div class="bws_pro_version_bloc">
 				<div class="bws_pro_version_table_bloc">
-					<div class="bws_table_bg"></div>
+                    <button type="submit" name="bws_hide_premium_options" class="notice-dismiss bws_hide_premium_options" title="<?php _e( 'Close', 'google-one' ); ?>"></button>
+                    <div class="bws_table_bg"></div>
 					<table class="form-table bws_pro_version">
 						<tr>
 							<td>
