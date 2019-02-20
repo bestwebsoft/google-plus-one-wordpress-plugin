@@ -113,6 +113,17 @@
 	max-width: 100%;
 	height: auto;
 }
+#gglplsn_settings_form div.gglpls-view{
+	background: #fff;
+	border-left: 4px solid #dc3232;
+	box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
+	padding: 1px 12px;
+	margin: 5px 0 15px;
+}
+#gglplsn_settings_form div.gglpls-view p {
+	margin: .5em 0;
+	padding: 2px;
+}
 @media screen and ( max-width: 1170px ) {
 	.gglplsn-view-invited-noscript p {
 		max-width: 100%;

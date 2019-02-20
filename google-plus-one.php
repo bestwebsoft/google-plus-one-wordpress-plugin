@@ -6,12 +6,12 @@ Description: Add Google +1, Share, Follow, Hangout buttons and profile badge to 
 Author: BestWebSoft
 Text Domain: google-one
 Domain Path: /languages
-Version: 1.3.9
+Version: 1.4.0
 Author URI: https://bestwebsoft.com
 License: GPLv2 or later
 */
 
-/*	@ Copyright 2018  BestWebSoft  ( https://support.bestwebsoft.com )
+/*	@ Copyright 2019  BestWebSoft  ( https://support.bestwebsoft.com )
 
 	This program is free software; you can redistribute it and/or modify
 	it under the terms of the GNU General Public License, version 2, as
@@ -194,6 +194,9 @@ if ( ! function_exists( 'gglplsn_options' ) ) {
 			<noscript><div class="error below-h2"><p><strong><?php _e( "Please enable JavaScript in your browser.", 'google-one' ); ?></strong></p></div></noscript>
 			<div class="error bws-notice inline hangouts-support" style="display: none;">
 				<p><strong><?php _e( 'Important' ) ?></strong>: <?php echo ( __( 'The Google+ API for Hangouts is no longer supported.', 'google-one' ) . ' <a href="https://developers.google.com/+/hangouts/support-faq">' . __( 'Learn more', 'google-one' ) . '</a>' ) ?></p>
+			</div>
+			<div class="bws-notice gglpls-view" >
+				<p><strong><?php _e( 'Important' ) ?></strong>: <?php echo ( __( 'Google+ APIs will be shut down on March 7, 2019.', 'google-one' ) . ' <a href="https://developers.google.com/+/api-shutdown">' . __( 'Learn more', 'google-one' ) . '</a>' ) ?></p>
 			</div>
 			<?php $page->display_content(); ?>
 		</div>
