@@ -6,7 +6,7 @@ Description: Add Google +1, Share, Follow, Hangout buttons and profile badge to 
 Author: BestWebSoft
 Text Domain: google-one
 Domain Path: /languages
-Version: 1.4.0
+Version: 1.4.1
 Author URI: https://bestwebsoft.com
 License: GPLv2 or later
 */
